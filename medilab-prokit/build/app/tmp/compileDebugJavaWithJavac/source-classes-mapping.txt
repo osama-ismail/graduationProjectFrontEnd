@@ -1,0 +1,4 @@
+com/example/medilab_prokit/BuildConfig.java
+ com.example.medilab_prokit.BuildConfig
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
