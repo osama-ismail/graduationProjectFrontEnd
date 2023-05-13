@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:medilab_prokit/utils/MLCommon.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -6,6 +8,9 @@ import 'package:medilab_prokit/model/MLTopHospitalData.dart';
 import 'package:medilab_prokit/utils/MLColors.dart';
 import 'package:medilab_prokit/utils/MLDataProvider.dart';
 import 'package:medilab_prokit/utils/MLString.dart';
+import 'package:http/http.dart' as http;
+
+import '../osama_screens/constant/linkapi.dart';
 
 class MLHomeBottomComponent extends StatefulWidget {
   static String tag = '/MLHomeBottomComponent';
@@ -16,18 +21,32 @@ class MLHomeBottomComponent extends StatefulWidget {
 
 class MLHomeBottomComponentState extends State<MLHomeBottomComponent> {
   List<MLDepartmentData> departmentList = mlDepartmentDataList();
-
+  var response;
   List<MLTopHospitalData> tophospitalList = mlTopHospitalDataList();
-
   @override
   void initState() {
+     getAllServices();
     super.initState();
     init();
+
   }
 
   Future<void> init() async {
     //
   }
+  getAllServices() async {
+
+      var data;
+
+
+       response = await http.get(
+          Uri.parse(linkIp+"/admin/getAllServices"));
+      print(response);
+      // if (response?.statusCode == 200) {
+      //   print(response.body);
+      //
+      // }
+    }
 
   @override
   void setState(fn) {
@@ -66,7 +85,7 @@ class MLHomeBottomComponentState extends State<MLHomeBottomComponent> {
                     width: 80,
                     fit: BoxFit.fill,
                   ).paddingAll(8.0),
-                  Text((departmentList[index].title).validate(), style: boldTextStyle()),
+                  Text((response[index].name).validate(), style: boldTextStyle()),
                   4.height,
                   Text((departmentList[index].subtitle).validate(), style: secondaryTextStyle()),
                   8.height,

@@ -46,7 +46,7 @@ List<MLWalkThroughData> mlWalkThroughDataList() {
 List<MLServicesData> mlServiceDataList() {
   List<MLServicesData> list = [];
   list.add(MLServicesData(title: 'Clinic Visit', icon: Icons.home_work_outlined, image: ml_ic_dashClinicVisit!, widget: MLBookAppointmentScreen(index: 0)));
-  list.add(MLServicesData(title: 'Home Visit', icon: Icons.home, image: ml_ic_dashHomeVisit, widget: MLBookAppointmentScreen(index: 0)));
+  list.add(MLServicesData(title: 'Home Visit', icon: Icons.password, image: ml_ic_dashHomeVisit, widget: MLBookAppointmentScreen(index: 0)));
   list.add(MLServicesData(title: 'Video Consult', icon: Icons.video_call, image: ml_ic_dashVideoCons, widget: MLVideoConsultScreen()));
   list.add(MLServicesData(title: 'Pharmacy', icon: Icons.local_hospital, image: ml_ic_dashPharmacy, widget: MLOnlinePharmacyScreen()));
   list.add(MLServicesData(title: 'Diseases', icon: Icons.health_and_safety, image: ml_ic_dashDisease, widget: MLDiseaseScreen()));
@@ -57,7 +57,7 @@ List<MLServicesData> mlServiceDataList() {
 List<MLDepartmentData> mlDepartmentDataList() {
   List<MLDepartmentData> list = [];
   list.add(MLDepartmentData(image: ml_ic_department_one, title: 'General Care', subtitle: '647 Doctor'));
-  list.add(MLDepartmentData(image: ml_ic_department_two, title: 'Pediatrics', subtitle: '324 Doctor'));
+  list.add(MLDepartmentData(image: "images/baby.png", title: 'Pediatrics', subtitle: '324 Doctor'));
   list.add(MLDepartmentData(image: ml_ic_department_three, title: 'Cardiologic', subtitle: '647 Doctor'));
   list.add(MLDepartmentData(image: ml_ic_department_one, title: 'General Care', subtitle: '647 Doctor'));
   list.add(MLDepartmentData(image: ml_ic_department_two, title: 'Pediatrics', subtitle: '324 Doctor'));

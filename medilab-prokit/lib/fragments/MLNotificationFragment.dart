@@ -77,7 +77,7 @@ class MLNotificationFragmentState extends State<MLNotificationFragment> {
                         border: Border.all(color: Colors.grey.withOpacity(0.3)),
                         backgroundColor: context.cardColor,
                       ),
-                      child: Icon(Icons.settings, color: mlColorDarkBlue, size: 20)),
+                      child: Icon(Icons.person, color: mlColorDarkBlue, size: 20)),
                 ],
               ).paddingAll(16.0),
               PurchaseMoreScreen().expand(),

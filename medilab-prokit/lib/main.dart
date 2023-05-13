@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:medilab_prokit/screens/MLDashboardScreen.dart';
 import 'package:medilab_prokit/screens/MLSplashScreen.dart';
 import 'package:medilab_prokit/store/AppStore.dart';
 import 'package:medilab_prokit/utils/AppTheme.dart';
@@ -37,6 +38,10 @@ class MyApp extends StatelessWidget {
         routes: {
           "login": (context) => Login(),
           "signup": (context) => SignUp(),
+          "homePage": (context) => MLDashboardScreen(),
+
+
+
         },
         debugShowCheckedModeBanner: false,
         title: '${'Here for you'}${!isMobile ? ' ${platformName()}' : ''}',

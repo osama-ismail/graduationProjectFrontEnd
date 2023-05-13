@@ -14,7 +14,9 @@ class MLProfileBottomComponent extends StatefulWidget {
 }
 
 class MLProfileBottomComponentState extends State<MLProfileBottomComponent> {
-  List<String> data = <String>['Membership card', 'Dependents', 'Health care', 'Refer friends and family'];
+  List<String> data = <String>['Profile', 'Change password', 'Privacy and Csecurity'];
+  List<String> dataIcons = <String>['person', 'person', 'person'];
+
   List<String> categoriesData = <String>['Prescription', 'Medical Record', 'Medical Test', 'Health Tracking'];
   List<Color> customColor = <Color>[Colors.blueAccent, Colors.orangeAccent, Colors.pinkAccent, Colors.cyan];
   List<MLProfileCardData> mlProfileData = mlProfileDataList();
@@ -105,7 +107,7 @@ class MLProfileBottomComponentState extends State<MLProfileBottomComponent> {
               children: [
                 Row(
                   children: [
-                    Image.asset('images/ic_theme.png', height: 24, width: 24, color: Colors.blue).paddingOnly(left: 4),
+                    // Image.asset('images/ic_theme.png', height: 24, width: 24, color: Colors.blue).paddingOnly(left: 4),
                     8.width,
                     Text('DarkMode', style: primaryTextStyle()),
                   ],

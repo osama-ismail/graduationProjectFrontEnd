@@ -7,9 +7,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
+import 'package:nb_utils/nb_utils.dart';
 import 'dart:convert';
 
+import '../../../components/MLSocialAccountComponent.dart';
 import '../../../main.dart';
+import '../../../screens/MLDashboardScreen.dart';
+import '../../../screens/MLRegistrationScreen.dart';
+import '../../../utils/MLColors.dart';
+import '../../../utils/MLString.dart';
 
 class Login extends StatefulWidget {
   Login({Key? key}) : super(key: key);
@@ -30,6 +36,8 @@ class _LoginState extends State<Login> {
   bool isLoading = false;
 
   login() async {
+    Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
+
     if (formstate.currentState!.validate()) {
 
 
@@ -60,10 +68,10 @@ class _LoginState extends State<Login> {
               ..show();
           }
           else{
-            print(response.body);
             sharedPref.setString("id", json.decode(response.body)["id"].toString());
             sharedPref.setString(
-                "username", json.decode(response.body)['username'].toString());
+                "username", json.decode(response.body)['name'].toString());
+            print(sharedPref.getString("name"));
             sharedPref.setString("email", json.decode(response.body)['email'].toString());
             sharedPref.setString(
                 "password", json.decode(response.body)['password'].toString());
@@ -75,7 +83,7 @@ class _LoginState extends State<Login> {
               sharedPref.setString("salary", json.decode(response.body)['salary'].toString());
               sharedPref.setString("service_id", json.decode(response.body)['service_id'].toString());
             }
-            Navigator.of(context).pushNamedAndRemoveUntil("ClinicHomePage", (route) => true);
+            Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
             return;
           }
         }
@@ -190,7 +198,7 @@ class _LoginState extends State<Login> {
                       ),
 
                       SizedBox(
-                        height: 59,
+                        height: 50,
                       ),
                       MaterialButton(
                         color: Colors.blue,
@@ -203,12 +211,45 @@ class _LoginState extends State<Login> {
                         child: Text("Login"),
                       ),
                       Container(height: 10),
-                      InkWell(
-                        child: Text("Sign Up"),
-                        onTap: () {
-                          Navigator.of(context).pushNamed("signup");
-                        },
-                      )
+                      // InkWell(
+                      //   child: Text("Sign Up"),
+                      //   onTap: () {
+                      //     Navigator.of(context).pushNamed("signup");
+                      //   },
+                      // ),
+                      // AppButton(
+                      //   color: mlPrimaryColor,
+                      //   width: double.infinity,
+                      //   onTap: () {
+                      //
+                      //        login();
+                      //
+                      //     // finish(context);
+                      //     // MLDashboardScreen().launch(context);
+                      //   },
+                      //   child: Text(mlLogin!, style: boldTextStyle(color: white)),
+                      // ),
+                      // 22.height,
+                      // Text(mlLogin_with!, style: secondaryTextStyle(size: 16)).center(),
+                      // 22.height,
+                      MLSocialAccountsComponent(),
+                      22.height,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(mlDont_have_account!, style: primaryTextStyle()),
+                          8.width,
+                          Text(
+                            mlRegister!,
+                            style: boldTextStyle(color: Colors.deepPurple, decoration: TextDecoration.underline),
+                          ).onTap(
+                                () {
+                                  Navigator.of(context).pushNamed("signup");
+                            },
+                          ),
+                        ],
+                      ),
+                      32.height,
                     ],
                   ),
                 ),

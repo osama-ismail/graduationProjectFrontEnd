@@ -56,7 +56,7 @@ class MLClinicVisitComponentState extends State<MLClinicVisitComponent> {
             ],
           ).paddingOnly(right: 16.0, left: 16.0),
           8.height,
-          PurchaseMoreScreen().withHeight(context.height() * 0.6),
+          PurchaseMoreScreen().withHeight(context.height() * 0.7),
         ],
       ),
     );

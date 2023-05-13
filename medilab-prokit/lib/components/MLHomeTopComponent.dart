@@ -7,6 +7,8 @@ import 'package:medilab_prokit/utils/MLDataProvider.dart';
 import 'package:medilab_prokit/utils/MLImage.dart';
 import 'package:medilab_prokit/utils/MLString.dart';
 
+import '../main.dart';
+
 class MLHomeTopComponent extends StatefulWidget {
   static String tag = '/MLHomeTopComponent';
 
@@ -35,53 +37,53 @@ class _MLHomeTopComponentState extends State<MLHomeTopComponent> {
       width: context.width(),
       margin: EdgeInsets.only(bottom: 16.0),
       decoration: boxDecorationWithRoundedCorners(
-        backgroundColor: mlColorDarkBlue,
+        backgroundColor: Colors.indigo
+        ,
         borderRadius: BorderRadius.vertical(bottom: Radius.elliptical(MediaQuery.of(context).size.width, 80.0)),
       ),
       child: Column(
         children: [
+          16.height,
           16.height,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 children: [
-                  CircleAvatar(child: Image.asset(ml_ic_profile_picture!), radius: 22, backgroundColor: mlColorCyan),
+                  CircleAvatar(child:
+                  // Icon(Icons., color: white, size: 24),
+                  Image.asset("images/person.png"),
+                       radius: 22, backgroundColor: Colors.white),
                   8.width,
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(mlProfile_name!, style: boldTextStyle(color: whiteColor)),
+                      Text("Hi "+sharedPref.getString("username")!.substring(2), style: boldTextStyle(color: whiteColor)),
                       4.height,
                       Text(mlWelcome!, style: secondaryTextStyle(color: white.withOpacity(0.7))),
+
                     ],
                   ),
                 ],
               ),
               Row(
                 children: [
-                  Icon(Icons.search, color: white, size: 24),
+                  // Icon(Icons.search, color: white, size: 24),
                   10.width,
                   Stack(
                     children: [
-                      Icon(Icons.shopping_bag_outlined, color: white, size: 24),
+                      Icon(Icons.logout, color: white, size: 24),
+
                       Positioned(
                         top: 0.0,
                         right: 0.0,
-                        child: Container(
-                          padding: EdgeInsets.all(2),
-                          decoration: boxDecorationWithRoundedCorners(backgroundColor: mlColorRed),
-                          constraints: BoxConstraints(minWidth: 12, minHeight: 12),
-                          child: Text(
-                            counter.toString(),
-                            style: boldTextStyle(size: 8, color: white),
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
+                        child: Text("")
                       ),
+
                     ],
                   ).onTap(() {
-                    MLAddToCartScreen().launch(context);
+                    Navigator.of(context).pushNamedAndRemoveUntil("login", (route) => true);
+
                   }),
                 ],
               )
@@ -103,7 +105,7 @@ class _MLHomeTopComponentState extends State<MLHomeTopComponent> {
                     padding: EdgeInsets.only(top: 20, bottom: 20.0),
                     child: Column(
                       children: [
-                        Image.asset(e.image!, width: 28, height: 28, fit: BoxFit.fill),
+                        Image.asset(e.image!, width: 28, height: 25, fit: BoxFit.fill),
                         8.height,
                         Text(e.title.toString(), style: boldTextStyle(size: 12), textAlign: TextAlign.center),
                       ],
