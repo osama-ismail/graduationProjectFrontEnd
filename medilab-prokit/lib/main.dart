@@ -45,7 +45,9 @@ class MyApp extends StatelessWidget {
         },
         debugShowCheckedModeBanner: false,
         title: '${'Here for you'}${!isMobile ? ' ${platformName()}' : ''}',
-        home: MLSplashScreen(),
+        home: MLDashboardScreen(),
+        // home: MLSplashScreen(),
+
         theme: !appStore.isDarkModeOn ? AppThemeData.lightTheme : AppThemeData.darkTheme,
         navigatorKey: navigatorKey,
         scrollBehavior: SBehavior(),

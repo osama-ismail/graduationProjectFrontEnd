@@ -37,9 +37,9 @@ const String? mlRegister = 'Register';
 
 const String? mlWelcome = 'Welcome back!';
 const String? mlProfile_name = 'Hi Kaixa,';
-const String? mlDepartment = 'Departments';
+const String? mlDepartment = 'Our Clinics';
 const String? mlView_all = 'View all';
-const String? mlTop_hospital = 'Top Hospital';
+const String? mlTop_hospital = 'Health Tips and Articles';
 const String? mlBot_support = 'Bot Support';
 const String? mlDoctors = 'Doctors';
 

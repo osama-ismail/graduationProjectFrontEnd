@@ -21,32 +21,33 @@ class MLHomeBottomComponent extends StatefulWidget {
 
 class MLHomeBottomComponentState extends State<MLHomeBottomComponent> {
   List<MLDepartmentData> departmentList = mlDepartmentDataList();
-  var response;
+  var response=null;
+  List<Map<String, dynamic>> oo = [];
+  bool isLoading = true;
+
   List<MLTopHospitalData> tophospitalList = mlTopHospitalDataList();
   @override
   void initState() {
-     getAllServices();
     super.initState();
-    init();
+     getAllServices();
 
   }
 
-  Future<void> init() async {
-    //
-  }
   getAllServices() async {
+    var response = await http.get(Uri.parse(linkIp + "/admin/getAllServices"));
+    if (response.statusCode == 200) {
+      var responseBody = response.body;
+      var decodedData = jsonDecode(responseBody);
 
-      var data;
+      if (decodedData is List) {
+        setState(() {
+          oo = List<Map<String, dynamic>>.from(decodedData.map((item) => item as Map<String, dynamic>));
+          isLoading = false;
 
-
-       response = await http.get(
-          Uri.parse(linkIp+"/admin/getAllServices"));
-      print(response);
-      // if (response?.statusCode == 200) {
-      //   print(response.body);
-      //
-      // }
+        });
+      }
     }
+  }
 
   @override
   void setState(fn) {
@@ -67,11 +68,18 @@ class MLHomeBottomComponentState extends State<MLHomeBottomComponent> {
           ],
         ).paddingOnly(left: 16, right: 16),
         10.height,
+        // oo.length==0? // Display a loading indicator if data is still loading
+        //
+        // Center(child: CircularProgressIndicator()):
         HorizontalList(
           padding: EdgeInsets.only(right: 16.0, left: 8.0),
           wrapAlignment: WrapAlignment.spaceEvenly,
-          itemCount: departmentList.length,
+          itemCount: oo.length,
           itemBuilder: (BuildContext context, int index) {
+            print(oo);
+            // print("leen");
+            // print(jsonDecode(oo)[index]['name']);
+
             return Container(
               margin: EdgeInsets.only(top: 8, bottom: 8, left: 8),
               padding: EdgeInsets.all(10),
@@ -85,7 +93,9 @@ class MLHomeBottomComponentState extends State<MLHomeBottomComponent> {
                     width: 80,
                     fit: BoxFit.fill,
                   ).paddingAll(8.0),
-                  Text((response[index].name).validate(), style: boldTextStyle()),
+                  // Text(oo[index]['name'] != null ? oo[index]['name'] : "dep1", style: boldTextStyle()),
+                  Text(oo[index]['name']!, style: boldTextStyle()),
+
                   4.height,
                   Text((departmentList[index].subtitle).validate(), style: secondaryTextStyle()),
                   8.height,
@@ -94,6 +104,8 @@ class MLHomeBottomComponentState extends State<MLHomeBottomComponent> {
             );
           },
         ),
+
+
         Row(
           children: [
             Text(mlTop_hospital!, style: boldTextStyle(size: 18)).expand(),

@@ -48,12 +48,12 @@ List<MLServicesData> mlServiceDataList() {
   list.add(MLServicesData(title: 'Clinic Visit', icon: Icons.home_work_outlined, image: ml_ic_dashClinicVisit!, widget: MLBookAppointmentScreen(index: 0)));
   list.add(MLServicesData(title: 'Home Visit', icon: Icons.password, image: ml_ic_dashHomeVisit, widget: MLBookAppointmentScreen(index: 0)));
   list.add(MLServicesData(title: 'Video Consult', icon: Icons.video_call, image: ml_ic_dashVideoCons, widget: MLVideoConsultScreen()));
-  list.add(MLServicesData(title: 'Pharmacy', icon: Icons.local_hospital, image: ml_ic_dashPharmacy, widget: MLOnlinePharmacyScreen()));
+  list.add(MLServicesData(title: 'My Services', icon: Icons.local_hospital, image: ml_ic_dashPharmacy, widget: MLOnlinePharmacyScreen()));
   list.add(MLServicesData(title: 'Diseases', icon: Icons.health_and_safety, image: ml_ic_dashDisease, widget: MLDiseaseScreen()));
   list.add(MLServicesData(title: 'Covid-19', icon: Icons.supervised_user_circle_outlined, image: ml_ic_dashCovid, widget: MLCovidScreen()));
   return list;
 }
-
+int i=0;
 List<MLDepartmentData> mlDepartmentDataList() {
   List<MLDepartmentData> list = [];
   list.add(MLDepartmentData(image: ml_ic_department_one, title: 'General Care', subtitle: '647 Doctor'));
@@ -67,21 +67,31 @@ List<MLDepartmentData> mlDepartmentDataList() {
 
 List<MLTopHospitalData> mlTopHospitalDataList() {
   List<MLTopHospitalData> list = [];
-  list.add(MLTopHospitalData(image: ml_ic_hospital_one, title: 'General Doctor', subtitle: '647 Doctor', rating: ''));
-  list.add(MLTopHospitalData(image: ml_ic_hospital_two, title: 'Pediatrics', subtitle: '647 Doctor', rating: ''));
-  list.add(MLTopHospitalData(image: ml_ic_hospital_three, title: 'Cardiologic', subtitle: '647 Doctor', rating: ''));
-  list.add(MLTopHospitalData(image: ml_ic_hospital_four, title: 'General Doctor', subtitle: '647 Doctor', rating: ''));
-  list.add(MLTopHospitalData(image: ml_ic_hospital_one, title: 'General Doctor', subtitle: '647 Doctor', rating: ''));
-  list.add(MLTopHospitalData(image: ml_ic_hospital_two, title: 'Pediatrics', subtitle: '647 Doctor', rating: ''));
-  list.add(MLTopHospitalData(image: ml_ic_hospital_three, title: 'Cardiologic', subtitle: '647 Doctor', rating: ''));
-  list.add(MLTopHospitalData(image: ml_ic_hospital_four, title: 'General Doctor', subtitle: '647 Doctor', rating: ''));
+  list.add(MLTopHospitalData(image: ml_ic_hospital_one, title: '10 Tips for Maintaining \na Healthy Lifestyle', subtitle: '647 Doctor', rating: ''));
+  list.add(MLTopHospitalData(image: ml_ic_hospital_two, title: 'The Benefits of Regular\n Exercise', subtitle: '647 Doctor', rating: ''));
+  list.add(MLTopHospitalData(image: ml_ic_hospital_three, title: 'Understanding Common \nAllergies and How to Manage Them', subtitle: '647 Doctor', rating: ''));
+  list.add(MLTopHospitalData(image: ml_ic_hospital_four, title: 'Healthy Eating: Tips for \na Balanced Dietr', subtitle: '647 Doctor', rating: ''));
+  list.add(MLTopHospitalData(image: ml_ic_hospital_one, title: 'Tips for Healthy Weight \nManagementr', subtitle: '647 Doctor', rating: ''));
+  list.add(MLTopHospitalData(image: ml_ic_hospital_two, title: 'Recognizing the Signs of \nMental Health Issues', subtitle: '647 Doctor', rating: ''));
+  list.add(MLTopHospitalData(image: ml_ic_hospital_three, title: 'Understanding and Managing \nChronic Pain', subtitle: '647 Doctor', rating: ''));
+  list.add(MLTopHospitalData(image: ml_ic_hospital_four, title: 'Preventing Workplace Stress \nand Burnout', subtitle: '647 Doctor', rating: ''));
   return list;
 }
 
 List<MLBookAppointmentData> mlBookAppointmentDataList() {
   List<MLBookAppointmentData> list = [];
   list.add(MLBookAppointmentData(id: '1', title: 'Select Service', widget: MLClinicVisitComponent(), progress: 0.2));
-  list.add(MLBookAppointmentData(id: '2', title: 'Choose Hospital', widget: MLHospitalListComponent(), progress: 0.4));
+  list.add(MLBookAppointmentData(id: '2', title: 'Choose a service', widget: MLHospitalListComponent(), progress: 0.4));
+  list.add(MLBookAppointmentData(id: '3', title: 'Choose Doctor', widget: MLDoctorListComponent(), progress: 0.6));
+  list.add(MLBookAppointmentData(id: '4', title: 'Choose Patient', widget: MLPatientComponent(), progress: 0.8));
+  list.add(MLBookAppointmentData(id: '5', title: 'Confirm Appointment', widget: MLConfirmAppointmentComponent(), progress: 1.0));
+  return list;
+}
+
+List<MLBookAppointmentData> mlBookAppointmentDataList2() {
+  List<MLBookAppointmentData> list = [];
+  list.add(MLBookAppointmentData(id: '1', title: 'Select Service', widget: MLClinicVisitComponent(), progress: 0.2));
+  list.add(MLBookAppointmentData(id: '2', title: 'Choose a service', widget: MLHospitalListComponent(), progress: 0.4));
   list.add(MLBookAppointmentData(id: '3', title: 'Choose Doctor', widget: MLDoctorListComponent(), progress: 0.6));
   list.add(MLBookAppointmentData(id: '4', title: 'Choose Patient', widget: MLPatientComponent(), progress: 0.8));
   list.add(MLBookAppointmentData(id: '5', title: 'Confirm Appointment', widget: MLConfirmAppointmentComponent(), progress: 1.0));

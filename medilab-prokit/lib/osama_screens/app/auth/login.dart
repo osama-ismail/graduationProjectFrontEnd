@@ -37,20 +37,15 @@ class _LoginState extends State<Login> {
 
   login() async {
     Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
-
     if (formstate.currentState!.validate()) {
 
-
       final headers = {'Content-Type': 'application/json'};
-
-
       isLoading = true;
       isLoading = false;
       var data;
       final body = json.encode({'username': this.email.text+"",
         'password':this.password.text+""
       });
-
         final response = await http.post(
             Uri.parse(linkIp+"/authinticate"),
             headers: headers, body: body);
