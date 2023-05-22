@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         },
         debugShowCheckedModeBanner: false,
         title: '${'Here for you'}${!isMobile ? ' ${platformName()}' : ''}',
-        home: MLDashboardScreen(),
+        home: Login(),
         // home: MLSplashScreen(),
 
         theme: !appStore.isDarkModeOn ? AppThemeData.lightTheme : AppThemeData.darkTheme,

@@ -1,7 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:medilab_prokit/main.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:medilab_prokit/utils/MLColors.dart';
+
+import '../osama_screens/constant/linkapi.dart';
+import 'MLScheduleAppointmentComponent.dart';
+import 'package:http/http.dart' as http;
 
 class MLHospitalDetailComponent extends StatefulWidget {
   static String tag = '/MLHospitalDetailComponent';
@@ -11,19 +17,37 @@ class MLHospitalDetailComponent extends StatefulWidget {
 }
 
 class MLHospitalDetailComponentState extends State<MLHospitalDetailComponent> {
-  String? hospitalName = 'The NorthSide Hospital -';
+  String? hospitalName = sharedPref.getString("serviceName");
   String? hospitalCity = 'Central Hills';
   String? rating = '4.8 (456 Reviews)';
 
   @override
   void initState() {
     super.initState();
-    init();
+    getAllServices();
+  }
+  var response=null;
+  List<Map<String, dynamic>> oo = [];
+  bool isLoading = true;
+
+  getAllServices() async {
+    print(sharedPref.getString("serviceId")!);
+
+    var response = await http.get(Uri.parse(linkIp + "/admin/getDoctorsOfService?id="+sharedPref.getString("serviceId")!));
+    if (response.statusCode == 200) {
+      var responseBody = response.body;
+      var decodedData = jsonDecode(responseBody);
+
+      if (decodedData is List) {
+        setState(() {
+          oo = List<Map<String, dynamic>>.from(decodedData.map((item) => item as Map<String, dynamic>));
+          isLoading = false;
+
+        });
+      }
+    }
   }
 
-  Future<void> init() async {
-    //
-  }
 
   @override
   void setState(fn) {
@@ -57,8 +81,7 @@ class MLHospitalDetailComponentState extends State<MLHospitalDetailComponent> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           16.height,
-          Text(hospitalName!, style: boldTextStyle(size: 22)),
-          Text(hospitalCity!, style: boldTextStyle(size: 22)),
+          Text(sharedPref.getString("serviceName")!, style: boldTextStyle(size: 22)),
           8.height,
           Row(
             children: [
@@ -66,20 +89,61 @@ class MLHospitalDetailComponentState extends State<MLHospitalDetailComponent> {
               Text(rating!, style: secondaryTextStyle()),
             ],
           ),
-          16.height,
-          Text('Specifications', style: boldTextStyle()),
-          8.height,
+          // 16.height,
+          ListView.builder(
+            scrollDirection: Axis.vertical,
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: oo.length,
+            itemBuilder: (context, index) {
+              sharedPref.setString("doctorName",oo[index]["name"].substring(2));
+              return Stack(
+                clipBehavior: Clip.none,
+                children: <Widget>[
+                                  Container(
+                    margin: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0,top: 10),
+                    padding: EdgeInsets.all(10),
+                    decoration: boxDecorationWithRoundedCorners(
+                      backgroundColor: mlColorBlue,
+                      borderRadius: radius(10),
+                    ),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text("Doctor "+
+                        oo[index]["name"].substring(2),
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+
+                    ),
+                  ), // instead of background
+
+                ],
+              );
+            },
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              mOption('34', 'Rooms'),
-              mOption('34', 'Rooms'),
-              mOption('34', 'Rooms'),
-            ],
+              // mOption('34', 'Rooms'),
+        Text(
+          'Schedule appointment time',
+          style: boldTextStyle(color: mlColorDarkBlue, decoration: TextDecoration.underline),
+        )
+      .paddingOnly(right: 16, bottom: 1).onTap(
+            () {
+          showModalBottomSheet(
+            isScrollControlled: true,
+            context: context,
+            builder: (builder) {
+              return MLScheduleApoointmentSheet();
+            },
+          );
+        },
+      )            ],
           ),
-          16.height,
           Divider(height: 0.5),
-          16.height,
           Text('Information', style: boldTextStyle()),
           16.height,
           Text('Location', style: boldTextStyle(color: mlColorBlue)),
@@ -102,8 +166,11 @@ class MLHospitalDetailComponentState extends State<MLHospitalDetailComponent> {
           Text('Other Information', style: boldTextStyle(color: mlColorBlue)),
           8.height,
           Text(
-            'The job of a doctor is to diagnose and treat illness and injury.'
-            ' Doctors examine patients and arrive upon diagnosis, perform surgeries, prescribe medications.',
+            'Doctors play a crucial role in diagnosing and treating illnesses and injuries. They conduct thorough examinations of patients to assess their medical condition and determine the underlying causes of their symptoms. Based on their findings, doctors arrive at '
+                "accurate diagnoses, enabling them to develop appropriate treatment plans."
+
+              "In addition to diagnosis, doctors may also perform surgical procedures to address various medical conditions. They possess the skills and expertise necessary to operate on patients, whether it involves a minor procedure or a complex surgery."
+            ,
             style: secondaryTextStyle(size: 16),
             textAlign: TextAlign.justify,
           ),

@@ -26,13 +26,6 @@ class MLHomeBottomComponentState extends State<MLHomeBottomComponent> {
   bool isLoading = true;
 
   List<MLTopHospitalData> tophospitalList = mlTopHospitalDataList();
-  @override
-  void initState() {
-    super.initState();
-     getAllServices();
-
-  }
-
   getAllServices() async {
     var response = await http.get(Uri.parse(linkIp + "/admin/getAllServices"));
     if (response.statusCode == 200) {
@@ -48,6 +41,14 @@ class MLHomeBottomComponentState extends State<MLHomeBottomComponent> {
       }
     }
   }
+  @override
+  void initState() {
+    super.initState();
+     getAllServices();
+
+  }
+
+
 
   @override
   void setState(fn) {

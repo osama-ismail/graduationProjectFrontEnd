@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:medilab_prokit/model/MLTopHospitalData.dart';
@@ -5,6 +7,10 @@ import 'package:medilab_prokit/screens/MLHospitalDetailScreen.dart';
 import 'package:medilab_prokit/utils/MLColors.dart';
 import 'package:medilab_prokit/utils/MLCommon.dart';
 import 'package:medilab_prokit/utils/MLDataProvider.dart';
+
+import '../main.dart';
+import '../osama_screens/constant/linkapi.dart';
+import 'package:http/http.dart' as http;
 
 class MLHospitalListComponent extends StatefulWidget {
   static String tag = '/MLHospitalListComponent';
@@ -19,16 +25,31 @@ class MLHospitalListComponentState extends State<MLHospitalListComponent> {
   bool? liked = false;
 
   List<MLTopHospitalData> tophospitalList = mlHospitalListDataList();
+  var response=null;
+  List<Map<String, dynamic>> oo = [];
+  bool isLoading = true;
 
+  getAllServices() async {
+    var response = await http.get(Uri.parse(linkIp + "/admin/getAllServices"));
+    if (response.statusCode == 200) {
+      var responseBody = response.body;
+      var decodedData = jsonDecode(responseBody);
+
+      if (decodedData is List) {
+        setState(() {
+          oo = List<Map<String, dynamic>>.from(decodedData.map((item) => item as Map<String, dynamic>));
+          isLoading = false;
+
+        });
+      }
+    }
+  }
   @override
   void initState() {
     super.initState();
-    init();
+    getAllServices();
   }
 
-  Future<void> init() async {
-    //
-  }
 
   @override
   void setState(fn) {
@@ -48,9 +69,9 @@ class MLHospitalListComponentState extends State<MLHospitalListComponent> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Hospital Visit', style: boldTextStyle(size: 24)),
+                  Text('Clinic Visit', style: boldTextStyle(size: 24)),
                   8.height,
-                  Text('Find the hospital you want', style: secondaryTextStyle()),
+                  Text('Find the Service you want', style: secondaryTextStyle()),
                   16.height,
                 ],
               ).expand(),
@@ -65,7 +86,7 @@ class MLHospitalListComponentState extends State<MLHospitalListComponent> {
             physics: NeverScrollableScrollPhysics(),
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
-            itemCount: tophospitalList.length,
+            itemCount: oo.length,
             itemBuilder: (context, index) {
               return Container(
                 padding: EdgeInsets.all(12.0),
@@ -132,9 +153,9 @@ class MLHospitalListComponentState extends State<MLHospitalListComponent> {
                       ],
                     ),
                     16.height,
-                    Text((tophospitalList[index].title).validate(), style: boldTextStyle()),
+                    Text((oo[index]['name']), style: boldTextStyle()),
                     8.height,
-                    Text((tophospitalList[index].city).validate(), style: secondaryTextStyle()),
+                    Text((oo[index]['name']), style: secondaryTextStyle()),
                     8.height,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -158,7 +179,11 @@ class MLHospitalListComponentState extends State<MLHospitalListComponent> {
                               ),
                             ],
                           ),
-                        ).onTap(() {
+                        ).onTap((
+
+                            ) {
+                          sharedPref.setString("serviceName",oo[index]['name']);
+                          sharedPref.setString("serviceId",oo[index]['id'].toString());
                           MLHospitalDetailScreen().launch(context);
                         }),
                       ],

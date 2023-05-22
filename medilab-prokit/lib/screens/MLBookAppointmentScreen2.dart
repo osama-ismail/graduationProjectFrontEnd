@@ -7,19 +7,19 @@ import 'package:medilab_prokit/utils/MLColors.dart';
 import 'package:medilab_prokit/utils/MLDataProvider.dart';
 import 'package:medilab_prokit/main.dart';
 
-class MLBookAppointmentScreen extends StatefulWidget {
+class MLBookAppointmentScreen2 extends StatefulWidget {
   static String tag = '/MLBookAppointmentScreen';
   final int? index;
 
-  const MLBookAppointmentScreen({Key? key, this.index}) : super(key: key);
+  const MLBookAppointmentScreen2({Key? key, this.index}) : super(key: key);
 
   @override
   MLBookAppointmentScreenState createState() => MLBookAppointmentScreenState();
 }
 
-class MLBookAppointmentScreenState extends State<MLBookAppointmentScreen> {
+class MLBookAppointmentScreenState extends State<MLBookAppointmentScreen2> {
   int currentWidget = 0;
-  List<MLBookAppointmentData> data = mlBookAppointmentDataList();
+  List<MLBookAppointmentData> data = mlBookAppointmentDataList2();
 
   @override
   void initState() {

@@ -1,8 +1,14 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:medilab_prokit/main.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:medilab_prokit/utils/MLColors.dart';
 
+import 'MLScheduleAppointmentComponent.dart';
+
+import '../osama_screens/constant/linkapi.dart';
+import 'package:http/http.dart' as http;
 class MLCalenderComponent extends StatefulWidget {
   static String tag = '/MLCalenderComponent';
 
@@ -13,15 +19,21 @@ class MLCalenderComponent extends StatefulWidget {
 class MLCalenderComponentState extends State<MLCalenderComponent> {
   DateTime selectedDate = DateTime.now();
 
-  int currentDateSelectedIndex = 0;
+  int currentDateSelectedIndex = sharedPref.getString("day")==null? 0 :int.parse(sharedPref.getString("day")!) ;
   ScrollController scrollController = ScrollController();
-
+  var response=null;
+  List<Map<String, dynamic>> oo = [];
+  bool isLoading = true;
   List<String> listOfMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   List<String> listOfDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
+  getAllServices() async {
+
+  }
   @override
   void initState() {
     super.initState();
+    getAllServices();
     init();
   }
 
@@ -61,9 +73,19 @@ class MLCalenderComponentState extends State<MLCalenderComponent> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                Builder(
+                builder: (context) {
+                 // print(DateTime.now().add(Duration(days: index)).day.toString());
+                  return SizedBox(); // Replace SizedBox with your desired widget
+          },
+          ),
+
+                sharedPref.getString("day")== DateTime.now().add(Duration(days: index)).day.toString()? Text(
                   listOfDays[DateTime.now().add(Duration(days: index)).weekday - 1].toString(),
-                  style: secondaryTextStyle(size: 16, color: currentDateSelectedIndex == index ? white : mlColorBlue),
+                  style: secondaryTextStyle(size: 16, color: currentDateSelectedIndex == index ? Colors.red : mlColorBlue),
+                ):Text(
+                  listOfDays[DateTime.now().add(Duration(days: index)).weekday - 1].toString(),
+                  style: secondaryTextStyle(size: 16, color: currentDateSelectedIndex == index ? Colors.red : mlColorBlue),
                 ),
                 4.height,
                 Text(
@@ -85,6 +107,17 @@ class MLCalenderComponentState extends State<MLCalenderComponent> {
                 () {
                   currentDateSelectedIndex = index;
                   selectedDate = DateTime.now().add(Duration(days: index));
+                  sharedPref.setString("date",selectedDate.toString());
+                  sharedPref.setString("day",selectedDate.day.toString());
+                  // print(selectedDate.day.toString());
+                  finish(context);
+                  showModalBottomSheet(
+                    isScrollControlled: true,
+                    context: context,
+                    builder: (builder) {
+                      return MLScheduleApoointmentSheet();
+                    },
+                  );
                 },
               );
             },

@@ -33,7 +33,7 @@ class MLClinicVisitComponentState extends State<MLClinicVisitComponent> {
     if (mounted) super.setState(fn);
   }
   getMyServices() async {
-    var response = await http.get(Uri.parse(linkIp + "/patient/getMyServices?id="+sharedPref.getString("id")!));
+    var response = await http.get(Uri.parse(linkIp + "/patient/getMyServices?id="+sharedPref.getString("serviceId")!));
 
     if (response.statusCode == 200) {
       var responseBody = response.body;
@@ -46,8 +46,7 @@ class MLClinicVisitComponentState extends State<MLClinicVisitComponent> {
 
         });
       }
-      print("OSAMA");
-      print(oo);
+
 
     }
   }

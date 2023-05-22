@@ -80,8 +80,12 @@ class MLDoctorDetailComponentState extends State<MLDoctorDetailComponent> {
           Text('Other Information', style: boldTextStyle(color: mlColorBlue)),
           8.height,
           Text(
-            'The job of a doctor is to diagnose and treat illness and injury.'
-            ' Doctors examine patients and arrive upon diagnosis, perform surgeries, prescribe medications.',
+            "Doctors play a crucial role in diagnosing and treating illnesses and injuries. They conduct thorough examinations of patients to assess their medical condition and determine the underlying causes of their symptoms. Based on their findings, doctors arrive"
+                " at accurate diagnoses, enabling them to develop appropriate treatment plans."
+             "In addition "
+                "to diagnosis,"
+                " doctors may also perform surgical procedures to address various medical"
+                " conditions. They possess the skills and expertise necessary to operate on patients, whether it involves a minor procedure or a complex surgery.",
             style: secondaryTextStyle(size: 16),
             textAlign: TextAlign.justify,
           ),

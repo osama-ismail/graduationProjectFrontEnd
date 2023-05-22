@@ -32,6 +32,7 @@ import 'package:medilab_prokit/screens/MLOnlinePharmacyScreen.dart';
 import 'package:medilab_prokit/screens/MLVideoCounsultScreen.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import '../screens/MLBookAppointmentScreen2.dart';
 import 'MLImage.dart';
 import 'MLString.dart';
 
@@ -45,7 +46,7 @@ List<MLWalkThroughData> mlWalkThroughDataList() {
 
 List<MLServicesData> mlServiceDataList() {
   List<MLServicesData> list = [];
-  list.add(MLServicesData(title: 'Clinic Visit', icon: Icons.home_work_outlined, image: ml_ic_dashClinicVisit!, widget: MLBookAppointmentScreen(index: 0)));
+  list.add(MLServicesData(title: 'Clinic Visit', icon: Icons.home_work_outlined, image: ml_ic_dashClinicVisit!, widget: MLBookAppointmentScreen2(index: 0)));
   list.add(MLServicesData(title: 'Home Visit', icon: Icons.password, image: ml_ic_dashHomeVisit, widget: MLBookAppointmentScreen(index: 0)));
   list.add(MLServicesData(title: 'Video Consult', icon: Icons.video_call, image: ml_ic_dashVideoCons, widget: MLVideoConsultScreen()));
   list.add(MLServicesData(title: 'My Services', icon: Icons.local_hospital, image: ml_ic_dashPharmacy, widget: MLOnlinePharmacyScreen()));
@@ -90,7 +91,6 @@ List<MLBookAppointmentData> mlBookAppointmentDataList() {
 
 List<MLBookAppointmentData> mlBookAppointmentDataList2() {
   List<MLBookAppointmentData> list = [];
-  list.add(MLBookAppointmentData(id: '1', title: 'Select Service', widget: MLClinicVisitComponent(), progress: 0.2));
   list.add(MLBookAppointmentData(id: '2', title: 'Choose a service', widget: MLHospitalListComponent(), progress: 0.4));
   list.add(MLBookAppointmentData(id: '3', title: 'Choose Doctor', widget: MLDoctorListComponent(), progress: 0.6));
   list.add(MLBookAppointmentData(id: '4', title: 'Choose Patient', widget: MLPatientComponent(), progress: 0.8));
@@ -138,11 +138,11 @@ List<String?> mlScheduleTimeList() {
   list.add('8:00 AM - 9:00 AM');
   list.add('9:00 AM - 10:00 AM');
   list.add('10:00 AM - 11:00 AM');
-  list.add('11:00 AM - 12:00 AM');
-  list.add('1:00 AM - 2:00 AM');
-  list.add('2:00 AM - 3:00 AM');
-  list.add('3:00 AM - 4:00 AM');
-  list.add('4:00 AM - 5:00 AM');
+  list.add('11:00 AM - 12:00 PM');
+  list.add('1:00 PM - 2:00 PM');
+  list.add('2:00 PM - 3:00 PM');
+  list.add('3:00 PM - 4:00 PM');
+  list.add('4:00 PM - 5:00 PM');
   return list;
 }
 
