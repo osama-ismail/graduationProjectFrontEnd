@@ -45,6 +45,14 @@
     <string name="common_open_on_phone">Buksan sa telepono</string>
     <string name="common_signin_button_text">Mag-sign in</string>
     <string name="common_signin_button_text_long">Mag-sign in sa Google</string>
+    <string name="scankit_confirm">OK</string>
+    <string name="scankit_light">Pindutin para mas lumiwanag</string>
+    <string name="scankit_light_off">I-off ang ilaw</string>
+    <string name="scankit_no_code_tip">Walang natukoy na code.</string>
+    <string name="scankit_scan_tip">Ilagay ang code sa loob ng frame</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">I-scan</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Maghanap"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

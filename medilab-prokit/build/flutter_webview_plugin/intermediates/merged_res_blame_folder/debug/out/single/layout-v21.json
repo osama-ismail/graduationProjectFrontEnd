@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\HP\\Downloads\\medilab-prokit\\medilab-prokit\\build\\flutter_webview_plugin\\intermediates\\merged_res\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\97b38e18a7dfee42d129e39529b611cd\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Downloads\\medilab-prokit\\medilab-prokit\\build\\flutter_webview_plugin\\intermediates\\merged_res\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\97b38e18a7dfee42d129e39529b611cd\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Downloads\\medilab-prokit\\medilab-prokit\\build\\flutter_webview_plugin\\intermediates\\merged_res\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\97b38e18a7dfee42d129e39529b611cd\\transformed\\core-1.6.0\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\Downloads\\medilab-prokit\\medilab-prokit\\build\\flutter_webview_plugin\\intermediates\\merged_res\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\HP\\.gradle\\caches\\transforms-3\\97b38e18a7dfee42d129e39529b611cd\\transformed\\core-1.6.0\\res\\layout-v21\\notification_action.xml"
+    }
+]

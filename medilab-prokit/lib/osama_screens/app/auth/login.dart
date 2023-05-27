@@ -8,8 +8,11 @@ import 'package:get/get.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'package:nb_utils/nb_utils.dart';
+import 'package:provider/provider.dart';
 import 'dart:convert';
-
+// import 'dart:html' as html;
+import '../../../adminPages/controllers/MenuAppController.dart';
+import '../../../adminPages/screens/main/main_screen.dart';
 import '../../../components/MLSocialAccountComponent.dart';
 import '../../../main.dart';
 import '../../../screens/MLDashboardScreen.dart';
@@ -34,9 +37,42 @@ class _LoginState extends State<Login> {
   Crud crud = Crud();
 
   bool isLoading = false;
+  callNumbers() async {
+    var response = await http.get(Uri.parse(linkIp + "/admin/getAlllDoctors"));
+    var responseBody = jsonDecode(response.body);
+    sharedPref.setString("doctorsNum", responseBody.length.toString());
 
+     response = await http.get(Uri.parse(linkIp + "/admin/getAlllPatients"));
+     responseBody = jsonDecode(response.body);
+    sharedPref.setString("patientsNum", responseBody.length.toString());
+
+     response = await http.get(Uri.parse(linkIp + "/admin/getAllServices"));
+     responseBody = jsonDecode(response.body);
+    sharedPref.setString("servicesNum", responseBody.length.toString());
+
+  }
+    @override
+  void initState() {
+      callNumbers();
+    super.initState();
+  }
   login() async {
-    Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
+    callNumbers();
+     // print("naddoo");
+    // String newUrl = 'http://new-url.com';
+    // int newPort = 8080;
+    //
+    // // Build the new URL with the desired path
+    // String newPath = '/new-application-path';
+    // String newFullUrl = '$newUrl:$newPort$newPath';
+    // print(newFullUrl);
+    //
+    // // Redirect to the new application
+    // html.window.location.href = "http://localhost:3000/";
+    // Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
+    // print("omaromar");
+    //
+    // print(sharedPref.getString("patientsNum"));
     if (formstate.currentState!.validate()) {
 
       final headers = {'Content-Type': 'application/json'};
@@ -72,14 +108,28 @@ class _LoginState extends State<Login> {
                 "password", json.decode(response.body)['password'].toString());
             if(this.email.text.startsWith("p")){
               sharedPref.setString("address", json.decode(response.body)['address'].toString());
+              Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
 
             }
             else if(this.email.text.startsWith("d")){
               sharedPref.setString("salary", json.decode(response.body)['salary'].toString());
               sharedPref.setString("service_id", json.decode(response.body)['service_id'].toString());
             }
-            Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
-            return;
+            Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(
+                builder: (BuildContext context) {
+                  return MultiProvider(
+                    providers: [
+                      ChangeNotifierProvider(
+                        create: (context) => MenuAppController(),
+                      ),
+                    ],
+                    child: MainScreen(),
+                  );
+                },
+              ),
+                  (Route<dynamic> route) => false,
+            );             return;
           }
         }
     }

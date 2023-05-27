@@ -33,21 +33,25 @@ class MLHospitalDetailComponentState extends State<MLHospitalDetailComponent> {
   getAllServices() async {
     print(sharedPref.getString("serviceId")!);
 
-    var response = await http.get(Uri.parse(linkIp + "/admin/getDoctorsOfService?id="+sharedPref.getString("serviceId")!));
+    var response = await http.get(Uri.parse(
+        linkIp + "/admin/getDoctorsOfService?id=" +
+            sharedPref.getString("serviceId")!));
     if (response.statusCode == 200) {
       var responseBody = response.body;
       var decodedData = jsonDecode(responseBody);
 
       if (decodedData is List) {
         setState(() {
-          oo = List<Map<String, dynamic>>.from(decodedData.map((item) => item as Map<String, dynamic>));
+          oo = List<Map<String, dynamic>>.from(
+              decodedData.map((item) => item as Map<String, dynamic>));
           isLoading = false;
-
         });
       }
+      sharedPref.setString("doctorName", oo[0]["name"].substring(2));
+      sharedPref.setString("doctorName", oo[0]["name"].substring(2));
+
     }
   }
-
 
   @override
   void setState(fn) {

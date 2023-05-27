@@ -45,6 +45,18 @@
     <string name="common_open_on_phone">Auf Smartphone öffnen</string>
     <string name="common_signin_button_text">Anmelden</string>
     <string name="common_signin_button_text_long">Über Google anmelden</string>
+    <string name="scankit_confirm">OK</string>
+    <string name="scankit_light">Für mehr Licht antippen</string>
+    <string name="scankit_light_off">Licht ausschalten</string>
+    <string name="scankit_no_code_tip">Kein Code erkannt.</string>
+    <string name="scankit_scan_tip">Code im Rahmen positionieren</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">Scannen</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Suche"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="zxing_app_name">Barcode Scanner</string>
+    <string name="zxing_button_ok">OK</string>
+    <string name="zxing_msg_camera_framework_bug">Mit der Android-Kamera ist leider ein Fehler aufgetreten. Es könnte sein, dass Sie das Gerät neu starten müssen.</string>
+    <string name="zxing_msg_default_status">Positionieren Sie den Barcode innerhalb des Rechteckes.</string>
 </resources>

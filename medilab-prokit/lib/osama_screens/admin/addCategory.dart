@@ -26,7 +26,6 @@ class AdminaddCategory extends StatefulWidget {
   @override
   State<AdminaddCategory> createState() => _HomeState();
 }
-
 class _HomeState extends State<AdminaddCategory> with Crud {
   bool isLoading = false;
   TextEditingController email = TextEditingController();
@@ -53,8 +52,6 @@ class _HomeState extends State<AdminaddCategory> with Crud {
 
     var response9 = await postRequestWithFile(linkaddCategory, {
       "name": email.text!,
-
-
     },
         myfile!);
     isLoading = false;
@@ -68,19 +65,11 @@ class _HomeState extends State<AdminaddCategory> with Crud {
       //
     }
   }
-
-
   getIMage (){
-
-    // if(myfile==File('')){
     if(  imageFile=="1") {
       return Image.file(myfile!, height: 100,);
-
     }
-
-
     else{
-
   return Text("no image");
 
   }
@@ -109,16 +98,29 @@ class _HomeState extends State<AdminaddCategory> with Crud {
                 icon: Icon(Icons.exit_to_app))
           ],
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            // Navigator.of(context).pushNamed("carts");
-          },
-          child: Icon(Icons.add),
-        ),
+
         body: Center(
             child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Container(
+              width: 300,
+              padding: EdgeInsets.only(top: 10),
+              child: TextFormField(
+                controller: email,
+                decoration: InputDecoration(
+                  labelText: 'Name',
+                  icon: Icon(Icons.category_sharp),
+                ),
+                validator: (value) {
+                  if (value!.isEmpty)
+                    return " the name shouldn't be empty ! ";
+                  else {
+                    return null;
+                  }
+                },
+              ),
+            ),
             Container(
               width: 300,
               padding: EdgeInsets.only(top: 10),

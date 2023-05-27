@@ -45,6 +45,14 @@
     <string name="common_open_on_phone">ফ\'নত খোলক</string>
     <string name="common_signin_button_text">ছাইন ইন কৰক</string>
     <string name="common_signin_button_text_long">Googleৰ জৰিয়তে ছাইন ইন কৰক</string>
+    <string name="scankit_confirm">ঠিক</string>
+    <string name="scankit_light">অধিক পোহৰৰ বাবে স্পৰ্শ কৰক</string>
+    <string name="scankit_light_off">লাইট অফ কৰক</string>
+    <string name="scankit_no_code_tip">কোনো কোড চিনাক্ত হোৱা নাই।</string>
+    <string name="scankit_scan_tip">কোডটো ফ্ৰেমটোৰ ভিতৰত ৰাখক</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">স্কেন কৰক</string>
     <string msgid="6264217191555673260" name="search_menu_title">"সন্ধান"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"৯৯৯+"</string>
 </resources>

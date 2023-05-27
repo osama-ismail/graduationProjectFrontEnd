@@ -6,9 +6,20 @@ import 'package:medilab_prokit/store/AppStore.dart';
 import 'package:medilab_prokit/utils/AppTheme.dart';
 import 'package:medilab_prokit/utils/MLDataProvider.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:provider/provider.dart';
 
+import 'adminPages/controllers/MenuAppController.dart';
+import 'adminPages/screens/main/main_screen.dart';
+import 'osama_screens/admin/addCategory.dart';
+import 'osama_screens/admin/category.dart';
+import 'osama_screens/admin/editItem.dart';
+import 'osama_screens/admin/map.dart';
+import 'osama_screens/admin/mapMap.dart';
+import 'osama_screens/app/auth/addPatient.dart';
 import 'osama_screens/app/auth/login.dart';
 import 'osama_screens/app/auth/signUp.dart';
+import 'osama_screens/app/home.dart';
+import 'osama_screens/app/orders.dart';
 
 AppStore appStore = AppStore();
 late SharedPreferences sharedPref ;
@@ -39,14 +50,31 @@ class MyApp extends StatelessWidget {
           "login": (context) => Login(),
           "signup": (context) => SignUp(),
           "homePage": (context) => MLDashboardScreen(),
+          // "MapMap": (context) => MapMap(),
 
+          "Home": (context) => Home(),
+          "AdminEditItem":(context)=>AdminEditItem(),
+          "Admincategory" :(context)=>Admincategory(),
+          "AdminaddCategory" :(context)=>AdminaddCategory(),
+          "AdminaddPateint" :(context)=>AdminaddPateint(),
+          "Adminpage" :(context)=>MainScreen(),
 
 
         },
         debugShowCheckedModeBanner: false,
         title: '${'Here for you'}${!isMobile ? ' ${platformName()}' : ''}',
-        home: Login(),
-        // home: MLSplashScreen(),
+        // home:MainScreen(),
+        home: MultiProvider(
+          providers: [
+            ChangeNotifierProvider(
+              create: (context) => MenuAppController(),
+            ),
+          ],
+          // child: MainScreen(),
+          child: Login(),
+
+
+        ),
 
         theme: !appStore.isDarkModeOn ? AppThemeData.lightTheme : AppThemeData.darkTheme,
         navigatorKey: navigatorKey,

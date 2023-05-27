@@ -48,10 +48,10 @@ List<MLServicesData> mlServiceDataList() {
   List<MLServicesData> list = [];
   list.add(MLServicesData(title: 'Clinic Visit', icon: Icons.home_work_outlined, image: ml_ic_dashClinicVisit!, widget: MLBookAppointmentScreen2(index: 0)));
   list.add(MLServicesData(title: 'Home Visit', icon: Icons.password, image: ml_ic_dashHomeVisit, widget: MLBookAppointmentScreen(index: 0)));
-  list.add(MLServicesData(title: 'Video Consult', icon: Icons.video_call, image: ml_ic_dashVideoCons, widget: MLVideoConsultScreen()));
+  list.add(MLServicesData(title: 'chat', icon: Icons.video_call, image: ml_ic_dashVideoCons, widget: MLVideoConsultScreen()));
   list.add(MLServicesData(title: 'My Services', icon: Icons.local_hospital, image: ml_ic_dashPharmacy, widget: MLOnlinePharmacyScreen()));
   list.add(MLServicesData(title: 'Diseases', icon: Icons.health_and_safety, image: ml_ic_dashDisease, widget: MLDiseaseScreen()));
-  list.add(MLServicesData(title: 'Covid-19', icon: Icons.supervised_user_circle_outlined, image: ml_ic_dashCovid, widget: MLCovidScreen()));
+  list.add(MLServicesData(title: 'Emergency call', icon: Icons.supervised_user_circle_outlined, image: ml_ic_dashCovid, widget: MLCovidScreen()));
   return list;
 }
 int i=0;

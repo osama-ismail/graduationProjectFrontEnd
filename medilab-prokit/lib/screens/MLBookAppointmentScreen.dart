@@ -129,7 +129,7 @@ class MLBookAppointmentScreenState extends State<MLBookAppointmentScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Continue", style: boldTextStyle(color: white)),
+                    Text("osama", style: boldTextStyle(color: white)),
                     8.width,
                     Icon(Icons.arrow_forward_ios, color: whiteColor, size: 12),
                   ],

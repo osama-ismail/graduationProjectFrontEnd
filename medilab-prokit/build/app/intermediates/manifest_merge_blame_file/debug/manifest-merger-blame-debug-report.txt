@@ -12,185 +12,403 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:4:5-67
-14-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:4:22-64
-15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-15-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:5:5-79
-15-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:5:22-76
-16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-16-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:6:5-79
-16-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:6:22-76
-17    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-17-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:7:5-81
-17-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:7:22-78
-18    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
-18-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:8:5-72
-18-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:8:22-69
+14-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\debug\AndroidManifest.xml:6:5-66
+14-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\debug\AndroidManifest.xml:6:22-64
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:3:5-79
+15-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:3:22-76
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:4:5-81
+16-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:4:22-78
+17    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+17-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:5:5-85
+17-->C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\android\app\src\main\AndroidManifest.xml:5:22-82
+18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+18-->[:nb_utils] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\nb_utils\intermediates\merged_manifest\debug\AndroidManifest.xml:8:5-79
+18-->[:nb_utils] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\nb_utils\intermediates\merged_manifest\debug\AndroidManifest.xml:8:22-76
 19    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 19-->[:geolocator_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-77
 19-->[:geolocator_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-74
-20
-21    <uses-feature
-21-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:26:5-28:35
-22        android:glEsVersion="0x00020000"
-22-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:27:9-41
-23        android:required="true" />
-23-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:28:9-32
-24
-25    <queries>
-25-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
+20    <uses-permission android:name="android.permission.CAMERA" />
+20-->[:scan] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\scan\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-65
+20-->[:scan] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\scan\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-62
+21    <uses-permission android:name="android.permission.VIBRATE" />
+21-->[:scan] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\scan\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-66
+21-->[:scan] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\scan\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-63
+22    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+22-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:7:5-81
+22-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:7:22-78
+23    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+23-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
+23-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
+24    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+24-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-79
+24-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-76
+25    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+25-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-77
+25-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-74
 26
-27        <!-- Needs to be explicitly declared on Android R+ -->
-28        <package android:name="com.google.android.apps.maps" />
-28-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:33:9-64
-28-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:33:18-61
-29    </queries>
+27    <uses-feature
+27-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:26:5-28:35
+28        android:glEsVersion="0x00020000"
+28-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:27:9-41
+29        android:required="true" />
+29-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:28:9-32
 30
-31    <permission
-31-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\9c665667fa9298ebfba9ee7af6796170\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-32        android:name="com.example.medilab_prokit.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-32-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\9c665667fa9298ebfba9ee7af6796170\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
-33        android:protectionLevel="signature" />
-33-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\9c665667fa9298ebfba9ee7af6796170\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
-34
-35    <uses-permission android:name="com.example.medilab_prokit.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-35-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\9c665667fa9298ebfba9ee7af6796170\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
-35-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\9c665667fa9298ebfba9ee7af6796170\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+31    <queries>
+31-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:30:5-34:15
+32
+33        <!-- Needs to be explicitly declared on Android R+ -->
+34        <package android:name="com.google.android.apps.maps" />
+34-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:33:9-64
+34-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:33:18-61
+35    </queries>
 36
-37    <application
-38        android:name="android.app.Application"
-39        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-39-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\9c665667fa9298ebfba9ee7af6796170\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
-40        android:debuggable="true"
-41        android:icon="@mipmap/ic_launcher"
-42        android:label="Medilab Flutter" >
-43        <activity
-44            android:name="com.example.medilab_prokit.MainActivity"
-45            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
-46            android:exported="true"
-47            android:hardwareAccelerated="true"
-48            android:launchMode="singleTop"
-49            android:theme="@style/LaunchTheme"
-50            android:windowSoftInputMode="adjustResize" >
-51
-52            <!--
-53                 Specifies an Android theme to apply to this Activity as soon as
-54                 the Android process has started. This theme is visible to the user
-55                 while the Flutter UI initializes. After that, this theme continues
-56                 to determine the Window background behind the Flutter UI.
-57            -->
-58            <meta-data
-59                android:name="io.flutter.embedding.android.NormalTheme"
-60                android:resource="@style/NormalTheme" />
+37    <permission
+37-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\9c665667fa9298ebfba9ee7af6796170\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+38        android:name="com.example.medilab_prokit.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+38-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\9c665667fa9298ebfba9ee7af6796170\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+39        android:protectionLevel="signature" />
+39-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\9c665667fa9298ebfba9ee7af6796170\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+40
+41    <uses-permission android:name="com.example.medilab_prokit.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+41-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\9c665667fa9298ebfba9ee7af6796170\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+41-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\9c665667fa9298ebfba9ee7af6796170\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+42    <uses-feature
+42-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:25:5-27:36
+43        android:name="android.hardware.camera"
+43-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:26:9-47
+44        android:required="false" />
+44-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:27:9-33
+45    <uses-feature
+45-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:28:5-30:36
+46        android:name="android.hardware.camera.front"
+46-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:29:9-53
+47        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+47-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:30:9-33
+48    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+49    <uses-feature
+49-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:33:5-35:36
+50        android:name="android.hardware.camera.autofocus"
+50-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:34:9-57
+51        android:required="false" />
+51-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:35:9-33
+52    <uses-feature
+52-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:36:5-38:36
+53        android:name="android.hardware.camera.flash"
+53-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:37:9-53
+54        android:required="false" />
+54-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:38:9-33
+55    <uses-feature
+55-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:39:5-41:36
+56        android:name="android.hardware.screen.landscape"
+56-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:40:9-57
+57        android:required="false" />
+57-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:41:9-33
+58    <uses-feature
+58-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:42:5-44:36
+59        android:name="android.hardware.wifi"
+59-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:43:9-45
+60        android:required="false" />
+60-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:44:9-33
 61
-62            <intent-filter>
-63                <action android:name="android.intent.action.MAIN" />
-64
-65                <category android:name="android.intent.category.LAUNCHER" />
-66            </intent-filter>
-67        </activity>
-68        <!--
-69             Don't delete the meta-data below.
-70             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
-71        -->
-72        <meta-data
-73            android:name="flutterEmbedding"
-74            android:value="2" />
-75
-76        <service
-76-->[:geolocator_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:56
-77            android:name="com.baseflow.geolocator.GeolocatorLocationService"
-77-->[:geolocator_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-77
-78            android:enabled="true"
-78-->[:geolocator_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-35
-79            android:exported="false"
-79-->[:geolocator_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
-80            android:foregroundServiceType="location" />
-80-->[:geolocator_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-53
-81
-82        <provider
-82-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-16:20
-83            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-83-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-82
-84            android:authorities="com.example.medilab_prokit.flutter.image_provider"
-84-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:13-74
-85            android:exported="false"
-85-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-37
-86            android:grantUriPermissions="true" >
-86-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-47
+62    <application
+63        android:name="android.app.Application"
+64        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+64-->[androidx.core:core:1.9.0] C:\Users\HP\.gradle\caches\transforms-3\9c665667fa9298ebfba9ee7af6796170\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+65        android:debuggable="true"
+66        android:icon="@mipmap/ic_launcher"
+67        android:label="Medilab Flutter" >
+68        <meta-data
+69            android:name="com.google.android.geo.API_KEY"
+70            android:value="AIzaSyBZtlSHssHimDM9AGVAlUb-XEhh5Y5ilcc" />
+71
+72        <activity
+73            android:name="com.example.medilab_prokit.MainActivity"
+74            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+75            android:exported="true"
+76            android:hardwareAccelerated="true"
+77            android:launchMode="singleTop"
+78            android:theme="@style/LaunchTheme"
+79            android:windowSoftInputMode="adjustResize" >
+80
+81            <!--
+82                 Specifies an Android theme to apply to this Activity as soon as
+83                 the Android process has started. This theme is visible to the user
+84                 while the Flutter UI initializes. After that, this theme continues
+85                 to determine the Window background behind the Flutter UI.
+86            -->
 87            <meta-data
-87-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-15:75
-88                android:name="android.support.FILE_PROVIDER_PATHS"
-88-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:17-67
-89                android:resource="@xml/flutter_image_picker_file_paths" />
-89-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:17-72
-90        </provider>
-91
-92        <activity
-92-->[:url_launcher_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-11:74
-93            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
-93-->[:url_launcher_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-74
-94            android:exported="false"
-94-->[:url_launcher_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:13-37
-95            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- Needs to be explicitly declared on P+ -->
-95-->[:url_launcher_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-71
-96        <uses-library
-96-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:39:9-41:40
-97            android:name="org.apache.http.legacy"
-97-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:40:13-50
-98            android:required="false" />
-98-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:41:13-37
-99
-100        <activity
-100-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\ec1d288dddbc41e1cba6bb41119da91a\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
-101            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-101-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\ec1d288dddbc41e1cba6bb41119da91a\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
-102            android:exported="false"
-102-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\ec1d288dddbc41e1cba6bb41119da91a\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
-103            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-103-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\ec1d288dddbc41e1cba6bb41119da91a\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+88                android:name="io.flutter.embedding.android.NormalTheme"
+89                android:resource="@style/NormalTheme" />
+90
+91            <intent-filter>
+92                <action android:name="android.intent.action.MAIN" />
+93
+94                <category android:name="android.intent.category.LAUNCHER" />
+95            </intent-filter>
+96        </activity>
+97        <!--
+98             Don't delete the meta-data below.
+99             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+100        -->
+101        <meta-data
+102            android:name="flutterEmbedding"
+103            android:value="2" />
 104
-105        <meta-data
-105-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\HP\.gradle\caches\transforms-3\faafcd02395b13652c3f9f46db7ab1b4\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
-106            android:name="com.google.android.gms.version"
-106-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\HP\.gradle\caches\transforms-3\faafcd02395b13652c3f9f46db7ab1b4\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
-107            android:value="@integer/google_play_services_version" />
-107-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\HP\.gradle\caches\transforms-3\faafcd02395b13652c3f9f46db7ab1b4\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
-108
-109        <uses-library
-109-->[androidx.window:window:1.0.0-beta04] C:\Users\HP\.gradle\caches\transforms-3\73584aa0f53fd434ca57ebc22ae1d6b4\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
-110            android:name="androidx.window.extensions"
-110-->[androidx.window:window:1.0.0-beta04] C:\Users\HP\.gradle\caches\transforms-3\73584aa0f53fd434ca57ebc22ae1d6b4\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
-111            android:required="false" />
-111-->[androidx.window:window:1.0.0-beta04] C:\Users\HP\.gradle\caches\transforms-3\73584aa0f53fd434ca57ebc22ae1d6b4\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
-112        <uses-library
-112-->[androidx.window:window:1.0.0-beta04] C:\Users\HP\.gradle\caches\transforms-3\73584aa0f53fd434ca57ebc22ae1d6b4\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
-113            android:name="androidx.window.sidecar"
-113-->[androidx.window:window:1.0.0-beta04] C:\Users\HP\.gradle\caches\transforms-3\73584aa0f53fd434ca57ebc22ae1d6b4\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
-114            android:required="false" />
-114-->[androidx.window:window:1.0.0-beta04] C:\Users\HP\.gradle\caches\transforms-3\73584aa0f53fd434ca57ebc22ae1d6b4\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
-115
-116        <provider
-116-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-117            android:name="androidx.startup.InitializationProvider"
-117-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
-118            android:authorities="com.example.medilab_prokit.androidx-startup"
-118-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
-119            android:exported="false" >
-119-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
-120            <meta-data
-120-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-121                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-121-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
-122                android:value="androidx.startup" />
-122-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
-123            <meta-data
-123-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\HP\.gradle\caches\transforms-3\c2ca1fad4d409adb5ee71688251c37c2\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-124                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-124-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\HP\.gradle\caches\transforms-3\c2ca1fad4d409adb5ee71688251c37c2\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-125                android:value="androidx.startup" />
-125-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\HP\.gradle\caches\transforms-3\c2ca1fad4d409adb5ee71688251c37c2\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-126        </provider>
-127    </application>
-128
-129</manifest>
+105        <service
+105-->[:geolocator_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:56
+106            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+106-->[:geolocator_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-77
+107            android:enabled="true"
+107-->[:geolocator_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-35
+108            android:exported="false"
+108-->[:geolocator_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+109            android:foregroundServiceType="location" />
+109-->[:geolocator_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\geolocator_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-53
+110
+111        <provider
+111-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-16:20
+112            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+112-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-82
+113            android:authorities="com.example.medilab_prokit.flutter.image_provider"
+113-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:13-74
+114            android:exported="false"
+114-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-37
+115            android:grantUriPermissions="true" >
+115-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-47
+116            <meta-data
+116-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-15:75
+117                android:name="android.support.FILE_PROVIDER_PATHS"
+117-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:17-67
+118                android:resource="@xml/flutter_image_picker_file_paths" />
+118-->[:image_picker_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:17-72
+119        </provider>
+120
+121        <receiver
+121-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:14:9-16:40
+122            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+122-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-97
+123            android:exported="false" />
+123-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:13-37
+124        <receiver
+124-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:9-26:20
+125            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+125-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-101
+126            android:exported="false" >
+126-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:13-37
+127            <intent-filter>
+127-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-25:29
+128                <action android:name="android.intent.action.BOOT_COMPLETED" />
+128-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:17-79
+128-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:25-76
+129                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+129-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:17-84
+129-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:25-81
+130                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+130-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:17-82
+130-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:25-79
+131                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+131-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:17-82
+131-->[:flutter_local_notifications] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:25-79
+132            </intent-filter>
+133        </receiver>
+134
+135        <activity
+135-->[:url_launcher_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:8:9-11:74
+136            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+136-->[:url_launcher_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:9:13-74
+137            android:exported="false"
+137-->[:url_launcher_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:13-37
+138            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- Needs to be explicitly declared on P+ -->
+138-->[:url_launcher_android] C:\Users\HP\Downloads\medilab-prokit\medilab-prokit\build\url_launcher_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-71
+139        <uses-library
+139-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:39:9-41:40
+140            android:name="org.apache.http.legacy"
+140-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:40:13-50
+141            android:required="false" />
+141-->[com.google.android.gms:play-services-maps:18.1.0] C:\Users\HP\.gradle\caches\transforms-3\d047955487bf699752f63acad98bcbc8\transformed\jetified-play-services-maps-18.1.0\AndroidManifest.xml:41:13-37
+142
+143        <activity
+143-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\ec1d288dddbc41e1cba6bb41119da91a\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+144            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+144-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\ec1d288dddbc41e1cba6bb41119da91a\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+145            android:exported="false"
+145-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\ec1d288dddbc41e1cba6bb41119da91a\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+146            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+146-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\HP\.gradle\caches\transforms-3\ec1d288dddbc41e1cba6bb41119da91a\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+147
+148        <meta-data
+148-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\HP\.gradle\caches\transforms-3\faafcd02395b13652c3f9f46db7ab1b4\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:21:9-23:69
+149            android:name="com.google.android.gms.version"
+149-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\HP\.gradle\caches\transforms-3\faafcd02395b13652c3f9f46db7ab1b4\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:22:13-58
+150            android:value="@integer/google_play_services_version" />
+150-->[com.google.android.gms:play-services-basement:18.0.0] C:\Users\HP\.gradle\caches\transforms-3\faafcd02395b13652c3f9f46db7ab1b4\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:23:13-66
+151
+152        <provider
+152-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+153            android:name="androidx.startup.InitializationProvider"
+153-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+154            android:authorities="com.example.medilab_prokit.androidx-startup"
+154-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+155            android:exported="false" >
+155-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+156            <meta-data
+156-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+157                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+157-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+158                android:value="androidx.startup" />
+158-->[androidx.emoji2:emoji2:1.0.0] C:\Users\HP\.gradle\caches\transforms-3\6750115e386665af6562000f72174089\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+159            <meta-data
+159-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP\.gradle\caches\transforms-3\36752e89c035a0d6a6a1d8dace199d06\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+160                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+160-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP\.gradle\caches\transforms-3\36752e89c035a0d6a6a1d8dace199d06\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+161                android:value="androidx.startup" />
+161-->[androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP\.gradle\caches\transforms-3\36752e89c035a0d6a6a1d8dace199d06\transformed\jetified-lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+162            <meta-data
+162-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+163                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+163-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+164                android:value="androidx.startup" />
+164-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+165        </provider>
+166
+167        <uses-library
+167-->[androidx.window:window:1.0.0-beta04] C:\Users\HP\.gradle\caches\transforms-3\73584aa0f53fd434ca57ebc22ae1d6b4\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+168            android:name="androidx.window.extensions"
+168-->[androidx.window:window:1.0.0-beta04] C:\Users\HP\.gradle\caches\transforms-3\73584aa0f53fd434ca57ebc22ae1d6b4\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+169            android:required="false" />
+169-->[androidx.window:window:1.0.0-beta04] C:\Users\HP\.gradle\caches\transforms-3\73584aa0f53fd434ca57ebc22ae1d6b4\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+170        <uses-library
+170-->[androidx.window:window:1.0.0-beta04] C:\Users\HP\.gradle\caches\transforms-3\73584aa0f53fd434ca57ebc22ae1d6b4\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+171            android:name="androidx.window.sidecar"
+171-->[androidx.window:window:1.0.0-beta04] C:\Users\HP\.gradle\caches\transforms-3\73584aa0f53fd434ca57ebc22ae1d6b4\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+172            android:required="false" />
+172-->[androidx.window:window:1.0.0-beta04] C:\Users\HP\.gradle\caches\transforms-3\73584aa0f53fd434ca57ebc22ae1d6b4\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+173
+174        <receiver
+174-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+175            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+175-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+176            android:directBootAware="false"
+176-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+177            android:enabled="true"
+177-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+178            android:exported="true"
+178-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+179            android:permission="android.permission.DUMP" >
+179-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+180            <intent-filter>
+180-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+181                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+181-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+181-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+182            </intent-filter>
+183            <intent-filter>
+183-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+184                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+184-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+184-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+185            </intent-filter>
+186            <intent-filter>
+186-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+187                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+187-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+187-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+188            </intent-filter>
+189            <intent-filter>
+189-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+190                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+190-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+190-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP\.gradle\caches\transforms-3\125708a8fa1e28578749f895f847af52\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+191            </intent-filter>
+192        </receiver>
+193
+194        <meta-data
+194-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:14:9-16:40
+195            android:name="huawei_module_scankit_local"
+195-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:15:13-55
+196            android:value="20100300" />
+196-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:16:13-37
+197        <meta-data
+197-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:17:9-19:50
+198            android:name="huawei_module_scankit_sdk_version"
+198-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:18:13-61
+199            android:value="scanplus:2.1.0.300" />
+199-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:19:13-47
+200        <meta-data
+200-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:20:9-22:50
+201            android:name="com.huawei.hms.client.service.name:scanplus"
+201-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:21:13-71
+202            android:value="scanplus:2.1.0.300" />
+202-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:22:13-47
+203        <meta-data
+203-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:23:9-25:33
+204            android:name="com.huawei.hms.min_api_level:scanplus:huawei_module_scankit"
+204-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:24:13-87
+205            android:value="1" />
+205-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:25:13-30
+206        <meta-data
+206-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:26:9-28:33
+207            android:name="com.huawei.hms.min_api_level:scanplus:hmscore"
+207-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:27:13-73
+208            android:value="1" />
+208-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:28:13-30
+209
+210        <activity android:name="com.huawei.hms.hmsscankit.ScanKitActivity" />
+210-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:30:9-78
+210-->[com.huawei.hms:scanplus:2.1.0.300] C:\Users\HP\.gradle\caches\transforms-3\c339fa8bac4bb3d393c1ad9e431398cc\transformed\jetified-scanplus-2.1.0.300\AndroidManifest.xml:30:19-75
+211        <activity
+211-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:47:9-53:63
+212            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+212-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:48:13-74
+213            android:clearTaskOnLaunch="true"
+213-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:49:13-45
+214            android:screenOrientation="sensorLandscape"
+214-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:50:13-56
+215            android:stateNotNeeded="true"
+215-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:51:13-42
+216            android:theme="@style/zxing_CaptureTheme"
+216-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:52:13-54
+217            android:windowSoftInputMode="stateAlwaysHidden" />
+217-->[com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\HP\.gradle\caches\transforms-3\958953765dd2b439a200b1f08222624d\transformed\jetified-zxing-android-embedded-4.3.0\AndroidManifest.xml:53:13-60
+218
+219        <meta-data
+219-->[com.huawei.hms:dynamic-api:1.0.13.303] C:\Users\HP\.gradle\caches\transforms-3\ea2df107199869cb52357a008698c7ea\transformed\jetified-dynamic-api-1.0.13.303\AndroidManifest.xml:12:9-14:54
+220            android:name="com.huawei.hms.client.service.name:dynamic-api"
+220-->[com.huawei.hms:dynamic-api:1.0.13.303] C:\Users\HP\.gradle\caches\transforms-3\ea2df107199869cb52357a008698c7ea\transformed\jetified-dynamic-api-1.0.13.303\AndroidManifest.xml:13:13-74
+221            android:value="dynamic-api:1.0.13.303" />
+221-->[com.huawei.hms:dynamic-api:1.0.13.303] C:\Users\HP\.gradle\caches\transforms-3\ea2df107199869cb52357a008698c7ea\transformed\jetified-dynamic-api-1.0.13.303\AndroidManifest.xml:14:13-51
+222        <meta-data
+222-->[com.huawei.hms:dynamic-api:1.0.13.303] C:\Users\HP\.gradle\caches\transforms-3\ea2df107199869cb52357a008698c7ea\transformed\jetified-dynamic-api-1.0.13.303\AndroidManifest.xml:15:9-17:33
+223            android:name="com.huawei.hms.min_api_level:dynamic-api:huawei_module_dynamicloader"
+223-->[com.huawei.hms:dynamic-api:1.0.13.303] C:\Users\HP\.gradle\caches\transforms-3\ea2df107199869cb52357a008698c7ea\transformed\jetified-dynamic-api-1.0.13.303\AndroidManifest.xml:16:13-96
+224            android:value="2" />
+224-->[com.huawei.hms:dynamic-api:1.0.13.303] C:\Users\HP\.gradle\caches\transforms-3\ea2df107199869cb52357a008698c7ea\transformed\jetified-dynamic-api-1.0.13.303\AndroidManifest.xml:17:13-30
+225
+226        <provider
+226-->[com.huawei.hms:ml-computer-sdkbase-inner:2.0.5.304] C:\Users\HP\.gradle\caches\transforms-3\eb784d46133a05a1bca47e55e0a696d6\transformed\jetified-ml-computer-sdkbase-inner-2.0.5.304\AndroidManifest.xml:13:9-16:40
+227            android:name="com.huawei.hms.mlsdk.common.provider.MLInitializerProvider"
+227-->[com.huawei.hms:ml-computer-sdkbase-inner:2.0.5.304] C:\Users\HP\.gradle\caches\transforms-3\eb784d46133a05a1bca47e55e0a696d6\transformed\jetified-ml-computer-sdkbase-inner-2.0.5.304\AndroidManifest.xml:14:13-86
+228            android:authorities="com.example.medilab_prokit.MLInitializerProvider"
+228-->[com.huawei.hms:ml-computer-sdkbase-inner:2.0.5.304] C:\Users\HP\.gradle\caches\transforms-3\eb784d46133a05a1bca47e55e0a696d6\transformed\jetified-ml-computer-sdkbase-inner-2.0.5.304\AndroidManifest.xml:15:13-73
+229            android:exported="false" />
+229-->[com.huawei.hms:ml-computer-sdkbase-inner:2.0.5.304] C:\Users\HP\.gradle\caches\transforms-3\eb784d46133a05a1bca47e55e0a696d6\transformed\jetified-ml-computer-sdkbase-inner-2.0.5.304\AndroidManifest.xml:16:13-37
+230        <provider
+230-->[com.huawei.agconnect:agconnect-core:1.4.0.300] C:\Users\HP\.gradle\caches\transforms-3\161890785d3c5dc2bbb07eb3e1ee7ed5\transformed\jetified-agconnect-core-1.4.0.300\AndroidManifest.xml:11:9-14:40
+231            android:name="com.huawei.agconnect.core.provider.AGConnectInitializeProvider"
+231-->[com.huawei.agconnect:agconnect-core:1.4.0.300] C:\Users\HP\.gradle\caches\transforms-3\161890785d3c5dc2bbb07eb3e1ee7ed5\transformed\jetified-agconnect-core-1.4.0.300\AndroidManifest.xml:12:13-90
+232            android:authorities="com.example.medilab_prokit.AGCInitializeProvider"
+232-->[com.huawei.agconnect:agconnect-core:1.4.0.300] C:\Users\HP\.gradle\caches\transforms-3\161890785d3c5dc2bbb07eb3e1ee7ed5\transformed\jetified-agconnect-core-1.4.0.300\AndroidManifest.xml:13:13-73
+233            android:exported="false" />
+233-->[com.huawei.agconnect:agconnect-core:1.4.0.300] C:\Users\HP\.gradle\caches\transforms-3\161890785d3c5dc2bbb07eb3e1ee7ed5\transformed\jetified-agconnect-core-1.4.0.300\AndroidManifest.xml:14:13-37
+234
+235        <service
+235-->[com.huawei.agconnect:agconnect-core:1.4.0.300] C:\Users\HP\.gradle\caches\transforms-3\161890785d3c5dc2bbb07eb3e1ee7ed5\transformed\jetified-agconnect-core-1.4.0.300\AndroidManifest.xml:16:9-18:40
+236            android:name="com.huawei.agconnect.core.ServiceDiscovery"
+236-->[com.huawei.agconnect:agconnect-core:1.4.0.300] C:\Users\HP\.gradle\caches\transforms-3\161890785d3c5dc2bbb07eb3e1ee7ed5\transformed\jetified-agconnect-core-1.4.0.300\AndroidManifest.xml:17:13-70
+237            android:exported="false" />
+237-->[com.huawei.agconnect:agconnect-core:1.4.0.300] C:\Users\HP\.gradle\caches\transforms-3\161890785d3c5dc2bbb07eb3e1ee7ed5\transformed\jetified-agconnect-core-1.4.0.300\AndroidManifest.xml:18:13-37
+238    </application>
+239
+240</manifest>

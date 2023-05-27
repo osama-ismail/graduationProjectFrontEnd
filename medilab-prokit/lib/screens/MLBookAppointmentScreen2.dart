@@ -7,6 +7,11 @@ import 'package:medilab_prokit/utils/MLColors.dart';
 import 'package:medilab_prokit/utils/MLDataProvider.dart';
 import 'package:medilab_prokit/main.dart';
 
+import '../components/MLBottomNavigationBarWidget.dart';
+import '../fragments/MLCalendarFragment.dart';
+import '../fragments/MLChatFragment.dart';
+import '../fragments/MLHomeFragment.dart';
+
 class MLBookAppointmentScreen2 extends StatefulWidget {
   static String tag = '/MLBookAppointmentScreen';
   final int? index;
@@ -20,6 +25,7 @@ class MLBookAppointmentScreen2 extends StatefulWidget {
 class MLBookAppointmentScreenState extends State<MLBookAppointmentScreen2> {
   int currentWidget = 0;
   List<MLBookAppointmentData> data = mlBookAppointmentDataList2();
+
 
   @override
   void initState() {
@@ -67,7 +73,7 @@ class MLBookAppointmentScreenState extends State<MLBookAppointmentScreen2> {
       child: Scaffold(
         body: SafeArea(
           child: Stack(
-            alignment: Alignment.bottomCenter,
+            alignment: Alignment.topLeft,
             children: <Widget>[
               Container(
                 decoration: boxDecorationWithRoundedCorners(
@@ -76,85 +82,25 @@ class MLBookAppointmentScreenState extends State<MLBookAppointmentScreen2> {
                 ),
                 child: Column(
                   children: <Widget>[
-                    8.height,
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
-                        Icon(
-                          Icons.arrow_back_ios,
-                          color: appStore.isDarkModeOn ? white : blackColor,
-                          size: 22,
-                        ).onTap(
-                          () {
-                            currentWidget == 0
-                                ? Navigator.of(context).pop()
-                                : setState(
-                                    () {
-                                      currentWidget--;
-                                      widget.index == currentWidget;
-                                    },
-                                  );
-                          },
-                        ).expand(flex: 1),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Step $titleNumber of 5: ',
-                              textAlign: TextAlign.center,
-                              style: boldTextStyle(color: mlColorDarkBlue),
-                            ),
-                            Text(titleText, textAlign: TextAlign.center, style: boldTextStyle(color: Colors.grey)),
-                          ],
-                        ).expand(flex: 8),
-                        Icon(Icons.home_outlined, color: blackColor, size: 24).expand(flex: 1),
+
+
                       ],
                     ).paddingAll(16.0),
                     8.height,
-                    LinearProgressIndicator(
-                      minHeight: 2.0,
-                      backgroundColor: mlColorLightGrey,
-                      valueColor: AlwaysStoppedAnimation<Color>(mlColorDarkBlue),
-                      value: progress,
-                    ),
+
                     8.height,
                     data[currentWidget].widget.validate().expand(),
                   ],
                 ),
               ),
-              AppButton(
-                height: 50,
-                width: context.width(),
-                color: mlColorDarkBlue,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text("Continue", style: boldTextStyle(color: white)),
-                    8.width,
-                    Icon(Icons.arrow_forward_ios, color: whiteColor, size: 12),
-                  ],
-                ),
-                onTap: () {
-                  setState(
-                    () {
-                      currentWidget++;
-                    },
-                  );
-                  if (currentWidget > 4) {
-                    setState(
-                      () {
-                        currentWidget--;
-                      },
-                    );
-                    currentWidget = 0;
-                    finish(context);
-                    MLAddPaymentScreen().launch(context);
-                  }
-                },
-              ).paddingOnly(right: 16, left: 16, bottom: 16)
+
             ],
           ),
         ),
+
       ),
     );
   }

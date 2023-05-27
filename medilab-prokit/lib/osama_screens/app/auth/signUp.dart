@@ -24,6 +24,9 @@ class _SignupState extends State<SignUp> {
   TextEditingController password = TextEditingController();
   TextEditingController username = TextEditingController();
   TextEditingController address = TextEditingController();
+  TextEditingController phone = TextEditingController();
+
+
   Crud crud = Crud();
 
   bool isLoading = false;
@@ -35,7 +38,13 @@ class _SignupState extends State<SignUp> {
       isLoading = false;
       var data;
       final body = json.encode({'name': this.username.text+"",
-        'password':this.password.text+"", 'email':this.email.text+"", 'address':this.address.text+""
+        'password':this.password.text+"", 'email':this.email.text+"",
+        'address':this.address.text+"",
+        'longitude':this.phone.text+"",
+        'phone':this.phone.text+"",
+        'latitude':this.phone.text+"",
+
+
       });
         final response = await http.post(
             Uri.parse(linkIp+"/patient/addNewPatient"),
@@ -155,6 +164,27 @@ class _SignupState extends State<SignUp> {
                         validator:(value) {
                           if(value!.isEmpty)
                             return "Enter corect password";
+                          else{
+                            return null;
+                          }
+                        },
+                      ),
+                      TextFormField(
+
+                        cursorColor: Color.fromRGBO(255, 192, 0, 1.0),
+                        controller: phone,
+                        decoration: InputDecoration(
+
+                          labelText: 'phone',
+                          icon: Icon(Icons.home,color: Color.fromRGBO(255, 192, 0, 1.0),),
+                          labelStyle: TextStyle(
+                            color: Color.fromRGBO(255, 192, 0, 1.0),
+                          ),
+
+                        ),
+                        validator:(value) {
+                          if(value!.isEmpty)
+                            return "Enter corect address";
                           else{
                             return null;
                           }

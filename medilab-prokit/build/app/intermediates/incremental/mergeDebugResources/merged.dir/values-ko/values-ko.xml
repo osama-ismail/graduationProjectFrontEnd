@@ -45,6 +45,18 @@
     <string name="common_open_on_phone">스마트폰에서 열기</string>
     <string name="common_signin_button_text">로그인</string>
     <string name="common_signin_button_text_long">Google 계정으로 로그인</string>
+    <string name="scankit_confirm">확인</string>
+    <string name="scankit_light">터치하여 조명을 높입니다</string>
+    <string name="scankit_light_off">조명을 끕니다</string>
+    <string name="scankit_no_code_tip">코드가 감지되지 않았습니다.</string>
+    <string name="scankit_scan_tip">프레임 안에 코드를 넣습니다</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">스캔</string>
     <string msgid="6264217191555673260" name="search_menu_title">"검색"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="zxing_app_name">바코드 스캐너</string>
+    <string name="zxing_button_ok">확인</string>
+    <string name="zxing_msg_camera_framework_bug">죄송합니다. 기기의 카메라에 오류가 생겼습니다. 기기를 재시작 해야될 수도 있습니다.</string>
+    <string name="zxing_msg_default_status">바코드를 사각형 안에 비춰주세요.</string>
 </resources>

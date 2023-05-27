@@ -49,7 +49,7 @@ class MLChatListComponentState extends State<MLChatListComponent> {
                       backgroundColor: widget.color,
                       radius: 28.0,
                       child: Image.asset(
-                        ml_ic_doctor_image!,
+                        ml_ic_medilab_logo!,
                         fit: BoxFit.cover,
                         width: 56,
                         height: 56,
@@ -84,7 +84,7 @@ class MLChatListComponentState extends State<MLChatListComponent> {
                           overflow: TextOverflow.ellipsis,
                           text: TextSpan(
                             children: <TextSpan>[
-                              TextSpan(text: e.validate(), style: boldTextStyle()),
+                              TextSpan(text: "Here for you", style: boldTextStyle()),
                               TextSpan(text: '(Clinic Visit)', style: secondaryTextStyle(size: 16)),
                             ],
                           ),

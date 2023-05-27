@@ -36,9 +36,7 @@ onDelete(){
 
             Expanded(
                 flex: 1,
-                child: Image.network(
-                  "$linkImageRoot/${image}",
-                )),
+                child:Text("leen")),
 
 
                   // "$linkImageRoot/${notemodel.notesImage}",

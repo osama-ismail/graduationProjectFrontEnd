@@ -45,6 +45,18 @@
     <string name="common_open_on_phone">在手机上打开</string>
     <string name="common_signin_button_text">登录</string>
     <string name="common_signin_button_text_long">使用 Google 帐号登录</string>
+    <string name="scankit_confirm">确认</string>
+    <string name="scankit_light">点击照亮</string>
+    <string name="scankit_light_off">点击关闭</string>
+    <string name="scankit_no_code_tip">图中未发现码</string>
+    <string name="scankit_scan_tip">将码放入取景框，即可自动扫描</string>
+    <string name="scankit_talkback_back">返回</string>
+    <string name="scankit_talkback_photo">图库</string>
+    <string name="scankit_title">扫码</string>
     <string msgid="6264217191555673260" name="search_menu_title">"搜索"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="zxing_app_name">条码扫描器</string>
+    <string name="zxing_button_ok">确定</string>
+    <string name="zxing_msg_camera_framework_bug">抱歉，Android相机出现问题。您可能需要重启设备。</string>
+    <string name="zxing_msg_default_status">请将条码置于取景框内扫描。  </string>
 </resources>

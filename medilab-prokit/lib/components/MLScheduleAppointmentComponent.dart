@@ -139,13 +139,12 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
                 isReserved!=false && isTimeInOo!=true? GestureDetector(
                   onTap: () {
                     // print(e.validate());
-                    print("leen");
-                    print( e.validate());
+
                     onDelete(e.validate().toString());
                   },
                   child: Icon(
                     Icons.delete_forever,
-                    size: 19,
+                    size: 18,
                     color: iconColor,
                   ),
                 ): Icon(
@@ -233,11 +232,11 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text((doctorDataList[0].title).validate(), style: boldTextStyle(size: 18)),
+                            Text("Dr. "+sharedPref.getString("doctorName")!, style: boldTextStyle(size: 18)),
                             8.height,
                             Row(
                               children: [
-                                Text((doctorDataList[0].subtitle).validate(), style: secondaryTextStyle()),
+                                Text(sharedPref.getString("serviceName")!, style: secondaryTextStyle()),
                                 8.width,
                                 RatingBarWidget(onRatingChanged: (double rating) {}, size: 16, rating: 3.5),
                                 4.width,

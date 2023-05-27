@@ -45,6 +45,14 @@
     <string name="common_open_on_phone">ဖုန်းပေါ်မှာ ဖွင့်ပါ</string>
     <string name="common_signin_button_text">လက်မှတ်ထိုး ဝင်ရန်</string>
     <string name="common_signin_button_text_long">Google ဖြင့် လက်မှတ်ထိုးဝင်ရေ</string>
+    <string name="scankit_confirm">အိုကေ</string>
+    <string name="scankit_light">နောက်ထပ်အလင်းရရှိရန်အတွက် နှိပ်ပါ</string>
+    <string name="scankit_light_off">မီးပိတ်ရန်</string>
+    <string name="scankit_no_code_tip">မည်သည့် ကုဒ်မျှ ရှာမတွေ့ပါ။</string>
+    <string name="scankit_scan_tip">ကုဒ်ကို ဖရိန်အတွင်း ဝင်အောင် ထားပါ</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">စကန်ဖတ်ပါ</string>
     <string msgid="6264217191555673260" name="search_menu_title">"ရှာဖွေမှု"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"၉၉၉+"</string>
 </resources>

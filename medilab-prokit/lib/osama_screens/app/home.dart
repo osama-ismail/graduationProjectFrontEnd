@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:get/get_connect/http/src/response/response.dart';
 import 'package:medilab_prokit/osama_screens/app/notes/edit.dart';
 import 'package:medilab_prokit/osama_screens/components/cardnote.dart';
 import 'package:medilab_prokit/osama_screens/components/cardProfile.dart';
@@ -10,6 +13,7 @@ import 'package:flutter/material.dart';
 import './auth/profile.dart';
 import 'items.dart';
 import 'package:medilab_prokit/osama_screens/Sample .dart';
+import 'package:http/http.dart' as http;
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
 
@@ -21,22 +25,15 @@ class _HomeState extends State<Home> with Crud {
   bool isLoading = false;
 
   getNotes() async {
-    var response =
-        await postRequest(linkViewNotes, {"id": sharedPref.getString("id")});
-    // print("soas");
-    // print(response);
-    // print("soas");
-    return response;
+    var response = await http.get(Uri.parse(linkIp + "/admin/getAlllPatients"));
+    var responseBody = jsonDecode(response.body);
+    // print("responseBody");
+    //
+    // print(responseBody);
+
+    return responseBody;
   }
 
-  getUser() async {
-    print("wwwww");
-
-    var response =
-        await postRequest(linkViewNotes, {"id": sharedPref.getString("id")});
-
-    return response;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,51 +51,27 @@ class _HomeState extends State<Home> with Crud {
               icon: Icon(Icons.exit_to_app))
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).pushNamed("carts");
-        },
-        child: Icon(Icons.shopping_cart),
 
-      ),
-      // bottomNavigationBar: BottomAppBar(
-      //   child: Row(
-      //     children: [
-      //       IconButton(
-      //         icon: Icon(Icons.menu),
-      //         onPressed: () {
-      //           // Animate a bottom drawer
-      //         },
-      //       ),
-      //       Spacer(),
-      //       IconButton(icon: Icon(Icons.search), onPressed: () {}),
-      //       IconButton(icon: Icon(Icons.more_vert), onPressed: () {}),
-      //       IconButton(icon: Icon(Icons.home), onPressed: () {}),
-      //     ],
-      //   ),
-      // ),
 
       body:
-          // isLoading == true
-          //     ? Center(child: CircularProgressIndicator())
-          //     :
           Container(
-
               padding: EdgeInsets.all(10),
               child: ListView(
                 children: [
-
                   FutureBuilder(
                       future: getNotes(),
                       builder: (BuildContext context, AsyncSnapshot snapshot) {
                         if (snapshot.hasData) {
-                          if (snapshot.data['status'] == 'fail') {
-                            return Center(
-                                child: Text("there is no categories",
-                                    style: TextStyle(fontSize: 20)));
-                          }
+                          var responseData = snapshot.data;
+
+                          // if (snapshot.data['status'] == 'fail') {
+                          //   return Center(
+                          //       child: Text("there is no categories",
+                          //           style: TextStyle(fontSize: 20)));
+                          // }
+                          print(responseData.length);
                           return ListView.builder(
-                            itemCount: snapshot.data['data'].length,
+                            itemCount: responseData.length,
                             shrinkWrap: true,
                             physics: NeverScrollableScrollPhysics(),
                             itemBuilder: (context, i) {
@@ -117,15 +90,15 @@ class _HomeState extends State<Home> with Crud {
                                     //     }),
                                     CardNotes(
                                         content:
-                                            "${snapshot.data['data'][i]['name']}",
+                                            "${snapshot.data[i]['name']}",
                                         title:
-                                            "${snapshot.data['data'][i]['price']}",
-                                        image:"${snapshot.data['data'][i]['image']}",
+                                            "${snapshot.data[i]['email']}",
+                                        image:"${snapshot.data[i]['address']}",
                                         ontap: () {
                                           // print(snapshot.data['data'][i]['id'].toString());
                                           sharedPref.setString(
                                               "id_category",
-                                              snapshot.data['data'][i]['id']
+                                              snapshot.data[i]['id']
                                                   .toString());
                                           Navigator.of(context).push(
                                               MaterialPageRoute(
@@ -137,14 +110,14 @@ class _HomeState extends State<Home> with Crud {
                                 // i--;
                               }
                               return CardNotes(
-                                  image:"${snapshot.data['data'][i]['image']}",
+                                  image:"${snapshot.data[i]['address']}",
                                   content:
-                                      "${snapshot.data['data'][i]['name']}",
-                                  title: "${snapshot.data['data'][i]['price']}",
+                                      "${snapshot.data[i]['name']}",
+                                  title: "${snapshot.data[i]['address']}",
                                   ontap: () {
                                     sharedPref.setString(
                                         "id_category",
-                                        snapshot.data['data'][i]['id']
+                                        snapshot.data[i]['id']
                                             .toString());
                                     Navigator.of(context).push(
                                         MaterialPageRoute(
@@ -157,7 +130,6 @@ class _HomeState extends State<Home> with Crud {
                         }
                         if (snapshot.connectionState ==
                             ConnectionState.waiting) {
-                          return Center(child: Text("loading.."));
                         }
                         return Center(child: Text("loading.."));
                       })

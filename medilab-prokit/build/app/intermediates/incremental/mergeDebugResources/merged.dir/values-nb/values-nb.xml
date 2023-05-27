@@ -45,6 +45,14 @@
     <string name="common_open_on_phone">Åpne på telefonen</string>
     <string name="common_signin_button_text">Logg på</string>
     <string name="common_signin_button_text_long">Logg på med Google</string>
+    <string name="scankit_confirm">OK</string>
+    <string name="scankit_light">Berør for mer lys</string>
+    <string name="scankit_light_off">Slå av lyset</string>
+    <string name="scankit_no_code_tip">Ingen kode funnet.</string>
+    <string name="scankit_scan_tip">Plasser koden innen rammen</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">Skann</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Søk"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

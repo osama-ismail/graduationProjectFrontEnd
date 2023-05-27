@@ -45,6 +45,14 @@
     <string name="common_open_on_phone">បើកតាមទូរស័ព្ទ</string>
     <string name="common_signin_button_text">ចូល</string>
     <string name="common_signin_button_text_long">ចូលដោយប្រើ Google</string>
+    <string name="scankit_confirm">យល់ព្រម</string>
+    <string name="scankit_light">ប៉ះសម្រាប់​ពន្លឺបន្ថែម</string>
+    <string name="scankit_light_off">បិទពន្លឺ</string>
+    <string name="scankit_no_code_tip">រក​មិនឃើញកូដ QR ទេ។</string>
+    <string name="scankit_scan_tip">ដាក់​កូដនៅក្នុងស៊ុម</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">ស្កេន</string>
     <string msgid="6264217191555673260" name="search_menu_title">"ស្វែងរក"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

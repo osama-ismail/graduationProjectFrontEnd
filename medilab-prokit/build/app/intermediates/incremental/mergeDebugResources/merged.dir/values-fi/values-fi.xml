@@ -45,6 +45,18 @@
     <string name="common_open_on_phone">Avaa puhelimessa</string>
     <string name="common_signin_button_text">Kirjaudu sisään</string>
     <string name="common_signin_button_text_long">Kirjaudu Google-tilille</string>
+    <string name="scankit_confirm">OK</string>
+    <string name="scankit_light">Kosketa lisävaloa varten</string>
+    <string name="scankit_light_off">Sammuta valo</string>
+    <string name="scankit_no_code_tip">Koodia ei havaittu.</string>
+    <string name="scankit_scan_tip">Aseta koodi kehyksen sisään</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">Skannaus</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Haku"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="zxing_app_name">Barcode Scanner</string>
+    <string name="zxing_button_ok">OK</string>
+    <string name="zxing_msg_camera_framework_bug">Valitettavasti Androidin kameran toimiinta häiriintyi. Joudut ehkä käynnistämään laitteen uudelleen.</string>
+    <string name="zxing_msg_default_status">Aseta viivakoodi neliön sisälle skannataksesi sen.</string>
 </resources>

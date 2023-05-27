@@ -5,10 +5,11 @@ import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'admin/category.dart';
+
 class NavBar extends StatelessWidget {
-  String? userName = sharedPref.getString("username");
-  String? userImage = sharedPref.getString("image");
-  String? userEmail = sharedPref.getString("email");
+  String? userName = "osama";
+  String? userImage = "sd";
+  String? userEmail = "osama@gmail.com";
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +22,10 @@ class NavBar extends StatelessWidget {
             accountName: Text(userName!),
             accountEmail: Text(userEmail!),
             currentAccountPicture: CircleAvatar(
-              child: ClipOval(
-                // child: Image.network(
-                //   "$linkImageRoot/${userImage!}",
-                //   fit: BoxFit.cover,
-                //   width: 90,
-                //   height: 90,
-                // ),
-              ),
+              child: CircleAvatar(child:
+              // Icon(Icons., color: white, size: 24),
+              Image.asset("images/person.png"),
+                  radius: 22, backgroundColor: Colors.white),
             ),
             decoration: BoxDecoration(
               color: Colors.blue,
@@ -43,16 +40,16 @@ class NavBar extends StatelessWidget {
             title: Text('Users'),
             onTap: () {
               Navigator.of(context)
-                  .pushNamedAndRemoveUntil("allUser", (route) => false);
+                  .pushNamedAndRemoveUntil("Admincategory", (route) => false);
             },
           ),
           ListTile(
 
             leading: Icon(Icons.person),
-            title: Text('Orders'),
+            title: Text('Doctors '),
             onTap: (){
               Navigator.of(context)
-                  .pushNamedAndRemoveUntil("Showorders", (route) => false);
+                  .pushNamedAndRemoveUntil("Admincategory", (route) => false);
             },
           ),
 

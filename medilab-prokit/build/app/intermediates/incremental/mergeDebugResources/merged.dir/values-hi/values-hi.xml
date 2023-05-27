@@ -45,6 +45,18 @@
     <string name="common_open_on_phone">फ़ोन पर खोलें</string>
     <string name="common_signin_button_text">साइन इन करें</string>
     <string name="common_signin_button_text_long">Google के ज़रिए साइन इन करें</string>
+    <string name="scankit_confirm">ठीक</string>
+    <string name="scankit_light">और अधिक प्रकाश के लिए टच करें</string>
+    <string name="scankit_light_off">પलाइट बंद करें</string>
+    <string name="scankit_no_code_tip">किसी भी कोड की पहचान नहीं की गई।</string>
+    <string name="scankit_scan_tip">कोड को फ़्रेम के भीतर रखें</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">स्कैन करें</string>
     <string msgid="6264217191555673260" name="search_menu_title">"खोजें"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="zxing_app_name">बारकोड स्कैनर</string>
+    <string name="zxing_button_ok">ठीक है</string>
+    <string name="zxing_msg_camera_framework_bug">क्षमा करें, Android कैमरा एक समस्या का सामना करना पड़ा. आप डिवाइस को पुनरारंभ करने की आवश्यकता हो सकती है.</string>
+    <string name="zxing_msg_default_status">दृश्यदर्शी आयत के अंदर एक बारकोड प्लेस इसे स्कैन.</string>
 </resources>

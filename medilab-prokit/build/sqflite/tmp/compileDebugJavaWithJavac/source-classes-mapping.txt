@@ -1,3 +1,5 @@
+com/tekartik/sqflite/BuildConfig.java
+ com.tekartik.sqflite.BuildConfig
 com/tekartik/sqflite/operation/Operation.java
  com.tekartik.sqflite.operation.Operation
 com/tekartik/sqflite/LocaleUtils.java
@@ -41,8 +43,6 @@ com/tekartik/sqflite/DatabaseTask.java
  com.tekartik.sqflite.DatabaseTask
 com/tekartik/sqflite/dev/Debug.java
  com.tekartik.sqflite.dev.Debug
-com/tekartik/sqfite/BuildConfig.java
- com.tekartik.sqfite.BuildConfig
 com/tekartik/sqflite/SqfliteCursor.java
  com.tekartik.sqflite.SqfliteCursor
 com/tekartik/sqflite/operation/SqlErrorInfo.java

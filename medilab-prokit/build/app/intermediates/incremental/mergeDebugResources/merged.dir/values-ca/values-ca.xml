@@ -45,6 +45,18 @@
     <string name="common_open_on_phone">Obre al telèfon</string>
     <string name="common_signin_button_text">Inicia sessió</string>
     <string name="common_signin_button_text_long">Inicia la sessió amb Google</string>
+    <string name="scankit_confirm">D\'ACORD</string>
+    <string name="scankit_light">Toqueu per a més il·luminació</string>
+    <string name="scankit_light_off">Apagar el llum</string>
+    <string name="scankit_no_code_tip">No s\'ha detectat cap codi.</string>
+    <string name="scankit_scan_tip">Col·loqueu el codi dins del marc</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">Escaneja</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Cerca"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="zxing_app_name">Barcode Scanner</string>
+    <string name="zxing_button_ok">D\'acord</string>
+    <string name="zxing_msg_camera_framework_bug">S\'ha produït un problema amb la càmera de l\'Android. Potser haureu de reiniciar el dispositiu.</string>
+    <string name="zxing_msg_default_status">Poseu un codi de barres dins el rectangle per escanejar-lo.</string>
 </resources>

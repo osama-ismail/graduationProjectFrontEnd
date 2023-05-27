@@ -71,14 +71,17 @@ class MLHospitalListComponentState extends State<MLHospitalListComponent> {
                 children: [
                   Text('Clinic Visit', style: boldTextStyle(size: 24)),
                   8.height,
-                  Text('Find the Service you want', style: secondaryTextStyle()),
-                  16.height,
                 ],
               ).expand(),
-              mlRoundedIconContainer(Icons.search, mlColorBlue),
+              // mlRoundedIconContainer(Icons.search, mlColorBlue),
               16.width,
-              mlRoundedIconContainer(Icons.calendar_view_day_outlined, mlColorBlue),
-            ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
+
+                },
+                child: mlRoundedIconContainer(Icons.close, mlColorBlue),
+              )            ],
           ).paddingOnly(right: 16.0, left: 16.0),
           8.height,
           ListView.builder(

@@ -45,6 +45,14 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign In</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="scankit_confirm">OK</string>
+    <string name="scankit_light">Touch for more light</string>
+    <string name="scankit_light_off">Turn off light</string>
+    <string name="scankit_no_code_tip">No code detected.</string>
+    <string name="scankit_scan_tip">Place the code within the frame</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">Scan</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Search"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

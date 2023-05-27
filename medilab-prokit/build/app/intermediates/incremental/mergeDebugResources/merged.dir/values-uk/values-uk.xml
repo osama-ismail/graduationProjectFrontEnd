@@ -45,6 +45,18 @@
     <string name="common_open_on_phone">Відкрити на телефоні</string>
     <string name="common_signin_button_text">Увійти</string>
     <string name="common_signin_button_text_long">Увійти в облік. запис Google</string>
+    <string name="scankit_confirm">OK</string>
+    <string name="scankit_light">Торкніться, щоб підсвітити</string>
+    <string name="scankit_light_off">Вимкнути світло</string>
+    <string name="scankit_no_code_tip">Коду не виявлено.</string>
+    <string name="scankit_scan_tip">Розташуйте код у межах рамки</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">Сканування</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Пошук"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="zxing_app_name">Сканер штрих-кодів</string>
+    <string name="zxing_button_ok">OK</string>
+    <string name="zxing_msg_camera_framework_bug">Нажаль, виникла помилка камери. Можливо, вам знадобиться перезавантажити пристрій.</string>
+    <string name="zxing_msg_default_status">Щоб відсканувати штрих-код, помістіть його в прямокутник видошукача.</string>
 </resources>

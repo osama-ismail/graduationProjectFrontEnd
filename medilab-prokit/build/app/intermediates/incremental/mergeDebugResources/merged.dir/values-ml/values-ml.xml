@@ -45,6 +45,14 @@
     <string name="common_open_on_phone">ഫോണിൽ തുറക്കുക</string>
     <string name="common_signin_button_text">സൈൻ ഇൻ ചെയ്യുക</string>
     <string name="common_signin_button_text_long">Google ഉപയോഗിച്ച് സൈൻ ഇൻ ചെയ്യുക</string>
+    <string name="scankit_confirm">ശരി</string>
+    <string name="scankit_light">കൂടുതൽ ലൈറ്റിനായി സ്‌പർശിക്കുക</string>
+    <string name="scankit_light_off">ലൈറ്റ് ഓഫ് ചെയ്യുക</string>
+    <string name="scankit_no_code_tip">കോഡ് ഒന്നും കണ്ടെത്തിയില്ല.</string>
+    <string name="scankit_scan_tip">കോഡ് ഫ്രെയിമിനകത്ത് കൊണ്ടുവരുക</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">സ്‌കാൻ ചെയ്യുക</string>
     <string msgid="6264217191555673260" name="search_menu_title">"തിരയുക"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

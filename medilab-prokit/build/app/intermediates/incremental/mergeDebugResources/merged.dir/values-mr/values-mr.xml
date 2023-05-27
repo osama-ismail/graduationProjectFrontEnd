@@ -45,6 +45,14 @@
     <string name="common_open_on_phone">फोनवर उघडा</string>
     <string name="common_signin_button_text">साइन इन करा</string>
     <string name="common_signin_button_text_long">Google सह साइन इन करा</string>
+    <string name="scankit_confirm">ठीक आहे</string>
+    <string name="scankit_light">अधिक प्रकाशासाठी स्पर्श करा</string>
+    <string name="scankit_light_off">प्रकाश बंद करा</string>
+    <string name="scankit_no_code_tip">कोणताही कोड आढळला नाही.</string>
+    <string name="scankit_scan_tip">फ्रेममध्ये कोड ठेवा</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">स्कॅन करा</string>
     <string msgid="6264217191555673260" name="search_menu_title">"शोध"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"९९९+"</string>
 </resources>

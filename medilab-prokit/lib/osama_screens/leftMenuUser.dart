@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'admin/category.dart';
 class NavBar extends StatelessWidget {
-  String? userName = sharedPref.getString("username");
-  String? userImage = sharedPref.getString("image");
-  String? userEmail = sharedPref.getString("email");
+  String? userName = "OSAMA";
+  String? userImage = "OSAMA";
+  String? userEmail = "OSMA";
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +22,7 @@ class NavBar extends StatelessWidget {
             accountEmail: Text(userEmail!),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
-                child: Image.network(
-                  "$linkImageRoot/${userImage!}",
-                  fit: BoxFit.cover,
-                  width: 90,
-                  height: 90,
-                ),
+
               ),
             ),
             decoration: BoxDecoration(

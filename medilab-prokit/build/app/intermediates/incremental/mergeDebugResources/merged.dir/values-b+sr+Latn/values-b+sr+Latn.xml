@@ -45,6 +45,14 @@
     <string name="common_open_on_phone">Otvori na telefonu</string>
     <string name="common_signin_button_text">Prijavi me</string>
     <string name="common_signin_button_text_long">Prijavi me na Google</string>
+    <string name="scankit_confirm">U redu</string>
+    <string name="scankit_light">Dodirnite za više svetla</string>
+    <string name="scankit_light_off">Isključite svetlo</string>
+    <string name="scankit_no_code_tip">Kôd nije detektovan.</string>
+    <string name="scankit_scan_tip">Postavite kôd u okvir</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">Skeniranje</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Pretražite"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

@@ -45,6 +45,14 @@
     <string name="common_open_on_phone">Telefonda açın</string>
     <string name="common_signin_button_text">Daxil olun</string>
     <string name="common_signin_button_text_long">Google ilə daxil olun</string>
+    <string name="scankit_confirm">OK</string>
+    <string name="scankit_light">Daha çox işıq üçün toxunun</string>
+    <string name="scankit_light_off">İşığı söndürün</string>
+    <string name="scankit_no_code_tip">Kod aşkarlanmadı.</string>
+    <string name="scankit_scan_tip">Kodu çərçivəyə yerləşdirin</string>
+    <string name="scankit_talkback_back">Back</string>
+    <string name="scankit_talkback_photo">Gallery</string>
+    <string name="scankit_title">Skanlayın</string>
     <string msgid="6264217191555673260" name="search_menu_title">"Axtarın"</string>
     <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
 </resources>

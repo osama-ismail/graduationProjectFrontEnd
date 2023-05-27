@@ -1,0 +1,23 @@
+com/chavesgu/scan/QRCodeDecoder.java
+ com.chavesgu.scan.QRCodeDecoder
+ com.chavesgu.scan.QRCodeDecoder$1
+ com.chavesgu.scan.QRCodeDecoder$2
+com/chavesgu/scan/ParentView.java
+ com.chavesgu.scan.ParentView
+com/chavesgu/scan/ScanViewFactory.java
+ com.chavesgu.scan.ScanViewFactory
+com/chavesgu/scan/ScanPlugin.java
+ com.chavesgu.scan.ScanPlugin
+ com.chavesgu.scan.ScanPlugin$QrCodeAsyncTask
+com/chavesgu/scan/BuildConfig.java
+ com.chavesgu.scan.BuildConfig
+com/chavesgu/scan/ScanDrawView.java
+ com.chavesgu.scan.ScanDrawView
+ com.chavesgu.scan.ScanDrawView$1
+com/chavesgu/scan/ScanPlatformView.java
+ com.chavesgu.scan.ScanPlatformView
+com/chavesgu/scan/ScanViewNew.java
+ com.chavesgu.scan.ScanViewNew
+ com.chavesgu.scan.ScanViewNew$1
+ com.chavesgu.scan.ScanViewNew$CaptureListener
+ com.chavesgu.scan.ScanViewNew$QrCodeAsyncTask
