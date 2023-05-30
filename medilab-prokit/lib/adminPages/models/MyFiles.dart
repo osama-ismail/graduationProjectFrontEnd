@@ -45,8 +45,8 @@ List demoMyFiles = [
     percentage: "10",
   ),
   CloudStorageInfo(
-    title: "Documents",
-    numOfFiles: "",
+    title: "Medical tests",
+    numOfFiles: "2 tests",
     svgSrc: "assets/icons/drop_box.svg",
     totalStorage: "",
     color: Color(0xFF007EE5),

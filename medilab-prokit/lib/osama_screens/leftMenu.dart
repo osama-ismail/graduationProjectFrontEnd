@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../adminPages/controllers/MenuAppController.dart';
+import '../adminPages/screens/main/main_screen.dart';
 import '../main.dart';
 import 'constant/linkapi.dart';
 import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
@@ -7,20 +10,18 @@ import 'package:url_launcher/url_launcher.dart';
 import 'admin/category.dart';
 
 class NavBar extends StatelessWidget {
-  String? userName = "osama";
-  String? userImage = "sd";
-  String? userEmail = "osama@gmail.com";
+  String userName = sharedPref.getString("username")!;
+  String userEmail = sharedPref.getString("email")!;
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
-        // Remove padding
         padding: EdgeInsets.zero,
         children: [
           UserAccountsDrawerHeader(
-            accountName: Text(userName!),
-            accountEmail: Text(userEmail!),
+            accountName: Text(userName),
+            accountEmail: Text(userEmail),
             currentAccountPicture: CircleAvatar(
               child: CircleAvatar(child:
               // Icon(Icons., color: white, size: 24),
@@ -36,8 +37,29 @@ class NavBar extends StatelessWidget {
             ),
           ),
           ListTile(
+            leading: Icon(Icons.dashboard),
+            title: Text('Dashboard'),
+            onTap: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return MultiProvider(
+                      providers: [
+                        ChangeNotifierProvider(
+                          create: (context) => MenuAppController(),
+                        ),
+                      ],
+                      child: MainScreen(),
+                    );
+                  },
+                ),
+                    (Route<dynamic> route) => false,
+              );
+            },
+          ),
+          ListTile(
             leading: Icon(Icons.person),
-            title: Text('Users'),
+            title: Text('Pateints'),
             onTap: () {
               Navigator.of(context)
                   .pushNamedAndRemoveUntil("Admincategory", (route) => false);
@@ -45,19 +67,21 @@ class NavBar extends StatelessWidget {
           ),
           ListTile(
 
-            leading: Icon(Icons.person),
+            leading: Icon(Icons.person_pin),
             title: Text('Doctors '),
             onTap: (){
               Navigator.of(context)
-                  .pushNamedAndRemoveUntil("Admincategory", (route) => false);
+                  .pushNamedAndRemoveUntil("AdminDoctors", (route) => false);
             },
           ),
 
           ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text('Request'),
+            leading: Icon(Icons.medical_services),
+            title: Text('Services'),
             onTap: () {
 
+    Navigator.of(context)
+        .pushNamedAndRemoveUntil("MLBookAppointmentScreen2", (route) => false);
             },
             trailing: ClipOval(
               child: Container(
@@ -78,8 +102,8 @@ class NavBar extends StatelessWidget {
           ),
           Divider(),
           ListTile(
-            leading: Icon(Icons.category),
-            title: Text('Categories'),
+            leading: Icon(Icons.date_range),
+            title: Text('Reservations'),
             onTap: () {
               Navigator.of(context)
                   .pushNamedAndRemoveUntil("Admincategory", (route) => false);

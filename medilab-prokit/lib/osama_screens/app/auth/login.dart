@@ -58,21 +58,6 @@ class _LoginState extends State<Login> {
   }
   login() async {
     callNumbers();
-     // print("naddoo");
-    // String newUrl = 'http://new-url.com';
-    // int newPort = 8080;
-    //
-    // // Build the new URL with the desired path
-    // String newPath = '/new-application-path';
-    // String newFullUrl = '$newUrl:$newPort$newPath';
-    // print(newFullUrl);
-    //
-    // // Redirect to the new application
-    // html.window.location.href = "http://localhost:3000/";
-    // Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
-    // print("omaromar");
-    //
-    // print(sharedPref.getString("patientsNum"));
     if (formstate.currentState!.validate()) {
 
       final headers = {'Content-Type': 'application/json'};
@@ -88,8 +73,6 @@ class _LoginState extends State<Login> {
       print(response.body);
         if (response?.statusCode == 200) {
           print(response.body);
-
-
         if (response.body.isEmpty) {
             AwesomeDialog(
                 context: context,
@@ -106,6 +89,7 @@ class _LoginState extends State<Login> {
             sharedPref.setString("email", json.decode(response.body)['email'].toString());
             sharedPref.setString(
                 "password", json.decode(response.body)['password'].toString());
+
             if(this.email.text.startsWith("p")){
               sharedPref.setString("address", json.decode(response.body)['address'].toString());
               Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
@@ -113,23 +97,24 @@ class _LoginState extends State<Login> {
             }
             else if(this.email.text.startsWith("d")){
               sharedPref.setString("salary", json.decode(response.body)['salary'].toString());
-              sharedPref.setString("service_id", json.decode(response.body)['service_id'].toString());
+              sharedPref.setString("service_id", json.decode(response.body)['service_id'].toString()); Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return MultiProvider(
+                      providers: [
+                        ChangeNotifierProvider(
+                          create: (context) => MenuAppController(),
+                        ),
+                      ],
+                      child: MainScreen(),
+                    );
+                  },
+                ),
+                    (Route<dynamic> route) => false,
+              );
+
             }
-            Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(
-                builder: (BuildContext context) {
-                  return MultiProvider(
-                    providers: [
-                      ChangeNotifierProvider(
-                        create: (context) => MenuAppController(),
-                      ),
-                    ],
-                    child: MainScreen(),
-                  );
-                },
-              ),
-                  (Route<dynamic> route) => false,
-            );             return;
+                      return;
           }
         }
     }

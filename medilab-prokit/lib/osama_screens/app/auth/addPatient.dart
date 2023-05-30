@@ -7,8 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
+import 'package:provider/provider.dart';
 import 'dart:convert';
 
+import '../../../adminPages/controllers/MenuAppController.dart';
+import '../../../adminPages/screens/main/main_screen.dart';
 import '../../../main.dart';
 
 class AdminaddPateint extends StatefulWidget {
@@ -57,39 +60,105 @@ class _SignupState extends State<AdminaddPateint> {
       isLoading = true;
       isLoading = false;
       var data;
-      if(sharedPref.getString("editPatient").toString()!="") {
+      final body0;
+
+      if (sharedPref.getString("editPatient").toString() != "") {
         String jsonString = sharedPref.getString("editPatient").toString();
 
         yourObject = jsonDecode(jsonString);
+        final response;
 
-         body = json.encode({'id':yourObject?["id"],
-          'name': this.username.text+"",
-          'password':this.password.text+"", 'email':this.email.text+"",
-          'address':this.address.text+"",
-          'longitude':"0",
-          'phone':this.phone.text+"",
-          'latitude':"0",
+        if (sharedPref.getString("isAdmin") == "1"){
+          print("ali");
+
+          body = json.encode({'id': yourObject?["id"],
+            'name': this.username.text + "",
+            'password': this.password.text + "",
+            'email': this.email.text + "",
+            'address': this.address.text + "",
+            'salary': this.address.text + "",
+            'service_id': "1",
+
+
+          });
+          response = await http.post(
+              Uri.parse(linkIp + "/admin/addNewDoctor"),
+              headers: headers, body: body);
+          AwesomeDialog(
+            context: context,
+            dialogType: DialogType.SUCCES,
+            body: Text("تمت العملية بنجاح."),
+          )..show().then((_) {
+            Future.delayed(Duration(seconds: 2), () {
+              Navigator.of(context).pushNamedAndRemoveUntil("AdminDoctors", (route) => true);
+            });
+          });
+        }
+        else{
+          body = json.encode({'id': yourObject?["id"],
+            'name': this.username.text + "",
+            'password': this.password.text + "", 'email': this.email.text + "",
+            'address': this.address.text + "",
+            'longitude': "0",
+            'phone': this.phone.text + "",
+            'latitude': "0",
+
+
+          });
+          response = await http.post(
+              Uri.parse(linkIp + "/admin/addNewPatient"),
+              headers: headers, body: body);
+          AwesomeDialog(
+            context: context,
+            dialogType: DialogType.SUCCES,
+            body: Text("تمت العملية بنجاح."),
+          )..show().then((_) {
+            Future.delayed(Duration(seconds: 2), () {
+              Navigator.of(context).pushNamedAndRemoveUntil("Admincategory", (route) => true);
+            });
+          });
+
+        }
+
+      }
+      else {
+        if (sharedPref.getString("isAdmin") == "1") {
+          final body0;
+          body0 = json.encode({
+            'name': this.username.text + "",
+            'password': this.password.text + "",
+            'email': this.email.text + "",
+            'address': this.address.text + "",
+            'salary': this.address.text + "",
+            'service_id': "1",
+
+
+          });
+        var response = await http.post(
+              Uri.parse(linkIp + "/admin/addNewDoctor"),
+              headers: headers, body: body0);
+          AwesomeDialog(
+            context: context,
+            dialogType: DialogType.SUCCES,
+            body: Text("تمت العملية بنجاح."),
+          )..show().then((_) {
+            Future.delayed(Duration(seconds: 2), () {
+              Navigator.of(context).pushNamedAndRemoveUntil("AdminDoctors", (route) => true);
+            });
+          });
+        }
+          body = json.encode({'name': this.username.text + "",
+          'password': this.password.text + "", 'email': this.email.text + "",
+          'address': this.address.text + "",
+          'longitude': "0",
+          'phone': this.phone.text + "",
+          'latitude': "0",
 
 
         });
-
-      }
-      else{
-         body = json.encode({'name': this.username.text+"",
-        'password':this.password.text+"", 'email':this.email.text+"",
-        'address':this.address.text+"",
-        'longitude':"0",
-        'phone':this.phone.text+"",
-        'latitude':"0",
-
-
-      });}
-        final response = await http.post(
-            Uri.parse(linkIp+"/admin/addNewPatient"),
-            headers: headers, body: body);
-      if(response.statusCode==200){
-        sharedPref.setString('editPatient', "");
-        AwesomeDialog(
+       var response = await http.post(
+            Uri.parse(linkIp + "/admin/addNewPatient"),
+            headers: headers, body: body); AwesomeDialog(
           context: context,
           dialogType: DialogType.SUCCES,
           body: Text("تمت العملية بنجاح."),
@@ -99,6 +168,7 @@ class _SignupState extends State<AdminaddPateint> {
           });
         });
       }
+
     }
   }
   @override
@@ -148,9 +218,6 @@ class _SignupState extends State<AdminaddPateint> {
                           else{
                             return null;
                           }
-
-
-
                         },
                       ),
 
@@ -189,7 +256,7 @@ class _SignupState extends State<AdminaddPateint> {
                         controller: phone,
                         decoration: InputDecoration(
                           labelText: 'phone',
-                          icon: Icon(Icons.email,color: Color.fromRGBO(255, 192, 0, 1.0),
+                          icon: Icon(Icons.phone,color: Color.fromRGBO(255, 192, 0, 1.0),
                           ),
                           labelStyle: TextStyle(
                             color: Color.fromRGBO(255, 192, 0, 1.0) ,
@@ -272,8 +339,21 @@ class _SignupState extends State<AdminaddPateint> {
                       InkWell(
                         child: Text("Back"),
                         onTap: () {
-                          Navigator.of(context).pushNamed("Admincategory");
-                        },
+                          Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return MultiProvider(
+                                  providers: [
+                                    ChangeNotifierProvider(
+                                      create: (context) => MenuAppController(),
+                                    ),
+                                  ],
+                                  child: MainScreen(),
+                                );
+                              },
+                            ),
+                                (Route<dynamic> route) => false,
+                          );                        },
                       )
                     ],
                   ),

@@ -35,7 +35,7 @@ class _HomeState extends State<Admincategory> with Crud {
     return Scaffold(
       drawer: NavBar(),
       appBar: AppBar(
-        title: Text("Categories"),
+        title: Text("Patients"),
         actions: [
           IconButton(
             onPressed: () {

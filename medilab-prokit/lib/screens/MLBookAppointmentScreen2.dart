@@ -34,7 +34,7 @@ class MLBookAppointmentScreenState extends State<MLBookAppointmentScreen2> {
   }
 
   Future<void> init() async {
-    currentWidget = widget.index!;
+    // currentWidget = widget.index!;
     changeStatusColor(appStore.isDarkModeOn ? scaffoldDarkColor : white);
   }
 
@@ -71,6 +71,13 @@ class MLBookAppointmentScreenState extends State<MLBookAppointmentScreen2> {
         return true;
       },
       child: Scaffold(
+        floatingActionButton:sharedPref.getString("username")!.startsWith("d")? FloatingActionButton(
+          onPressed: () {    sharedPref.setString('editPatient', "");
+
+          Navigator.of(context).pushNamed("AdminaddCategory");
+          },
+          child: Icon(Icons.add),
+        ):null,
         body: SafeArea(
           child: Stack(
             alignment: Alignment.topLeft,
@@ -99,6 +106,7 @@ class MLBookAppointmentScreenState extends State<MLBookAppointmentScreen2> {
 
             ],
           ),
+
         ),
 
       ),

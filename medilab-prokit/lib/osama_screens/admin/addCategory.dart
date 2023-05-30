@@ -1,4 +1,7 @@
 // import 'package:ecommerce_osama/app/notes/edit.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 import 'package:medilab_prokit/osama_screens/components/cardnote.dart';
 import 'package:medilab_prokit/osama_screens/components/cardProfile.dart';
 import '../../main.dart';
@@ -28,42 +31,44 @@ class AdminaddCategory extends StatefulWidget {
 }
 class _HomeState extends State<AdminaddCategory> with Crud {
   bool isLoading = false;
+  String? selectedValue;
+  Map<String, String> dropdownItems = {
+
+  };
+  findDoctors() async{
+    var response = await http.get(Uri.parse(linkIp + "/admin/getAlllDoctors"));
+    var responseBody = jsonDecode(response.body);
+    for (var doctor in responseBody) {
+      String id = doctor['id'].toString();
+      String name = doctor['name'].toString();
+      dropdownItems[name] = id;
+    }
+    print(dropdownItems);
+  }
   TextEditingController email = TextEditingController();
   File? myfile=File('');
+  String? selectedOption;
+
   XFile? xfile;
   String imageFile="0";
   addCtegories() async {
-    if (imageFile == "0") {
-      return AwesomeDialog(
-          context: context,
-          title: "هام",
-          body: Text("الرجاء اضافة الصورة الخاصة بالصنف"))
-        ..show();
-    }
-    if (email.text == "") {print("osama999");
-    // print(myfile);
-
-      return AwesomeDialog(
-          context: context,
-          title: "هام",
-          body: Text("الرجاء اضافة الاسم الخاص بالصنف"))
-        ..show();
-    }
-
-    var response9 = await postRequestWithFile(linkaddCategory, {
-      "name": email.text!,
-    },
-        myfile!);
+    final headers = {'Content-Type': 'application/json'};
+    isLoading = true;
     isLoading = false;
-    // print("deem");
-    // print(response9);
-    setState(() {});
-    if (response9['status'] == "success") {
-      // Navigator.of(context).pushReplacementNamed("add");
-      Navigator.of(context).pushNamedAndRemoveUntil("Admincategory", (route) => false);
-    } else {
-      //
-    }
+    var data;
+    final body = json.encode({'name':email.text+""
+
+
+    });
+    // final body = json.encode({'name':sharedPref.getString("addNewService"),
+    //
+    //
+    // });
+    var response = await http.post(
+        Uri.parse(linkIp+"/admin/addNewService"),
+        headers: headers, body: body);
+
+    print(response.statusCode);
   }
   getIMage (){
     if(  imageFile=="1") {
@@ -76,6 +81,7 @@ class _HomeState extends State<AdminaddCategory> with Crud {
   }
   @override
   void initState() {
+    findDoctors();
     // TODO: implement initState
     // getCtegories();
     super.initState();
@@ -83,6 +89,7 @@ class _HomeState extends State<AdminaddCategory> with Crud {
 
   @override
   Widget build(BuildContext context) {
+
     String? tt = sharedPref.getString("username");
     return Scaffold(
         drawer: NavBar(),
@@ -104,17 +111,36 @@ class _HomeState extends State<AdminaddCategory> with Crud {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: 300,
+              width: 350,
               padding: EdgeInsets.only(top: 10),
               child: TextFormField(
                 controller: email,
                 decoration: InputDecoration(
-                  labelText: 'Name',
-                  icon: Icon(Icons.category_sharp),
+                  labelText: 'Service name',
+                  labelStyle: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                  ),
+                  icon: Icon(
+                    Icons.category_sharp,
+                    color: Colors.black,
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                      width: 2,
+                    ),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                      width: 2,
+                    ),
+                  ),
                 ),
                 validator: (value) {
                   if (value!.isEmpty)
-                    return " the name shouldn't be empty ! ";
+                    return "The name shouldn't be empty!";
                   else {
                     return null;
                   }
@@ -122,33 +148,62 @@ class _HomeState extends State<AdminaddCategory> with Crud {
               ),
             ),
             Container(
-              width: 300,
+              width: 310,
               padding: EdgeInsets.only(top: 10),
-              child: TextFormField(
-                controller: email,
-                decoration: InputDecoration(
-                  labelText: 'Name',
-                  icon: Icon(Icons.category_sharp),
-                ),
-                validator: (value) {
-                  if (value!.isEmpty)
-                    return " the name shouldn't be empty ! ";
-                  else {
-                    return null;
-                  }
+              margin: EdgeInsets.fromLTRB(40, 50, 0, 0),
+              child: DropdownButton<String>(
+                value: selectedOption,
+                onChanged: (String? newValue) {
+                  setState(() {
+                    sharedPref.setString("docService", newValue!);
+                    selectedOption = newValue;
+                  });
                 },
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.black,
+                ),
+                icon: Icon(
+                  Icons.arrow_drop_down,
+                  color: Colors.black,
+                ),
+                iconSize: 100,
+                elevation: 16,
+                underline: Container(
+                  height: 2,
+                  color: Colors.black,
+                ),
+                dropdownColor: Colors.white, // Set the dropdown background color
+                isExpanded: true, // Expand the dropdown to fit the container width
+                items: dropdownItems.keys.map<DropdownMenuItem<String>>((String key) {
+                  return DropdownMenuItem<String>(
+                    value: dropdownItems[key],
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8.0), // Add vertical padding for each item
+                      child: Text(
+                        key,
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
               ),
-            ),
+            )
+,
+
             Container(
               width: 300,
-              padding: EdgeInsets.only(top: 10),
+              padding: EdgeInsets.fromLTRB(50, 50, 10, 10),
 
               child:getIMage(),
 
 
             ),
             Padding(
-                padding: const EdgeInsets.only(left: 100, top: 20),
+                padding: const EdgeInsets.only(left: 110, top: 50),
 
                 child: MaterialButton(
                   padding: EdgeInsets.fromLTRB(12, 12, 12, 12),
@@ -162,85 +217,75 @@ class _HomeState extends State<AdminaddCategory> with Crud {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text("Please Choose Image",
-                                      style: TextStyle(fontSize: 22)),
-                                ),
+
 
 
                                 Padding(
-
-                                  padding: const EdgeInsets.only(left: 40,right: 40),
-
-                                  child: Container(
-                                    margin: EdgeInsets.only(top:10),
-                                    child:       MaterialButton(
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(18.0),
-                                          side: BorderSide(color: Colors.red)
-                                      ),
-                                      color: Colors.blue,
-                                      textColor: Colors.white,
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 70, vertical: 10),
-                                      onPressed: () async {
-                                        xfile = await ImagePicker()
-                                            .pickImage(source: ImageSource.gallery);
-                                        Navigator.of(context).pop();
-                                        myfile = File(xfile!.path);
-                                        imageFile="1";
-                                        // image:Image.file(File(xfile!.path), height: 300,);
-
-                                        setState(() {});
-                                      },
-                                      child: Container(
-                                        alignment: Alignment.center,
-                                        width: double.infinity,
-                                        padding: EdgeInsets.all(10),
-                                        child: Text(
-                                          "From Gallery",
-                                          style: TextStyle(fontSize: 16),
+                                  padding: const EdgeInsets.only(left: 40, right: 40),
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        margin: EdgeInsets.only(top: 10),
+                                        child: MaterialButton(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(18.0),
+                                            side: BorderSide(color: Colors.red),
+                                          ),
+                                          color: Colors.blue,
+                                          textColor: Colors.white,
+                                          padding: EdgeInsets.symmetric(horizontal: 7, vertical: 10),
+                                          onPressed: () async {
+                                            xfile = await ImagePicker().pickImage(source: ImageSource.gallery);
+                                            Navigator.of(context).pop();
+                                            myfile = File(xfile!.path);
+                                            imageFile = "1";
+                                            setState(() {});
+                                          },
+                                          child: Container(
+                                            alignment: Alignment.center,
+                                            width: double.infinity,
+                                            padding: EdgeInsets.all(1),
+                                            child: Text(
+                                              "From Gallery",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                          ),
                                         ),
                                       ),
-                                    ),),
-                                ),
-                                Padding(
-
-                                  padding: const EdgeInsets.only(left: 40,right: 40),
-                                  child: Container(
-                                    margin: EdgeInsets.only(top:10),
-                                 child: MaterialButton(
-                                   shape: RoundedRectangleBorder(
-                                       borderRadius: BorderRadius.circular(18.0),
-                                       side: BorderSide(color: Colors.red)
-                                   ),
-                                    color: Colors.blue,
-                                    textColor: Colors.white,
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 70, vertical: 10),
-
-                                    onPressed: () async {
-                                      xfile = await ImagePicker()
-                                          .pickImage(source: ImageSource.camera);
-                                      Navigator.of(context).pop();
-
-                                      myfile = File(xfile!.path);
-                                      imageFile="1";
-                                      setState(() {});
-                                    },
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      width: double.infinity,
-
-                                      padding: EdgeInsets.all(10),
-                                      child: Text(
-                                        "From Camera",
-                                        style: TextStyle(fontSize: 16),
+                                      SizedBox(height: 10), // Add spacing between the buttons
+                                      Container(
+                                        margin: EdgeInsets.only(top: 10),
+                                        child: MaterialButton(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(18.0),
+                                            side: BorderSide(color: Colors.red),
+                                          ),
+                                          color: Colors.blue,
+                                          textColor: Colors.white,
+                                          padding: EdgeInsets.symmetric(horizontal: 7, vertical: 10),
+                                          onPressed: () async {
+                                            xfile = await ImagePicker().pickImage(source: ImageSource.camera);
+                                            Navigator.of(context).pop();
+                                            myfile = File(xfile!.path);
+                                            imageFile = "1";
+                                            setState(() {});
+                                          },
+                                          child: Container(
+                                            alignment: Alignment.center,
+                                            width: double.infinity,
+                                            padding: EdgeInsets.all(1),
+                                            child: Text(
+                                              "From Camera",
+                                              style: TextStyle(fontSize: 16),
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ),),
+                                    ],
+                                  ),
                                 ),
+
+
 
 
 
@@ -253,7 +298,7 @@ class _HomeState extends State<AdminaddCategory> with Crud {
                   color: myfile == null ? Colors.blue : Colors.green,
                 )),
             Padding(
-              padding: const EdgeInsets.only(left: 100,right: 60),
+              padding: const EdgeInsets.only(left: 110,right: 60),
 
             child:  MaterialButton(
               color: Colors.blue,

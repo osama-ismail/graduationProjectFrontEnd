@@ -38,6 +38,8 @@ class CartCardState extends State<CardNotes> with Crud {
     Navigator.of(context).pushNamedAndRemoveUntil("Admincategory", (route) => false);
   }
   onEdit() async {
+    sharedPref.setString("isAdmin","0");
+
     String jsonString = jsonEncode({
       "id":widget.id,
       "name":widget.name,

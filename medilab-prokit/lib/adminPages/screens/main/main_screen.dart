@@ -25,7 +25,7 @@ class MainScreen extends StatelessWidget {
               Expanded(
                 // default flex = 1
                 // and it takes 1/6 part of the screen
-                child: SideMenu(),
+                child: NavBar(),
               ),
             Expanded(
               // It takes 5/6 part of the screen

@@ -1,3 +1,5 @@
+import 'package:medilab_prokit/main.dart';
+
 import '../../../controllers/MenuAppController.dart';
 import '../../../responsive.dart';
 import '../../../controllers/MenuAppController.dart';
@@ -80,7 +82,7 @@ class SearchField extends StatelessWidget {
 
     return TextField(
       decoration: InputDecoration(
-        hintText: "Hi ahmad",
+        hintText:sharedPref.getString("username"),
         fillColor: secondaryColor,
         filled: true,
         border: OutlineInputBorder(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:medilab_prokit/screens/MLBookAppointmentScreen2.dart';
 import 'package:medilab_prokit/screens/MLDashboardScreen.dart';
 import 'package:medilab_prokit/screens/MLSplashScreen.dart';
 import 'package:medilab_prokit/store/AppStore.dart';
@@ -11,10 +12,13 @@ import 'package:provider/provider.dart';
 import 'adminPages/controllers/MenuAppController.dart';
 import 'adminPages/screens/main/main_screen.dart';
 import 'osama_screens/admin/addCategory.dart';
+import 'osama_screens/admin/cardnoteAdmin.dart';
 import 'osama_screens/admin/category.dart';
+import 'osama_screens/admin/categoryDoctor.dart';
 import 'osama_screens/admin/editItem.dart';
 import 'osama_screens/admin/map.dart';
 import 'osama_screens/admin/mapMap.dart';
+import 'osama_screens/app/auth/addDoctors.dart';
 import 'osama_screens/app/auth/addPatient.dart';
 import 'osama_screens/app/auth/login.dart';
 import 'osama_screens/app/auth/signUp.dart';
@@ -50,6 +54,8 @@ class MyApp extends StatelessWidget {
           "login": (context) => Login(),
           "signup": (context) => SignUp(),
           "homePage": (context) => MLDashboardScreen(),
+          "MLBookAppointmentScreen2": (context) => MLBookAppointmentScreen2(),
+
           // "MapMap": (context) => MapMap(),
 
           "Home": (context) => Home(),
@@ -58,6 +64,7 @@ class MyApp extends StatelessWidget {
           "AdminaddCategory" :(context)=>AdminaddCategory(),
           "AdminaddPateint" :(context)=>AdminaddPateint(),
           "Adminpage" :(context)=>MainScreen(),
+          "AdminDoctors" :(context)=>AdminDoctorcategory(),
 
 
         },
