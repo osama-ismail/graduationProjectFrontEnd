@@ -6,7 +6,10 @@ import 'package:medilab_prokit/screens/MLAddPaymentScreen.dart';
 import 'package:medilab_prokit/utils/MLColors.dart';
 import 'package:medilab_prokit/utils/MLDataProvider.dart';
 import 'package:medilab_prokit/main.dart';
+import 'package:provider/provider.dart';
 
+import '../adminPages/controllers/MenuAppController.dart';
+import '../adminPages/screens/main/main_screen.dart';
 import '../components/MLBottomNavigationBarWidget.dart';
 import '../fragments/MLCalendarFragment.dart';
 import '../fragments/MLChatFragment.dart';
@@ -71,6 +74,27 @@ class MLBookAppointmentScreenState extends State<MLBookAppointmentScreen2> {
         return true;
       },
       child: Scaffold(
+        appBar: AppBar(
+          leading:sharedPref.getString("username")!.startsWith("d")? IconButton(
+            icon: Icon(Icons.arrow_back,color: Colors.white,),
+            onPressed: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return MultiProvider(
+                      providers: [
+                        ChangeNotifierProvider(
+                          create: (context) => MenuAppController(),
+                        ),
+                      ],
+                      child: MainScreen(),
+                    );
+                  },
+                ),
+                    (Route<dynamic> route) => false,
+              );            },
+          ):null,
+        ),
         floatingActionButton:sharedPref.getString("username")!.startsWith("d")? FloatingActionButton(
           onPressed: () {    sharedPref.setString('editPatient', "");
 

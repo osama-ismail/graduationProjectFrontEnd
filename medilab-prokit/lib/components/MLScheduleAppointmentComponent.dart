@@ -52,9 +52,9 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
 
         });
       }
-      print("osama");
+      // print("osama");
       oo.forEach((element) {print(element);});
-      print("osama");
+      // print("osama");
 
       // print(oo[0]["time"].toString().contains("9:00 AM - 10:00 AM"));
     }
@@ -74,7 +74,6 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
   }
   onAdd() async {
     final headers = {'Content-Type': 'application/json'};
-    print("ayat");
     print(sharedPref.getString("day")!);
 
     final body = json.encode({
@@ -255,7 +254,7 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
                         Row(
                           children: [
                             Text(sharedPref.getString("date")==null? DateTime.now().toString().split(' ')[0]:sharedPref.getString("date")!.split(' ')[0], style:
-                            secondaryTextStyle(color: Colors.yellow,size: 24)),
+                            secondaryTextStyle(color: Colors.blue,size: 24)),
                             Icon(Icons.arrow_drop_down_sharp, color: mlColorLightGrey),
                           ],
                         ),

@@ -21,7 +21,6 @@ class _MLDashboardScreenState extends State<MLDashboardScreen> {
     MLHomeFragment(),
     MLChatFragment(),
     MLCalendarFragment(),
-    MLNotificationFragment(),
     MLProfileFragment(),
   ];
 

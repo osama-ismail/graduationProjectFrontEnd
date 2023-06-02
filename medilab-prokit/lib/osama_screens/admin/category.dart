@@ -72,34 +72,7 @@ class _HomeState extends State<Admincategory> with Crud {
                       itemCount: responseData.length,
                       itemBuilder: (context, i) {
                         if (i == 0) {
-                          // return Column(
-                          //   children: [
-                          //
-                          //     CardNotes(
-                          //         id:"${snapshot.data[i]['id']}",
-                          //         content:
-                          //         "",
-                          //         title:
-                          //         "${snapshot.data[i]['name']}",
-                          //         image:"${snapshot.data[i]['name']}",
-                          //         ontap: () {
-                          //           // print(snapshot.data['data'][i]['id'].toString());
-                          //           sharedPref.setString(
-                          //               "id_category",
-                          //               snapshot.data[i]['id']
-                          //                   .toString());  setState(() {
-                          //
-                          //           });
-                          //           Navigator.of(context).push(
-                          //               MaterialPageRoute(
-                          //                   builder: (context) =>
-                          //                       Item()
-                          //               )
-                          //           );
-                          //         }),
-                          //   ],
-                          // );
-                          // i--;
+
                         }
                         return CardNotes(
                           id: "${snapshot.data[i]['id']}",

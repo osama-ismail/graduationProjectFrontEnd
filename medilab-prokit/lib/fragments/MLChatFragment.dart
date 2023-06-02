@@ -5,6 +5,7 @@ import 'package:medilab_prokit/screens/PurchaseMoreScreen.dart';
 import 'package:medilab_prokit/utils/MLColors.dart';
 import 'package:medilab_prokit/utils/MLString.dart';
 import 'package:nb_utils/nb_utils.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MLChatFragment extends StatefulWidget {
   static String tag = '/MLChatFragment';
@@ -18,6 +19,19 @@ class MLChatFragmentState extends State<MLChatFragment> with SingleTickerProvide
   TextEditingController _searchController = TextEditingController();
   late TabController _tabController;
 
+   getCtegories() {
+
+    var phoneNumber = 'tel:+101';
+
+    launch(phoneNumber);
+
+   }
+
+  Future<void> fetchCategories() async {
+    await getCtegories();
+    // Other asynchronous tasks
+  }
+
   @override
   void initState() {
     super.initState();
@@ -25,11 +39,7 @@ class MLChatFragmentState extends State<MLChatFragment> with SingleTickerProvide
       setState(() {});
     });
     _tabController = TabController(length: 2, vsync: this);
-    init();
-  }
-
-  Future<void> init() async {
-    //
+    fetchCategories();
   }
 
   @override
@@ -52,52 +62,7 @@ class MLChatFragmentState extends State<MLChatFragment> with SingleTickerProvide
       child: Scaffold(
         backgroundColor: mlPrimaryColor,
         body: Container(
-          width: context.width(),
-          decoration: boxDecorationWithRoundedCorners(
-            borderRadius: radiusOnly(topRight: 32),
-            backgroundColor: appStore.isDarkModeOn ? black : white,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              24.height,
-              Text('Inbox', style: boldTextStyle(size: 20)).paddingLeft(16.0),
-              8.height,
-              AppTextField(
-                controller: _searchController,
-                textFieldType: TextFieldType.OTHER,
-                autoFocus: false,
-                decoration: InputDecoration(
-                  hintText: "Search",
-                  prefixIcon: Icon(Icons.search, color: appStore.isDarkModeOn ? white : blackColor, size: 20),
-                  suffixIcon: _searchController.text.isEmpty
-                      ? null
-                      : Icon(Icons.clear).onTap(() {
-                          _searchController.clear();
-                        }),
-                ),
-              ).paddingOnly(right: 16.0, left: 16.0),
-              16.height,
-              TabBar(
-                controller: _tabController,
-                labelColor: mlColorBlue,
-                indicatorColor: mlColorBlue,
-                indicatorSize: TabBarIndicatorSize.label,
-                unselectedLabelColor: Colors.grey,
-                tabs: [
-                  Tab(text: mlDoctors! + ' (' + notificationCounter.toString() + ')'),
-                  Tab(text: mlBot_support),
-                ],
-              ),
-              TabBarView(
-                controller: _tabController,
-                children: [
-                  MLDoctorChatComponent(),
-                  PurchaseMoreScreen(),
-                ],
-              ).expand(),
-            ],
-          ),
+
         ),
       ),
     );

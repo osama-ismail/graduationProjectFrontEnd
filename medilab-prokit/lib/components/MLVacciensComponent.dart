@@ -55,7 +55,7 @@ class MLVaccineComponentState extends State<MLVaccineComponent> {
                 Icon(Icons.opacity, color: appStore.isDarkModeOn ? white : blackColor, size: 24),
                 8.width,
                 Text(
-                  'Vaccination progress',
+                  'Vitamin B12',
                   style: boldTextStyle(size: 18, color: appStore.isDarkModeOn ? white : blackColor),
                 ),
               ],
@@ -90,7 +90,7 @@ class MLVaccineComponentState extends State<MLVaccineComponent> {
             32.height,
             Divider(height: 5.0),
             16.height,
-            Text('Dashboard', style: boldTextStyle(size: 18, color: appStore.isDarkModeOn ? white : blackColor)),
+            Text('Vitamin D:', style: boldTextStyle(size: 18, color: appStore.isDarkModeOn ? white : blackColor)),
             16.height,
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,

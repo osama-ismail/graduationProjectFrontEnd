@@ -112,6 +112,17 @@ class NavBar extends StatelessWidget {
 
           Divider(),
           ListTile(
+
+            leading: Icon(Icons.dark_mode),
+            title: Text('Dare mode '),
+            onTap: (){
+              appStore.toggleDarkMode();
+
+            },
+          ),
+          Divider(),
+
+          ListTile(
             title: Text('Exit'),
             leading: Icon(Icons.exit_to_app),
             onTap: () {sharedPref.clear();

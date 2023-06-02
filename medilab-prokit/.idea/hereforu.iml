@@ -6,6 +6,9 @@
       <excludeFolder url="file://$MODULE_DIR$/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
       <excludeFolder url="file://$MODULE_DIR$/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/medilab_prokit/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/medilab_prokit/build" />
+      <excludeFolder url="file://$MODULE_DIR$/medilab_prokit/.pub" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:medilab_prokit/components/MLClinicVisitComponent.dart';
 import 'package:medilab_prokit/components/MLConfirmAppointmentComponent.dart';
 import 'package:medilab_prokit/components/MLDoctorListComponent.dart';
+import 'package:medilab_prokit/components/MLHospitalDetailComponent.dart';
 import 'package:medilab_prokit/components/MLHospitalListComponent.dart';
 import 'package:medilab_prokit/components/MLPatientComponent.dart';
+import 'package:medilab_prokit/main.dart';
 import 'package:medilab_prokit/model/MLAppointmentData.dart';
 import 'package:medilab_prokit/model/MLBookAppointmentData.dart';
 import 'package:medilab_prokit/model/MLCovidData.dart';
@@ -32,7 +34,14 @@ import 'package:medilab_prokit/screens/MLOnlinePharmacyScreen.dart';
 import 'package:medilab_prokit/screens/MLVideoCounsultScreen.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import '../chatTest/chatBot.dart';
+import '../chatTest/chatpage.dart';
+import '../components/MLHospitalDetailComponent2.dart';
+import '../components/MLHospitalDetailComponent3.dart';
+import '../components/MLHospitalListComponent2.dart';
+import '../osama_screens/admin/mapMap.dart';
 import '../screens/MLBookAppointmentScreen2.dart';
+import '../screens/MLBookAppointmentScreen4.dart';
 import 'MLImage.dart';
 import 'MLString.dart';
 
@@ -47,21 +56,21 @@ List<MLWalkThroughData> mlWalkThroughDataList() {
 List<MLServicesData> mlServiceDataList() {
   List<MLServicesData> list = [];
   list.add(MLServicesData(title: 'Clinic Visit', icon: Icons.home_work_outlined, image: ml_ic_dashClinicVisit!, widget: MLBookAppointmentScreen2(index: 0)));
-  list.add(MLServicesData(title: 'Home Visit', icon: Icons.password, image: ml_ic_dashHomeVisit, widget: MLBookAppointmentScreen(index: 0)));
-  list.add(MLServicesData(title: 'chat', icon: Icons.video_call, image: ml_ic_dashVideoCons, widget: MLVideoConsultScreen()));
-  list.add(MLServicesData(title: 'My Services', icon: Icons.local_hospital, image: ml_ic_dashPharmacy, widget: MLOnlinePharmacyScreen()));
-  list.add(MLServicesData(title: 'Diseases', icon: Icons.health_and_safety, image: ml_ic_dashDisease, widget: MLDiseaseScreen()));
-  list.add(MLServicesData(title: 'Emergency call', icon: Icons.supervised_user_circle_outlined, image: ml_ic_dashCovid, widget: MLCovidScreen()));
+  list.add(MLServicesData(title: 'Home Visit', icon: Icons.password, image: ml_ic_dashHomeVisit, widget: MLBookAppointmentScreen4()));
+  list.add(MLServicesData(title: 'chat', icon: Icons.video_call, image: ml_ic_dashVideoCons, widget: chatpage(email: '${sharedPref.getString("email")!}',)));
+  list.add(MLServicesData(title: 'Chat Bot', icon: Icons.local_hospital, image: ml_ic_dashPharmacy, widget: ChatScreen()));
+  list.add(MLServicesData(title: 'My location', icon: Icons.health_and_safety, image: ml_ic_dashDisease, widget: MapMap()));
+  list.add(MLServicesData(title: 'Medical Tests', icon: Icons.supervised_user_circle_outlined, image: ml_ic_dashCovid, widget: MLCovidScreen()));
   return list;
 }
 int i=0;
 List<MLDepartmentData> mlDepartmentDataList() {
   List<MLDepartmentData> list = [];
-  list.add(MLDepartmentData(image: ml_ic_department_one, title: 'General Care', subtitle: '647 Doctor'));
-  list.add(MLDepartmentData(image: "images/baby.png", title: 'Pediatrics', subtitle: '324 Doctor'));
-  list.add(MLDepartmentData(image: ml_ic_department_three, title: 'Cardiologic', subtitle: '647 Doctor'));
-  list.add(MLDepartmentData(image: ml_ic_department_one, title: 'General Care', subtitle: '647 Doctor'));
-  list.add(MLDepartmentData(image: ml_ic_department_two, title: 'Pediatrics', subtitle: '324 Doctor'));
+  list.add(MLDepartmentData(image: ml_ic_department_one, title: 'General Care', subtitle: ''));
+  list.add(MLDepartmentData(image: "images/baby.png", title: 'Pediatrics', subtitle: ''));
+  list.add(MLDepartmentData(image: ml_ic_department_three, title: 'Cardiologic', subtitle: ''));
+  list.add(MLDepartmentData(image: ml_ic_department_one, title: 'General Care', subtitle: ''));
+  list.add(MLDepartmentData(image: ml_ic_department_two, title: 'Pediatrics', subtitle: ''));
   list.add(MLDepartmentData(image: ml_ic_department_three, title: 'Cardiologic', subtitle: '647 Doctor'));
   return list;
 }
@@ -92,6 +101,15 @@ List<MLBookAppointmentData> mlBookAppointmentDataList() {
 List<MLBookAppointmentData> mlBookAppointmentDataList2() {
   List<MLBookAppointmentData> list = [];
   list.add(MLBookAppointmentData(id: '2', title: 'Choose a service', widget: MLHospitalListComponent(), progress: 0.4));
+  list.add(MLBookAppointmentData(id: '3', title: 'Choose Doctor', widget: MLDoctorListComponent(), progress: 0.6));
+  list.add(MLBookAppointmentData(id: '4', title: 'Choose Patient', widget: MLPatientComponent(), progress: 0.8));
+  list.add(MLBookAppointmentData(id: '5', title: 'Confirm Appointment', widget: MLConfirmAppointmentComponent(), progress: 1.0));
+  return list;
+}
+
+List<MLBookAppointmentData> mlBookAppointmentDataList3() {
+  List<MLBookAppointmentData> list = [];
+  list.add(MLBookAppointmentData(id: '2', title: 'Choose a service', widget: MLHospitalListComponent2(), progress: 0.4));
   list.add(MLBookAppointmentData(id: '3', title: 'Choose Doctor', widget: MLDoctorListComponent(), progress: 0.6));
   list.add(MLBookAppointmentData(id: '4', title: 'Choose Patient', widget: MLPatientComponent(), progress: 0.8));
   list.add(MLBookAppointmentData(id: '5', title: 'Confirm Appointment', widget: MLConfirmAppointmentComponent(), progress: 1.0));

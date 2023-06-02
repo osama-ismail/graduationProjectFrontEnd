@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:medilab_prokit/main.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:medilab_prokit/components/MLProfileBottomComponent.dart';
 import 'package:medilab_prokit/utils/MLColors.dart';
@@ -46,9 +47,9 @@ class MLProfileFragmentState extends State<MLProfileFragment> {
                     children: [
                       CircleAvatar(child: Image.asset(ml_ic_profile_picture!), radius: 40.0, backgroundColor: mlColorCyan),
                       8.height,
-                      Text('Kaixa Pham', style: boldTextStyle(color: white, size: 24)),
+                      Text(sharedPref.getString("username")!.substring(2), style: boldTextStyle(color: white, size: 24)),
                       4.height,
-                      Text('johnsmith@gmail.com', style: secondaryTextStyle(color: white, size: 16)),
+                      Text(sharedPref.getString("email")!, style: secondaryTextStyle(color: white, size: 16)),
                     ],
                   ),
                 ),

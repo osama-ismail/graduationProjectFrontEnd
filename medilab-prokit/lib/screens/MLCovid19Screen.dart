@@ -52,7 +52,7 @@ class MLCovidScreenState extends State<MLCovidScreen> with SingleTickerProviderS
               children: [
                 mlBackToPreviousIcon(context, white),
                 8.width,
-                Text('Covid-19', style: boldTextStyle(color: whiteColor, size: 20)).expand(),
+                Text('Reports', style: boldTextStyle(color: whiteColor, size: 20)).expand(),
                 Row(
                   children: [
                     Image.asset(ml_ic_icon_help!, width: 16, height: 16),
@@ -70,15 +70,7 @@ class MLCovidScreenState extends State<MLCovidScreen> with SingleTickerProviderS
               child: Column(
                 children: [
                   16.height,
-                  Row(
-                    children: [
-                      MLCountryPickerComponent(),
-                      8.width,
-                      Text(mlGlobal_status!, style: boldTextStyle()).expand(),
-                      Text('152.799.358', style: boldTextStyle()),
-                      16.width,
-                    ],
-                  ).paddingOnly(right: 16, left: 16),
+
                   TabBar(
                     controller: _tabController,
                     labelColor: mlColorBlue,
@@ -87,18 +79,16 @@ class MLCovidScreenState extends State<MLCovidScreen> with SingleTickerProviderS
                     indicatorSize: TabBarIndicatorSize.label,
                     labelStyle: primaryTextStyle(size: 14),
                     tabs: [
-                      Tab(text: 'Cases'),
-                      Tab(text: 'Vaccines'),
-                      Tab(text: 'News & Videos'),
+                      Tab(text: ''),
+                      Tab(text: 'Result : '),
+                      Tab(text: ''),
                     ],
                   ),
                   Flexible(
                     child: TabBarView(
                       controller: _tabController,
                       children: [
-                        PurchaseMoreScreen(),
                         MLVaccineComponent(),
-                        PurchaseMoreScreen(),
                       ],
                     ),
                   ),

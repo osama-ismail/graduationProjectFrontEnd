@@ -39,9 +39,8 @@ class MLBottomNavigationBarWidgetState extends State<MLBottomNavigationBarWidget
       onTap: widget.onTap,
       items: [
         bottomNavigationItem(Icons.home_outlined),
-        bottomNavigationItem(Icons.chat_bubble_outline),
-        bottomNavigationItem(Icons.calendar_today_outlined),
-        bottomNavigationItem(Icons.notifications_none),
+        bottomNavigationItem(Icons.call),
+        bottomNavigationItem(Icons.calendar_month),
         bottomNavigationItem(Icons.people_alt_outlined),
       ],
     );

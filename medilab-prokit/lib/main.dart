@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:medilab_prokit/screens/MLBookAppointmentScreen2.dart';
@@ -11,6 +12,7 @@ import 'package:provider/provider.dart';
 
 import 'adminPages/controllers/MenuAppController.dart';
 import 'adminPages/screens/main/main_screen.dart';
+import 'chatTest/firebase_options.dart';
 import 'osama_screens/admin/addCategory.dart';
 import 'osama_screens/admin/cardnoteAdmin.dart';
 import 'osama_screens/admin/category.dart';
@@ -30,6 +32,16 @@ late SharedPreferences sharedPref ;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(
+  //   options: DefaultFirebaseOptions.android,
+  // );
+  await Firebase.initializeApp(
+      options: FirebaseOptions(
+        apiKey: "AIzaSyCirX946oOpXRBhXovLRLqEfKT6K2MHtxY",
+        appId: "1:181691481978:web:71e5a69d756ad1dc5be0c3",
+        messagingSenderId: "181691481978",
+        projectId: "chatapp-15cc5",
+      ));
   sharedPref = await SharedPreferences.getInstance() ;
 
   await initialize(aLocaleLanguageList: languageList());
@@ -56,7 +68,7 @@ class MyApp extends StatelessWidget {
           "homePage": (context) => MLDashboardScreen(),
           "MLBookAppointmentScreen2": (context) => MLBookAppointmentScreen2(),
 
-          // "MapMap": (context) => MapMap(),
+          "MapMap": (context) => MapMap(),
 
           "Home": (context) => Home(),
           "AdminEditItem":(context)=>AdminEditItem(),

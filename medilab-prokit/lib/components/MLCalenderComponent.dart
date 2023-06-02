@@ -9,6 +9,7 @@ import 'MLScheduleAppointmentComponent.dart';
 
 import '../osama_screens/constant/linkapi.dart';
 import 'package:http/http.dart' as http;
+
 class MLCalenderComponent extends StatefulWidget {
   static String tag = '/MLCalenderComponent';
 
@@ -63,7 +64,7 @@ class MLCalenderComponentState extends State<MLCalenderComponent> {
             width: 60,
             alignment: Alignment.center,
             decoration: boxDecorationWithRoundedCorners(
-              backgroundColor: currentDateSelectedIndex == index
+              backgroundColor: currentDateSelectedIndex == index+2
                   ? mlColorBlue
                   : appStore.isDarkModeOn
                       ? scaffoldDarkColor
@@ -82,17 +83,17 @@ class MLCalenderComponentState extends State<MLCalenderComponent> {
 
                 sharedPref.getString("day")== DateTime.now().add(Duration(days: index)).day.toString()? Text(
                   listOfDays[DateTime.now().add(Duration(days: index)).weekday - 1].toString(),
-                  style: secondaryTextStyle(size: 16, color: currentDateSelectedIndex == index ? Colors.red : mlColorBlue),
+                  style: secondaryTextStyle(size: 16, color: currentDateSelectedIndex == index+2 ? Colors.red : mlColorBlue),
                 ):Text(
                   listOfDays[DateTime.now().add(Duration(days: index)).weekday - 1].toString(),
-                  style: secondaryTextStyle(size: 16, color: currentDateSelectedIndex == index ? Colors.red : mlColorBlue),
+                  style: secondaryTextStyle(size: 16, color: currentDateSelectedIndex == index+2 ? Colors.red : mlColorBlue),
                 ),
                 4.height,
                 Text(
                   DateTime.now().add(Duration(days: index)).day.toString(),
                   style: boldTextStyle(
                       size: 22,
-                      color: currentDateSelectedIndex == index
+                      color: currentDateSelectedIndex == index+2
                           ? white
                           : appStore.isDarkModeOn
                               ? white
@@ -106,7 +107,11 @@ class MLCalenderComponentState extends State<MLCalenderComponent> {
               setState(
                 () {
                   currentDateSelectedIndex = index;
+                  print(currentDateSelectedIndex);
+
                   selectedDate = DateTime.now().add(Duration(days: index));
+                  // selectedDate = selectedDate.add(Duration(days: 2));
+                  print(selectedDate);
                   sharedPref.setString("date",selectedDate.toString());
                   sharedPref.setString("day",selectedDate.day.toString());
                   // print(selectedDate.day.toString());

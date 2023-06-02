@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:medilab_prokit/main.dart';
@@ -5,6 +7,8 @@ import 'package:medilab_prokit/model/MLProfileCardData.dart';
 import 'package:medilab_prokit/utils/MLColors.dart';
 import 'package:medilab_prokit/utils/MLDataProvider.dart';
 import 'package:nb_utils/nb_utils.dart';
+
+import '../osama_screens/app/auth/addPatient.dart';
 
 class MLProfileBottomComponent extends StatefulWidget {
   static String tag = '/MLProfileBottomComponent';
@@ -14,7 +18,7 @@ class MLProfileBottomComponent extends StatefulWidget {
 }
 
 class MLProfileBottomComponentState extends State<MLProfileBottomComponent> {
-  List<String> data = <String>['Profile', 'Change password', 'Privacy and Csecurity'];
+  List<String> data = <String>['Profile', 'Change password'];
   List<String> dataIcons = <String>['person', 'person', 'person'];
 
   List<String> categoriesData = <String>['Prescription', 'Medical Record', 'Medical Test', 'Health Tracking'];
@@ -50,7 +54,6 @@ class MLProfileBottomComponentState extends State<MLProfileBottomComponent> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text('Main Categories', style: boldTextStyle(size: 18)),
-              Text('04', style: secondaryTextStyle(size: 16)),
             ],
           ),
           16.height,
@@ -142,11 +145,48 @@ class MLProfileBottomComponentState extends State<MLProfileBottomComponent> {
                       Icon(Icons.arrow_forward_ios, color: Colors.grey[300], size: 16),
                     ],
                   ),
-                ).onTap(
-                  () {
-                    toasty(context, e.validate());
-                  },
-                );
+                )
+                    .paddingOnly(right: 16, bottom: 1).onTap(
+                    () {
+                    showModalBottomSheet(
+                    isScrollControlled: true,
+                    context: context,
+                    builder: (builder) {
+                    return AdminaddPateint();
+                    },
+                    );
+                    },
+                    );
+                //     .onTap(
+                //   () {
+                //     print("osama");
+                //     sharedPref.setString("isAdmin","0");
+                //
+                //     String jsonString = jsonEncode({
+                //       "id":sharedPref.getString("id"),
+                //       "name":sharedPref.getString("username"),
+                //       "address":sharedPref.getString("address"),
+                //       "phone":sharedPref.getString("phone"),
+                //       "email":sharedPref.getString("email"),
+                //       "password":sharedPref.getString("password"),
+                //     });
+                //     sharedPref.setString('editPatient', jsonString);
+                //     .paddingOnly(right: 16, bottom: 1).onTap(
+                //     () {
+                //     showModalBottomSheet(
+                //     isScrollControlled: true,
+                //     context: context,
+                //     builder: (builder) {
+                //     return AdminaddPateint();
+                //     },
+                //     );
+                //     },
+                //     );
+                //     // Navigator.of(context).pushNamedAndRemoveUntil("AdminaddPateint", (route) => false);
+                //
+                //     toasty(context, e.validate());
+                //   },
+                // );
               },
             ).toList(),
           ),

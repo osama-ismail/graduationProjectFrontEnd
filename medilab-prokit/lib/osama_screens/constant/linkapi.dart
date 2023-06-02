@@ -2,6 +2,7 @@
 const String linkImageRoot = "http://192.168.159.1:8080/ecommerce_jawwal/backend/coursephp/upload" ;
 // const String linkServerName = "192.168.159.1:8080/ecommerce_jawwal/backend/coursephp" ;
 const String linkServerName = "http://192.168.159.1:8080/ecommerce_jawwal/backend/coursephp" ;
+// const String linkIp= "http:// 192.168.1.10.1:8087" ;
 const String linkIp= "http://192.168.159.1:8087" ;
 
 const String linkSignUp = "$linkServerName/auth/signup.php" ;

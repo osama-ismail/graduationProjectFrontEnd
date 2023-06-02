@@ -91,6 +91,12 @@ class _LoginState extends State<Login> {
                 "password", json.decode(response.body)['password'].toString());
 
             if(this.email.text.startsWith("p")){
+              sharedPref.setString(
+                  "phone", json.decode(response.body)['phone'].toString());
+              sharedPref.setString(
+                  "lat", json.decode(response.body)['latitude'].toString());
+              sharedPref.setString(
+                  "lon", json.decode(response.body)['longitude'].toString());
               sharedPref.setString("address", json.decode(response.body)['address'].toString());
               Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
 
