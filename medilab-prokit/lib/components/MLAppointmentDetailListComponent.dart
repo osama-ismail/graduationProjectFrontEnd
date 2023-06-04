@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:medilab_prokit/main.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -6,6 +8,9 @@ import 'package:medilab_prokit/screens/MLAppintmentDetailScreen.dart';
 import 'package:medilab_prokit/utils/MLColors.dart';
 import 'package:medilab_prokit/utils/MLDataProvider.dart';
 import 'package:medilab_prokit/utils/MLString.dart';
+
+import '../osama_screens/constant/linkapi.dart';
+import 'package:http/http.dart' as http;
 
 class MLAppointmentDetailListComponent extends StatefulWidget {
   static String tag = '/MLAppointmentDetailListComponent';
@@ -17,9 +22,29 @@ class MLAppointmentDetailListComponent extends StatefulWidget {
 class MLAppointmentDetailListComponentState extends State<MLAppointmentDetailListComponent> {
   String? time = 'Today, 9:30 PM';
   List<MLAppointmentData> data = mlAppointmentDataList();
+  List<Map<String, dynamic>> oo = [];
 
+  getAllServices() async {
+
+    var response = await http.get(Uri.parse(
+        linkIp + "/patient/getMyServices?id=${sharedPref.getString("id")}"));
+    if (response.statusCode == 200) {
+      var responseBody = response.body;
+      var decodedData = jsonDecode(responseBody);
+
+      if (decodedData is List) {
+        setState(() {
+          oo = List<Map<String, dynamic>>.from(
+              decodedData.map((item) => item as Map<String, dynamic>));
+        });
+      }
+
+
+    }
+  }
   @override
   void initState() {
+    getAllServices();
     super.initState();
     init();
   }
@@ -46,8 +71,9 @@ class MLAppointmentDetailListComponentState extends State<MLAppointmentDetailLis
           Text('October', style: boldTextStyle()),
           16.height,
           Column(
-            children: data.map(
+            children: oo.map(
               (e) {
+
                 return Stack(
                   children: [
                     Container(
@@ -71,8 +97,8 @@ class MLAppointmentDetailListComponentState extends State<MLAppointmentDetailLis
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text((e.date).validate(), style: boldTextStyle(size: 32, color: white)),
-                                    Text((e.month).validate(), style: secondaryTextStyle(color: white)),
+                                    Text(e['date'], style: boldTextStyle(size: 32, color: white)),
+                                    Text("June", style: secondaryTextStyle(color: white)),
                                   ],
                                 ),
                               ),
@@ -83,11 +109,11 @@ class MLAppointmentDetailListComponentState extends State<MLAppointmentDetailLis
                                   Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text((e.department).validate(), style: boldTextStyle(size: 18)),
+                                      Text(e['name'], style: boldTextStyle(size: 18)),
                                       8.height,
-                                      Text((e.doctor).validate(), style: secondaryTextStyle()),
+                                      Text(e['date'], style: secondaryTextStyle()),
                                       8.height,
-                                      Text('Patient: ' + (e.patient).validate(), style: secondaryTextStyle()),
+                                      Text('Patient: ' + e['name'], style: secondaryTextStyle()),
                                     ],
                                   ),
                                   Container(
@@ -100,7 +126,7 @@ class MLAppointmentDetailListComponentState extends State<MLAppointmentDetailLis
                                     ),
                                     child: Icon(
                                       Icons.notifications_none,
-                                      color: e.department == 'General Care' ? mlColorBlue : Colors.grey.shade400,
+                                      color: e.toString() == 'General Care' ? mlColorBlue : Colors.grey.shade400,
                                       size: 24,
                                     ),
                                   ).paddingBottom(16.0)
@@ -113,7 +139,7 @@ class MLAppointmentDetailListComponentState extends State<MLAppointmentDetailLis
                           8.height,
                           Row(
                             children: [
-                              Text(time!, style: boldTextStyle(color: mlColorDarkBlue)),
+                              Text(e['time'], style: boldTextStyle(color: mlColorDarkBlue)),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
@@ -138,7 +164,7 @@ class MLAppointmentDetailListComponentState extends State<MLAppointmentDetailLis
                         padding: EdgeInsets.all(2.0),
                         decoration: boxDecorationWithRoundedCorners(backgroundColor: mlColorDarkBlue, borderRadius: radius(20)),
                         child: Text(
-                          (e.service.validate()),
+                          (e.toString()),
                           style: secondaryTextStyle(color: white),
                         ).paddingOnly(right: 10.0, left: 10.0),
                       ),
