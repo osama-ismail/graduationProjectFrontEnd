@@ -91,6 +91,9 @@ class _LoginState extends State<Login> {
                 "password", json.decode(response.body)['password'].toString());
 
             if(this.email.text.startsWith("p")){
+
+              sharedPref.setString(
+                  "istick", "1");
               sharedPref.setString(
                   "phone", json.decode(response.body)['phone'].toString());
               sharedPref.setString(
@@ -102,6 +105,8 @@ class _LoginState extends State<Login> {
 
             }
             else if(this.email.text.startsWith("d")){
+              sharedPref.setString(
+                  "istick", "0");
               sharedPref.setString("salary", json.decode(response.body)['salary'].toString());
               sharedPref.setString("service_id", json.decode(response.body)['service_id'].toString()); Navigator.of(context).pushAndRemoveUntil(
                 MaterialPageRoute(

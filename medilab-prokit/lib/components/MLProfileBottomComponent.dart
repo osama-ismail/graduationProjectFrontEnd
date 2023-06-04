@@ -148,6 +148,18 @@ class MLProfileBottomComponentState extends State<MLProfileBottomComponent> {
                 )
                     .paddingOnly(right: 16, bottom: 1).onTap(
                     () {
+                          sharedPref.setString("isAdmin","0");
+                          sharedPref.setString("istick","1");
+
+                          String jsonString = jsonEncode({
+                            "id":sharedPref.getString("id"),
+                            "name":sharedPref.getString("username"),
+                            "address":sharedPref.getString("address"),
+                            "phone":sharedPref.getString("phone"),
+                            "email":sharedPref.getString("email"),
+                            "password":sharedPref.getString("password"),
+                          });
+                          sharedPref.setString('editPatient', jsonString);
                     showModalBottomSheet(
                     isScrollControlled: true,
                     context: context,

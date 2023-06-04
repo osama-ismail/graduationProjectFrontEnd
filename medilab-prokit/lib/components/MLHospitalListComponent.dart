@@ -7,7 +7,10 @@ import 'package:medilab_prokit/screens/MLHospitalDetailScreen.dart';
 import 'package:medilab_prokit/utils/MLColors.dart';
 import 'package:medilab_prokit/utils/MLCommon.dart';
 import 'package:medilab_prokit/utils/MLDataProvider.dart';
+import 'package:provider/provider.dart';
 
+import '../adminPages/controllers/MenuAppController.dart';
+import '../adminPages/screens/main/main_screen.dart';
 import '../main.dart';
 import '../osama_screens/constant/linkapi.dart';
 import 'package:http/http.dart' as http;
@@ -77,7 +80,28 @@ class MLHospitalListComponentState extends State<MLHospitalListComponent> {
               16.width,
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
+                  if(sharedPref.getString("username")!.startsWith("d")
+                  ){
+                    print("ali");
+                    Navigator.of(context).pushAndRemoveUntil(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return MultiProvider(
+                            providers: [
+                              ChangeNotifierProvider(
+                                create: (context) => MenuAppController(),
+                              ),
+                            ],
+                            child: MainScreen(),
+                          );
+                        },
+                      ),
+                          (Route<dynamic> route) => false,
+                    );}
+                  else{
+                    Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
+
+                  }
 
                 },
                 child: mlRoundedIconContainer(Icons.close, mlColorBlue),

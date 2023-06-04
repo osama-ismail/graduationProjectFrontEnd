@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:medilab_prokit/main.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'firebase_options.dart';
 
@@ -61,7 +62,14 @@ class _ChatScreenState extends State<ChatScreen> {
   }
   void _onIconTap() {
     // Perform the desired action when the icon is tapped
-    Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => false);
+    if(sharedPref.getString("istick")=="0"){
+      Navigator.of(context).pushNamedAndRemoveUntil("Admincategory", (route) => false);
+
+    }
+    else{
+      Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => false);
+
+    }
 
   }
   @override

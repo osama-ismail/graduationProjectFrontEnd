@@ -35,6 +35,8 @@ class OrderState extends State<MapMap> {
 
   @override
   void initState() {
+    sharedPref.setString("istick","1");
+
     getLocation1();
     getLanAndLongs();
     super.initState();

@@ -78,8 +78,7 @@ class NavBar extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.medical_services),
             title: Text('Services'),
-            onTap: () {
-
+            onTap: () {sharedPref.setString("istick","0");
     Navigator.of(context)
         .pushNamedAndRemoveUntil("MLBookAppointmentScreen2", (route) => false);
             },
@@ -114,7 +113,7 @@ class NavBar extends StatelessWidget {
           ListTile(
 
             leading: Icon(Icons.dark_mode),
-            title: Text('Dare mode '),
+            title: Text('Dark mode '),
             onTap: (){
               appStore.toggleDarkMode();
 

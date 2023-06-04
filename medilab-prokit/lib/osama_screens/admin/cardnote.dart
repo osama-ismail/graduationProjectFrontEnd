@@ -37,6 +37,14 @@ class CartCardState extends State<CardNotes> with Crud {
 
     Navigator.of(context).pushNamedAndRemoveUntil("Admincategory", (route) => false);
   }
+  onChat(){
+    sharedPref.setString("istick","0");
+
+    Navigator.of(context).pushNamedAndRemoveUntil("chatpage", (route) => false);
+
+
+  }
+
   onEdit() async {
     sharedPref.setString("isAdmin","0");
 
@@ -49,6 +57,9 @@ class CartCardState extends State<CardNotes> with Crud {
       "password":widget.password,
     });
     sharedPref.setString('editPatient', jsonString);
+    sharedPref.setString("isAdmin","0");
+    sharedPref.setString("istick","0");
+
     Navigator.of(context).pushNamedAndRemoveUntil("AdminaddPateint", (route) => false);
 
   }
@@ -101,6 +112,11 @@ class CartCardState extends State<CardNotes> with Crud {
                         icon: Icon(Icons.delete),
                         color: Colors.red,
                         onPressed: onDelete,
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.chat),
+                        color: Colors.blue,
+                        onPressed: onChat,
                       ),
                     ],
                   ),

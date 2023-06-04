@@ -13,6 +13,7 @@ import 'dart:convert';
 import '../../../adminPages/controllers/MenuAppController.dart';
 import '../../../adminPages/screens/main/main_screen.dart';
 import '../../../main.dart';
+import '../../../screens/MLDashboardScreen.dart';
 
 class AdminaddPateint extends StatefulWidget {
   AdminaddPateint({Key? key}) : super(key: key);
@@ -90,7 +91,7 @@ class _SignupState extends State<AdminaddPateint> {
             body: Text("تمت العملية بنجاح."),
           )..show().then((_) {
             Future.delayed(Duration(seconds: 2), () {
-              Navigator.of(context).pushNamedAndRemoveUntil("AdminDoctors", (route) => true);
+              // Navigator.of(context).pushNamedAndRemoveUntil("AdminDoctors", (route) => true);
             });
           });
         }
@@ -114,7 +115,7 @@ class _SignupState extends State<AdminaddPateint> {
             body: Text("تمت العملية بنجاح."),
           )..show().then((_) {
             Future.delayed(Duration(seconds: 2), () {
-              Navigator.of(context).pushNamedAndRemoveUntil("Admincategory", (route) => true);
+              // Navigator.of(context).pushNamedAndRemoveUntil("Admincategory", (route) => true);
             });
           });
 
@@ -143,7 +144,7 @@ class _SignupState extends State<AdminaddPateint> {
             body: Text("تمت العملية بنجاح."),
           )..show().then((_) {
             Future.delayed(Duration(seconds: 2), () {
-              Navigator.of(context).pushNamedAndRemoveUntil("AdminDoctors", (route) => true);
+              // Navigator.of(context).pushNamedAndRemoveUntil("AdminDoctors", (route) => true);
             });
           });
         }
@@ -164,7 +165,7 @@ class _SignupState extends State<AdminaddPateint> {
           body: Text("تمت العملية بنجاح."),
         )..show().then((_) {
           Future.delayed(Duration(seconds: 2), () {
-            Navigator.of(context).pushNamedAndRemoveUntil("Admincategory", (route) => true);
+            // Navigator.of(context).pushNamedAndRemoveUntil("Admincategory", (route) => true);
           });
         });
       }
@@ -348,7 +349,7 @@ class _SignupState extends State<AdminaddPateint> {
                                       create: (context) => MenuAppController(),
                                     ),
                                   ],
-                                  child: MainScreen(),
+                                  child:sharedPref.getString("istick")!="1"? MainScreen():MLDashboardScreen(),
                                 );
                               },
                             ),

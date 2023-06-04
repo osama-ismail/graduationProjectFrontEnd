@@ -4,6 +4,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:medilab_prokit/screens/MLBookAppointmentScreen2.dart';
 import 'package:medilab_prokit/screens/MLDashboardScreen.dart';
 import 'package:medilab_prokit/screens/MLSplashScreen.dart';
+import 'package:medilab_prokit/screens/MLWalkThroughScreen.dart';
 import 'package:medilab_prokit/store/AppStore.dart';
 import 'package:medilab_prokit/utils/AppTheme.dart';
 import 'package:medilab_prokit/utils/MLDataProvider.dart';
@@ -12,6 +13,8 @@ import 'package:provider/provider.dart';
 
 import 'adminPages/controllers/MenuAppController.dart';
 import 'adminPages/screens/main/main_screen.dart';
+import 'chatTest/chatBot.dart';
+import 'chatTest/chatpage.dart';
 import 'chatTest/firebase_options.dart';
 import 'osama_screens/admin/addCategory.dart';
 import 'osama_screens/admin/cardnoteAdmin.dart';
@@ -69,7 +72,7 @@ class MyApp extends StatelessWidget {
           "MLBookAppointmentScreen2": (context) => MLBookAppointmentScreen2(),
 
           "MapMap": (context) => MapMap(),
-
+          
           "Home": (context) => Home(),
           "AdminEditItem":(context)=>AdminEditItem(),
           "Admincategory" :(context)=>Admincategory(),
@@ -78,7 +81,10 @@ class MyApp extends StatelessWidget {
           "Adminpage" :(context)=>MainScreen(),
           "AdminDoctors" :(context)=>AdminDoctorcategory(),
 
+          "ChatScreen" :(context)=>ChatScreen(),
+          "chatpage" :(context)=>chatpage(email: '${sharedPref.getString("username")}',),
 
+          
         },
         debugShowCheckedModeBanner: false,
         title: '${'Here for you'}${!isMobile ? ' ${platformName()}' : ''}',
@@ -90,7 +96,7 @@ class MyApp extends StatelessWidget {
             ),
           ],
           // child: MainScreen(),
-          child: Login(),
+          child: MLWalkThroughScreen(),
 
 
         ),

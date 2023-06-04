@@ -40,15 +40,16 @@ class _SignupState extends State<SignUp> {
       final body = json.encode({'name': this.username.text+"",
         'password':this.password.text+"", 'email':this.email.text+"",
         'address':this.address.text+"",
-        'longitude':this.phone.text+"",
+        'longitude':"0",
         'phone':this.phone.text+"",
-        'latitude':this.phone.text+"",
+        'latitude':"0",
 
 
       });
         final response = await http.post(
-            Uri.parse(linkIp+"/patient/addNewPatient"),
+            Uri.parse(linkIp+"/admin/addNewPatient"),
             headers: headers, body: body);
+        print(response.statusCode);
       if(response.statusCode==200){
         AwesomeDialog(
           context: context,

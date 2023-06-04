@@ -78,21 +78,69 @@ class MLBookAppointmentScreenState extends State<MLBookAppointmentScreen2> {
           leading:sharedPref.getString("username")!.startsWith("d")? IconButton(
             icon: Icon(Icons.arrow_back,color: Colors.white,),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(
-                  builder: (BuildContext context) {
-                    return MultiProvider(
-                      providers: [
-                        ChangeNotifierProvider(
-                          create: (context) => MenuAppController(),
-                        ),
-                      ],
-                      child: MainScreen(),
-                    );
-                  },
-                ),
-                    (Route<dynamic> route) => false,
-              );            },
+              if(sharedPref.getString("username")!.startsWith("d")
+              ){
+                print("ali");
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return MultiProvider(
+                        providers: [
+                          ChangeNotifierProvider(
+                            create: (context) => MenuAppController(),
+                          ),
+                        ],
+                        child: MainScreen(),
+                      );
+                    },
+                  ),
+                      (Route<dynamic> route) => false,
+                );}
+              else{
+                Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
+
+              }
+              // print(sharedPref.getString("username"));
+              // sharedPref.getString("username")!.startsWith("d")?
+              // Navigator.of(context).pushNamedAndRemoveUntil("AdminaddCategory", (route) => true):
+              // Navigator.of(context).pushAndRemoveUntil(
+              //         MaterialPageRoute(
+              //           builder: (BuildContext context) {
+              //             return MultiProvider(
+              //               providers: [
+              //                 ChangeNotifierProvider(
+              //                   create: (context) => MenuAppController(),
+              //                 ),
+              //               ],
+              //               child: MainScreen(),
+              //             );
+              //           },
+              //         ),
+              //             (Route<dynamic> route) => false,
+              //       );
+              //
+              // if(sharedPref.getString("istick")=="0"
+              // ){
+              //   Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(
+              //       builder: (BuildContext context) {
+              //         return MultiProvider(
+              //           providers: [
+              //             ChangeNotifierProvider(
+              //               create: (context) => MenuAppController(),
+              //             ),
+              //           ],
+              //           child: MainScreen(),
+              //         );
+              //       },
+              //     ),
+              //         (Route<dynamic> route) => false,
+              //   );}
+              // else{
+              //   Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
+              //
+              // }
+                    },
           ):null,
         ),
         floatingActionButton:sharedPref.getString("username")!.startsWith("d")? FloatingActionButton(

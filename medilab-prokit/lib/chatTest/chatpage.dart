@@ -1,6 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../adminPages/controllers/MenuAppController.dart';
+import '../adminPages/screens/main/main_screen.dart';
+import '../main.dart';
 import 'message.dart';
 
 class chatpage extends StatefulWidget {
@@ -22,12 +26,39 @@ class _chatpageState extends State<chatpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
         title: Text(
           'data',
         ),
-        actions: [
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            if(sharedPref.getString("istick")=="0"
+            ){
+              Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return MultiProvider(
+                      providers: [
+                        ChangeNotifierProvider(
+                          create: (context) => MenuAppController(),
+                        ),
+                      ],
+                      child: MainScreen(),
+                    );
+                  },
+                ),
+                    (Route<dynamic> route) => false,
+              );}
+            else{
+              Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
 
-        ],
+            }
+
+            // Handle back button press
+            // You can navigate to the previous screen or perform any desired action here
+          },
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(

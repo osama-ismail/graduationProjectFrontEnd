@@ -88,11 +88,11 @@ class _HomeState extends State<Admincategory> with Crud {
                               snapshot.data[i]['id'].toString(),
                             );
                             setState(() {});
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) => Item(),
-                              ),
-                            );
+                            // Navigator.of(context).push(
+                            //   MaterialPageRoute(
+                            //     builder: (context) => Item(),
+                            //   ),
+                            // );
                             // print(snapshot.data['data'][i]['id'].toString());
                           },
                         );
