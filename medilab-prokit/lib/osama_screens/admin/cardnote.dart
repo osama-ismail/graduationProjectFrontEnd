@@ -44,6 +44,13 @@ class CartCardState extends State<CardNotes> with Crud {
 
 
   }
+  onevent_available(){
+    sharedPref.setString("istick","0");
+
+    Navigator.of(context).pushNamedAndRemoveUntil("chatpage", (route) => false);
+
+
+  }
 
   onEdit() async {
     sharedPref.setString("isAdmin","0");
@@ -117,6 +124,11 @@ class CartCardState extends State<CardNotes> with Crud {
                         icon: Icon(Icons.chat),
                         color: Colors.blue,
                         onPressed: onChat,
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.event_available),
+                        color: Colors.blue,
+                        onPressed: onevent_available,
                       ),
                     ],
                   ),

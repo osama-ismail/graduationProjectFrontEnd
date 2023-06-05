@@ -35,7 +35,7 @@ class FileInfoCard extends StatelessWidget {
                   color: info.color!.withOpacity(0.1),
                   borderRadius: const BorderRadius.all(Radius.circular(10)),
                 ),
-                child:Text("ali")
+                child:Icon(Icons.local_hospital)
               ),
               Icon(Icons.more_vert, color: Colors.white54)
             ],

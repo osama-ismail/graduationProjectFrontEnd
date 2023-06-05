@@ -85,7 +85,7 @@ class MLProfileBottomComponentState extends State<MLProfileBottomComponent> {
                           style: secondaryTextStyle(color: white),
                           textAlign: TextAlign.start,
                         ).expand(),
-                        Icon(Icons.arrow_forward_ios, color: white, size: 12),
+                        // Icon(Icons.arrow_forward_ios, color: white, size: 12),
                       ],
                     )
                   ],

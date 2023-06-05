@@ -61,7 +61,7 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
 
   }
    onDelete(String time) async {
-    var response = await http.get(Uri.parse(linkIp + "/patient/deletePatientAppointments?time="+time+"&date="+sharedPref.getString("day")!+"&service_patient="+sharedPref.getString("id")!));
+    var response = await http.get(Uri.parse(linkIp + "/patient/deletePatientAppointments?time="+time+"&date="+sharedPref.getString("day")!+"&service_patient="+sharedPref.getString("serviceId")!));
     finish(context);
     showModalBottomSheet(
       isScrollControlled: true,
@@ -72,13 +72,14 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
     );
 
   }
+
   onAdd() async {
     final headers = {'Content-Type': 'application/json'};
     print(sharedPref.getString("day")!);
 
     final body = json.encode({
       'serviceId':sharedPref.getString("serviceId")!,
-      'status':"2",
+      'status':sharedPref.getString("username")!.startsWith("d")?"1":"2",
       "time" :sharedPref.getString("time")!,
       "date" :sharedPref.getString("day")!,
       'patient_id':sharedPref.getString("id")!,
@@ -96,6 +97,47 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
       },
     );
 
+  }
+  onAddPatient() async {
+    final headers = {'Content-Type': 'application/json'};
+    print(sharedPref.getString("day")!);
+
+    final body = json.encode({
+      'serviceId':sharedPref.getString("serviceId")!,
+      'status':"2",
+      "time" :sharedPref.getString("time")!,
+      "date" :sharedPref.getString("day")!,
+      'patient_id':sharedPref.getString("docService")!,
+      'service_patient':sharedPref.getString("docService")!,
+    });
+    var response = await http.post(Uri.parse(linkIp + "/patient/addPatientAppointments"), headers: headers, body: body);
+    print(response.statusCode);
+
+    finish(context);
+    showModalBottomSheet(
+      isScrollControlled: true,
+      context: context,
+      builder: (builder) {
+        return MLScheduleApoointmentSheet();
+      },
+    );
+
+  }
+
+  Map<String, String> dropdownItems = {
+
+  };
+  String? selectedOption;
+
+  findDoctors() async{
+    var response = await http.get(Uri.parse(linkIp + "/admin/getAlllPatients"));
+    var responseBody = jsonDecode(response.body);
+    for (var doctor in responseBody) {
+      String id = doctor['id'].toString();
+      String name = doctor['name'].toString();
+      dropdownItems[name] = id;
+    }
+    print(dropdownItems);
   }
   List<Widget> getWidgets() {
     List<Widget> widgets = [];
@@ -117,6 +159,7 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
         InkWell(
           onTap: () {
             setState(() {
+              print(e);
               selectedTime = e;
               sharedPref.setString("time",e.toString() );
             });
@@ -135,7 +178,7 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                isReserved!=false && isTimeInOo!=true? GestureDetector(
+                isReserved!=false && isTimeInOo==true? GestureDetector(
                   onTap: () {
                     // print(e.validate());
 
@@ -146,10 +189,21 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
                     size: 18,
                     color: iconColor,
                   ),
+                ):sharedPref.getString("username")!.startsWith('d')?GestureDetector(
+                  onTap: () {
+                    // print(e.validate());
+
+                    onDelete(e.validate().toString());
+                  },
+                  child: Icon(
+                    Icons.delete_forever,
+                    size: 18,
+                    color: Colors.white,
+                  ),
                 ): Icon(
-                  null,
-                  size: 0,
-                  color: iconColor,
+                  Icons.delete_forever,
+                  size:0,
+                  color: Colors.white,
                 ),
                 SizedBox(width: 8.0),
                 Text(
@@ -174,7 +228,9 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
   }
   @override
   void initState() {
+
     super.initState();
+    findDoctors();
     getAllServices();
     init();
   }
@@ -272,14 +328,74 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
               ],
             ),
           ),
-          AppButton(
-            width: context.width(),
-            color: mlPrimaryColor,
-            onTap: () {
-              onAdd();
-            },
-            child: Text('Add +', style: boldTextStyle(color: white), textAlign: TextAlign.center),
-          ).paddingOnly(right: 16, left: 16, bottom: 16),
+
+    Column(
+    children: [if (sharedPref.getString("username")!.startsWith('d')) Container(
+    width: 310,
+    padding: EdgeInsets.only(top: 480),
+    margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+    child: DropdownButton<String>(
+    value: selectedOption,
+    onChanged: (String? newValue) {
+    setState(() {
+    sharedPref.setString("docService", newValue!);
+    selectedOption = newValue;
+    });
+    },
+    style: TextStyle(
+    fontSize: 16,
+    color: Colors.black,
+    ),
+    icon: Icon(
+    Icons.arrow_drop_down,
+    color: Colors.black,
+    ),
+    iconSize: 100,
+    elevation: 16,
+    underline: Container(
+    height: 2,
+    color: Colors.black,
+    ),
+    dropdownColor: Colors.white,
+    isExpanded: true,
+    items: dropdownItems.keys.map<DropdownMenuItem<String>>((String key) {
+    print(dropdownItems);
+    return DropdownMenuItem<String>(
+    value: dropdownItems[key],
+    child: Padding(
+    padding: EdgeInsets.symmetric(vertical: 0.0),
+    child: Text(
+    key,
+    style: TextStyle(
+    fontSize: 16,
+    color: Colors.black,
+    ),
+    ),
+    ),
+    );
+    }).toList(),
+    ),
+    ) else Container(),
+    AppButton(
+    width: context.width(),
+    color: mlPrimaryColor,
+    onTap: () {
+    onAdd();
+    },
+    child: Text('Edit  ', style: boldTextStyle(color: white), textAlign: TextAlign.center),
+    ).paddingOnly(right: 16,top: 450, left: 16, bottom: 16),
+    sharedPref.getString("username")!.startsWith('d')
+    ? AppButton(
+    width: context.width(),
+    color: mlPrimaryColor,
+    onTap: () {
+    onAddPatient();
+    },
+    child: Text('Add Patient +', style: boldTextStyle(color: white), textAlign: TextAlign.center),
+    ).paddingOnly(right: 16, left: 16, bottom: 0)
+        : Container(),
+    ],
+    )
         ],
       ),
     );

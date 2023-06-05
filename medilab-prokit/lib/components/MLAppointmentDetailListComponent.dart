@@ -68,8 +68,6 @@ class MLAppointmentDetailListComponentState extends State<MLAppointmentDetailLis
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           16.height,
-          Text('October', style: boldTextStyle()),
-          16.height,
           Column(
             children: oo.map(
               (e) {
@@ -143,9 +141,9 @@ class MLAppointmentDetailListComponentState extends State<MLAppointmentDetailLis
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
-                                  Text(mlAppointment_detail!, style: secondaryTextStyle(color: mlColorDarkBlue)),
+                                  // Text(mlAppointment_detail!, style: secondaryTextStyle(color: mlColorDarkBlue)),
                                   4.width,
-                                  Icon(Icons.arrow_forward, color: mlPrimaryColor, size: 16),
+                                  // Icon(Icons.arrow_forward, color: mlPrimaryColor, size: 16),
                                 ],
                               ).onTap(
                                 () {
@@ -161,12 +159,12 @@ class MLAppointmentDetailListComponentState extends State<MLAppointmentDetailLis
                     Positioned(
                       left: 16.0,
                       child: Container(
-                        padding: EdgeInsets.all(2.0),
-                        decoration: boxDecorationWithRoundedCorners(backgroundColor: mlColorDarkBlue, borderRadius: radius(20)),
-                        child: Text(
-                          (e.toString()),
-                          style: secondaryTextStyle(color: white),
-                        ).paddingOnly(right: 10.0, left: 10.0),
+                        // padding: EdgeInsets.all(2.0),
+                        // decoration: boxDecorationWithRoundedCorners(backgroundColor: mlColorDarkBlue, borderRadius: radius(20)),
+                        // child: Text(
+                        //   (e.toString()),
+                        //   style: secondaryTextStyle(color: white),
+                        // ).paddingOnly(right: 10.0, left: 10.0),
                       ),
                     ),
                   ],
