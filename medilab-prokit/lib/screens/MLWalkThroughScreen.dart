@@ -96,7 +96,7 @@ class _MLWalkThroughScreenState extends State<MLWalkThroughScreen> {
             ),
           ),
           Positioned(
-            top: 40,
+            top: 50,
             right: 16,
             child: Text(mlSkip!, style: boldTextStyle(color: whiteColor)).paddingOnly(top: 8, right: 8).onTap(
               () {

@@ -145,7 +145,7 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
     // Iterate through each time in the time() list
     for (var e in time()) {
       // Check if the time exists in the oo objects
-      bool isTimeInOo = oo.any((obj) => obj['time'] == e && obj['status'] == "1");
+      bool isTimeInOo = oo.any((obj) => obj['time'] == e && obj['status'] == "2" &&obj['servicPatient'] != sharedPref.getString("id")! );
       bool isReserved = oo.any((obj) => obj['time'] == e && obj['service_patient'] == sharedPref.getString("id"));
       bool isReserved2 = oo.any((obj) => obj['time'] == e && obj['service_patient'] != sharedPref.getString("id") && obj['servicPatient'] != "0");
       bool isServicPatientMatch = oo.any((obj) => obj['service_patient'] == sharedPref.getString("id"));
@@ -219,11 +219,6 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
 
     }
 
-    // widgets.add(Icon(
-    //   Icons.add,
-    //   size: 19,
-    //   color: Colors.cyan,
-    // ));
     return widgets;
   }
   @override
@@ -332,7 +327,7 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
     Column(
     children: [if (sharedPref.getString("username")!.startsWith('d')) Container(
     width: 310,
-    padding: EdgeInsets.only(top: 480),
+    padding: EdgeInsets.only(top: 450),
     margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
     child: DropdownButton<String>(
     value: selectedOption,
@@ -382,10 +377,9 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
     onTap: () {
     onAdd();
     },
-    child: Text('Edit  ', style: boldTextStyle(color: white), textAlign: TextAlign.center),
-    ).paddingOnly(right: 16,top: 450, left: 16, bottom: 16),
-    sharedPref.getString("username")!.startsWith('d')
-    ? AppButton(
+    child: Text('Block  ', style: boldTextStyle(color: white), textAlign: TextAlign.center),
+    ).paddingOnly(right: 16,top:sharedPref.getString("username")!.startsWith('p')? 500:0, left: 16, bottom: 16),
+   AppButton(
     width: context.width(),
     color: mlPrimaryColor,
     onTap: () {
@@ -393,7 +387,6 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheet> 
     },
     child: Text('Add Patient +', style: boldTextStyle(color: white), textAlign: TextAlign.center),
     ).paddingOnly(right: 16, left: 16, bottom: 0)
-        : Container(),
     ],
     )
         ],

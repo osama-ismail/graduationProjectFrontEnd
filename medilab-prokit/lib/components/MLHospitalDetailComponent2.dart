@@ -9,6 +9,8 @@ import '../osama_screens/constant/linkapi.dart';
 import 'MLScheduleAppointmentComponent.dart';
 import 'package:http/http.dart' as http;
 
+import 'MLScheduleAppointmentComponentPatient.dart';
+
 class MLHospitalDetailComponent2 extends StatefulWidget {
   static String tag = '/MLHospitalDetailComponent';
 
@@ -141,7 +143,9 @@ class MLHospitalDetailComponentState extends State<MLHospitalDetailComponent2> {
             isScrollControlled: true,
             context: context,
             builder: (builder) {
-              return MLScheduleApoointmentSheet();
+              return sharedPref.getString("username")!.startsWith("d")? MLScheduleApoointmentSheet():MLScheduleApoointmentSheetPatient();
+
+              // return MLScheduleApoointmentSheet();
             },
           );
         },

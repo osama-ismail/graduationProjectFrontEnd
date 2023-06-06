@@ -7,7 +7,9 @@ import 'package:medilab_prokit/utils/MLCommon.dart';
 import 'package:medilab_prokit/utils/MLDataProvider.dart';
 import 'package:nb_utils/nb_utils.dart';
 
+import '../main.dart';
 import 'MLScheduleAppointmentComponent.dart';
+import 'MLScheduleAppointmentComponentPatient.dart';
 
 class MLDoctorListComponent extends StatefulWidget {
   static String tag = '/MLDoctorListComponent';
@@ -78,7 +80,7 @@ class MLDoctorListComponentState extends State<MLDoctorListComponent> {
               isScrollControlled: true,
               context: context,
               builder: (builder) {
-                return MLScheduleApoointmentSheet();
+                return sharedPref.getString("username")!.startsWith("d")? MLScheduleApoointmentSheet():MLScheduleApoointmentSheetPatient();
               },
             );
           },
