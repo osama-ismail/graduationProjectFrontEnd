@@ -70,6 +70,7 @@ class MLCalendarFragmentState extends State<MLCalendarFragment> with SingleTicke
   @override
   Widget build(BuildContext context) {
     return SafeArea(
+
       child: Scaffold(
         backgroundColor: mlPrimaryColor,
         body: Column(

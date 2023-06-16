@@ -9,6 +9,8 @@ import 'package:http/http.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import '../../../main.dart';
+
 class SignUp extends StatefulWidget {
   SignUp({Key? key}) : super(key: key);
 
@@ -139,7 +141,7 @@ class _SignupState extends State<SignUp> {
                         },
                       ),
                       SizedBox(height: 10,),
-                      TextFormField(
+                    TextFormField(
 
                         cursorColor: Color.fromRGBO(255, 192, 0, 1.0),
                         obscureText: _isObscure,

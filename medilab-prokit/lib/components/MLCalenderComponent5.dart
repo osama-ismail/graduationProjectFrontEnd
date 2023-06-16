@@ -66,7 +66,7 @@ class MLCalenderComponentState extends State<MLCalenderComponent5> {
             width: 60,
             alignment: Alignment.center,
             decoration: boxDecorationWithRoundedCorners(
-              backgroundColor: currentDateSelectedIndex == index+6
+              backgroundColor: currentDateSelectedIndex == index+7
                   ? mlColorBlue
                   : appStore.isDarkModeOn
                       ? scaffoldDarkColor
@@ -85,10 +85,10 @@ class MLCalenderComponentState extends State<MLCalenderComponent5> {
 
                 sharedPref.getString("day")== DateTime.now().add(Duration(days: index)).day.toString()? Text(
                   listOfDays[DateTime.now().add(Duration(days: index)).weekday - 1].toString(),
-                  style: secondaryTextStyle(size: 16, color: currentDateSelectedIndex == index+6 ? Colors.red : mlColorBlue),
+                  style: secondaryTextStyle(size: 16, color: currentDateSelectedIndex == index+7 ? Colors.red : mlColorBlue),
                 ):Text(
                   listOfDays[DateTime.now().add(Duration(days: index)).weekday - 1].toString(),
-                  style: secondaryTextStyle(size: 16, color: currentDateSelectedIndex == index+6? Colors.red : mlColorBlue),
+                  style: secondaryTextStyle(size: 16, color: currentDateSelectedIndex == index+7? Colors.red : mlColorBlue),
                 ),
                 4.height,
                 Text(

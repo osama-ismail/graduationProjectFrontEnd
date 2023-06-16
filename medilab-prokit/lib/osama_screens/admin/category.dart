@@ -87,7 +87,12 @@ class _HomeState extends State<Admincategory> with Crud {
                               "id_category",
                               snapshot.data[i]['id'].toString(),
                             );
-                            setState(() {});
+                            // setState(() {});
+                            // print("ali");
+                            // print(snapshot.data[i]['id'].toString());
+                            sharedPref.setString("id",snapshot.data[i]['id'].toString());
+                            Navigator.of(context).pushNamedAndRemoveUntil("MLCalendarFragment", (route) => true);
+
                             // Navigator.of(context).push(
                             //   MaterialPageRoute(
                             //     builder: (context) => Item(),

@@ -16,6 +16,7 @@ import 'adminPages/screens/main/main_screen.dart';
 import 'chatTest/chatBot.dart';
 import 'chatTest/chatpage.dart';
 import 'chatTest/firebase_options.dart';
+import 'fragments/MLCalendarFragment.dart';
 import 'osama_screens/admin/addCategory.dart';
 import 'osama_screens/admin/cardnoteAdmin.dart';
 import 'osama_screens/admin/category.dart';
@@ -80,6 +81,8 @@ class MyApp extends StatelessWidget {
           "AdminaddPateint" :(context)=>AdminaddPateint(),
           "Adminpage" :(context)=>MainScreen(),
           "AdminDoctors" :(context)=>AdminDoctorcategory(),
+
+          "MLCalendarFragment" :(context)=>MLCalendarFragment(),
 
           "ChatScreen" :(context)=>ChatScreen(),
           "chatpage" :(context)=>chatpage(email: '${sharedPref.getString("username")}',),

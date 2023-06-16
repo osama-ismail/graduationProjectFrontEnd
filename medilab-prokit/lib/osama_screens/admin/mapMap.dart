@@ -8,7 +8,10 @@ import 'package:medilab_prokit/osama_screens/components/cardProfile.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:provider/provider.dart';
 import 'dart:async';
+import '../../adminPages/controllers/MenuAppController.dart';
+import '../../adminPages/screens/main/main_screen.dart';
 import '../../main.dart';
 import '../components/customtextform.dart';
 import 'package:medilab_prokit/osama_screens/components/crud.dart';
@@ -129,16 +132,33 @@ class OrderState extends State<MapMap> {
 
     return Scaffold(
         appBar: AppBar(
-          leading: GestureDetector(
-            onTap: () {
-              Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
+          leading:sharedPref.getString("username")!.startsWith("d")? IconButton(
+            icon: Icon(Icons.arrow_back,color: Colors.white,),
+            onPressed: () {
+              if(sharedPref.getString("username")!.startsWith("d")
+              ){
+                print("ali");
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return MultiProvider(
+                        providers: [
+                          ChangeNotifierProvider(
+                            create: (context) => MenuAppController(),
+                          ),
+                        ],
+                        child: MainScreen(),
+                      );
+                    },
+                  ),
+                      (Route<dynamic> route) => false,
+                );}
+              else{
+                Navigator.of(context).pushNamedAndRemoveUntil("homePage", (route) => true);
 
+              }
             },
-            child: Icon(
-              Icons.arrow_back,
-              size: 24,
-            ),
-          ),
+          ):null,
           title: Text('Your App'),
         ),
       body: Container(

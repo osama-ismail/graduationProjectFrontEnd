@@ -100,16 +100,16 @@ class NavBar extends StatelessWidget {
             ),
           ),
           Divider(),
-          ListTile(
-            leading: Icon(Icons.date_range),
-            title: Text('Reservations'),
-            onTap: () {
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil("Admincategory", (route) => false);
-            },
-          ),
-
-          Divider(),
+          // ListTile(
+          //   leading: Icon(Icons.date_range),
+          //   title: Text('Reservations'),
+          //   onTap: () {
+          //     Navigator.of(context)
+          //         .pushNamedAndRemoveUntil("Admincategory", (route) => false);
+          //   },
+          // ),
+          //
+          // Divider(),
           ListTile(
 
             leading: Icon(Icons.dark_mode),

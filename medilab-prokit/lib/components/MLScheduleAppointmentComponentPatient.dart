@@ -155,6 +155,7 @@ class MLScheduleApoointmentSheetState extends State<MLScheduleApoointmentSheetPa
                 ),
                 SizedBox(width: 8.0),
                 Text(
+
                   e.validate(),
                   style: boldTextStyle(size: 14, color: isTimeInOo ? Colors.white : isReserved ? Colors.white : isReserved2 ?selectedTime == e? Colors.white : mlColorDarkBlue:Colors.black),
                   textAlign: TextAlign.center,

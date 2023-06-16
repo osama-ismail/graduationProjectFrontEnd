@@ -44,10 +44,12 @@ class CartCardState extends State<CardNotes> with Crud {
 
 
   }
+
   onevent_available(){
+
     sharedPref.setString("istick","0");
 
-    Navigator.of(context).pushNamedAndRemoveUntil("chatpage", (route) => false);
+    Navigator.of(context).pushNamedAndRemoveUntil("MapMap", (route) => false);
 
 
   }
@@ -71,6 +73,13 @@ class CartCardState extends State<CardNotes> with Crud {
 
   }
 
+  onClick() async{
+    print("osanaaa");
+    print(widget.id);
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -89,47 +98,58 @@ class CartCardState extends State<CardNotes> with Crud {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              CircleAvatar(
+              GestureDetector(
+                onTap: onClick, // Define the onTap callback function
                 child: CircleAvatar(
-                  child: Image.asset("images/person.png"),
-                  radius: 25,
-                  backgroundColor: Colors.white,
+                  child: CircleAvatar(
+                    child: Image.asset("images/person.png"),
+                    radius: 25,
+                    backgroundColor: Colors.white,
+                  ),
                 ),
               ),
               Expanded(
                 flex: 2,
                 child: ListTile(
                   title: Text(
-                    "Name: ${widget.name.substring(2)} \nAddress: ${widget.address}  ",
+                    "${widget.name.substring(2)} ,\n ${widget.address}  ",
                     style: TextStyle(
                       color: Colors.deepPurple,
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      IconButton(
+                      IconButton(iconSize: 20,
                         icon: Icon(Icons.edit),
                         color: Colors.blue,
                         onPressed: onEdit, // Define the edit callback function
                       ),
-                      IconButton(
+                      IconButton(iconSize: 20,
                         icon: Icon(Icons.delete),
                         color: Colors.red,
                         onPressed: onDelete,
                       ),
-                      IconButton(
+                      IconButton(iconSize: 20,
                         icon: Icon(Icons.chat),
                         color: Colors.blue,
                         onPressed: onChat,
                       ),
-                      IconButton(
-                        icon: Icon(Icons.event_available),
-                        color: Colors.blue,
-                        onPressed: onevent_available,
-                      ),
+                      Column(
+                        children: [
+                          IconButton(
+                            iconSize: 20,
+                            icon: Icon(Icons.zoom_in_map_rounded),
+                            color: Colors.blue,
+                            onPressed: onevent_available,
+                          ),
+
+                        ],
+                      )
+
                     ],
                   ),
                 ),
